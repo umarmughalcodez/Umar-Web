@@ -70,7 +70,7 @@ const Navbar = () => {
         {/* <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200">
           Get In Touch
         </button> */}
-        <AnimatedButton />
+        <AnimatedButton text="Get In Touch" />
 
         {/* Mobile Menu Button (Optional) */}
         {/* <button className="md:hidden text-white">

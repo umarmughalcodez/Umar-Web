@@ -3,6 +3,7 @@ import { Geist, Geist_Mono, League_Spartan, Poppins } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import MovingBackground from "./components/ui/MovingBackground";
+import BottomBlur from "./components/ui/BottomBlur";
 
 const league_spartan = League_Spartan({
   variable: "--font-geist-sans",
@@ -28,7 +29,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" data-arp="">
-      <body className={`${poppins.variable} antialiased`}>
+      <body className={`${league_spartan.variable} antialiased`}>
         <MovingBackground />
         <Navbar />
         {children}
