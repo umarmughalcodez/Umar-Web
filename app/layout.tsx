@@ -1,15 +1,19 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, League_Spartan, Poppins } from "next/font/google";
 import "./globals.css";
+import Navbar from "./components/Navbar";
+import MovingBackground from "./components/ui/MovingBackground";
 
-const geistSans = Geist({
+const league_spartan = League_Spartan({
   variable: "--font-geist-sans",
   subsets: ["latin"],
+  weight: ["400", "500", "700"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const poppins = Poppins({
+  variable: "--font-geist-sans",
   subsets: ["latin"],
+  weight: ["400", "500", "700"],
 });
 
 export const metadata: Metadata = {
@@ -23,10 +27,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+    <html lang="en" data-arp="">
+      <body className={`${poppins.variable} antialiased`}>
+        <MovingBackground />
+        <Navbar />
         {children}
       </body>
     </html>
