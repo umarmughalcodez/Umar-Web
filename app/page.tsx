@@ -2,7 +2,7 @@
 import Hero from "./components/Hero";
 import About from "./components/About";
 import Projects from "./components/Projects";
-import Work from "./components/Work";
+import { Work } from "./components/Work";
 
 const Home = () => {
   return (

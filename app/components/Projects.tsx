@@ -31,12 +31,12 @@ const Projects = () => {
   ];
 
   return (
-    <div className="mt-6 flex flex-col items-center justify-center w-full h-auto space-y-8 ">
+    <div className=" flex flex-col items-center justify-center w-full h-auto space-y-8 ">
       <div className="p-4 lg:p-12 grid place-items-center">
         <button
           className="relative flex items-center gap-2 px-4 py-2 rounded-lg 
         bg-black/30 border border-white/10 text-white text-sm
-        shadow-md transition"
+        shadow-md transition mb-12"
         >
           {/* Blue top highlight */}
           <span className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-blue-500 to-transparent" />
@@ -46,7 +46,7 @@ const Projects = () => {
           <span>Launch Your Website</span>
         </button>
 
-        <div className="text-4xl font-semibold text-gray-100 mt-3 text-center md:text-5xl">
+        <div className="text-4xl font-semibold text-gray-100 mt-3 text-center md:text-5xl mb-2">
           <p>Reliable Agency Partner</p>
           <p>For Startups & Growing Businesses</p>
           <p className="text-sm text-gray-400 font-normal mt-8">

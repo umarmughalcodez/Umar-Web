@@ -1,22 +1,23 @@
-import React from "react";
-import { TextRevealCard } from "./ui/Text-reveal-card";
-import { LampContainer } from "./ui/lamp";
+"use client";
+import BorderBtn from "./ui/BorderBtn";
+import ScrollStack, { ScrollStackItem } from "./ui/ScrollStack";
+import WorkCards from "./WorkCards";
 
-const Work = () => {
+export const Work = () => {
   return (
-    <div>
-      <LampContainer
-        children={
-          <p className="text-5xl font-semibold text-white">Hello World</p>
-        }
-      />
-      Work
-      <TextRevealCard
-        text="Your know the business"
-        revealText="We know the chemistry"
-      />
+    <div className="w-full h-auto flex flex-col items-start justify-center mt-2 p-8 xl:p-26">
+      <BorderBtn text="How We Work?" />
+      <div className="text-4xl text-white md:text-5xl w-full space-y-8">
+        <div className="font-semibold">
+          <p>We Simplify Your Journey</p>
+          <p>From Concept To Launch</p>
+        </div>
+        <p className="text-sm w-[70%] mb-8">
+          We make it effortless to turn your vision into reality, guiding you
+          every step of the way — from concept to a fully live website.
+        </p>
+      </div>
+      <WorkCards />
     </div>
   );
 };
-
-export default Work;

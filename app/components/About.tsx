@@ -65,6 +65,11 @@ const About = () => {
             </span>
             <span className="text-sm ">56+ Reviews</span>
           </div>
+          <div className="h-[40px] w-[2px] bg-gradient-to-b from-transparent via-gray-500 to-transparent" />
+          <div className="text-center  flex-col flex">
+            <span className="font-semibold">3+ Years</span>
+            <span className="text-sm">Experience</span>
+          </div>
         </div>
       </div>
       <div className="w-[90%] lg:w-1/2 h-full bg-black/30 relative mb-12"></div>
