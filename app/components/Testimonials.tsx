@@ -47,7 +47,7 @@ const Testimonials = () => {
   };
 
   return (
-    <div className="flex items-center justify-center flex-col mt-6 py-12 px-4">
+    <div className="flex items-center justify-center flex-col mt-6 p-6 lg:p-16 xl:p-26">
       <BorderBtn text="Testimonials" />
       <div className="font-semibold text-center w-full max-w-3xl">
         <p className="text-4xl text-white md:text-5xl">What Our Clients Say,</p>
