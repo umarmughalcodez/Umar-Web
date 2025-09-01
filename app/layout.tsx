@@ -29,8 +29,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" data-arp="">
-      <body className={`${league_spartan.variable} antialiased`}>
-        <MovingBackground />
+      <body className={`${league_spartan.variable} antialiased bg-black`}>
+        {/* <MovingBackground /> */}
         <Navbar />
         {children}
       </body>
