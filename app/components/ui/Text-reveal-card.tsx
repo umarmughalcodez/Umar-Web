@@ -72,7 +72,7 @@ export const TextRevealCard = ({
       }}
       onTouchMove={touchMoveHandler}
       className={cn(
-        "relative w-full rounded-3xl p-6 sm:p-8 overflow-hidden bg-black border border-white/15 shadow-xl text-center",
+        "relative w-full rounded-3xl p-6 sm:p-8 overflow-hidden bg-black border border-white/15 shadow-xl",
         className
       )}
     >
@@ -82,7 +82,7 @@ export const TextRevealCard = ({
 
       {children}
 
-      <div className="h-32 sm:h-40 relative flex items-center overflow-hidden z-10 text-center">
+      <div className="h-32 sm:h-40 relative flex items-center justify-center overflow-hidden z-10">
         {/* Reveal Text */}
         <motion.div
           style={{ width: "100%" }}
@@ -91,11 +91,11 @@ export const TextRevealCard = ({
             clipPath: `inset(0 ${100 - widthPercentage}% 0 0)`,
           }}
           transition={{ duration: isMouseOver ? 0 : 0.4 }}
-          className="absolute backdrop-blur-md z-20"
+          className="absolute backdrop-blur-md z-20 flex items-center justify-center"
         >
           <p
             style={{ textShadow: "4px 4px 15px rgba(0,0,0,0.5)" }}
-            className="text-lg sm:text-[2.5rem] md:text-[3rem] py-6 sm:py-10 font-bold text-white bg-clip-text bg-gradient-to-b from-white to-neutral-100"
+            className="text-lg sm:text-[2.5rem] md:text-[3rem] py-6 sm:py-10 font-bold text-white bg-clip-text bg-gradient-to-b from-white to-neutral-100 text-center w-full"
           >
             {revealText}
           </p>
@@ -113,8 +113,8 @@ export const TextRevealCard = ({
         ></motion.div>
 
         {/* Base text */}
-        <div className="overflow-hidden [mask-image:linear-gradient(to_bottom,transparent,white,transparent)]">
-          <p className="text-lg sm:text-[2.5rem] md:text-[3rem] py-6 sm:py-10 font-bold bg-clip-text text-transparent bg-[#969696]">
+        <div className="overflow-hidden [mask-image:linear-gradient(to_bottom,transparent,white,transparent)] w-full flex items-center justify-center">
+          <p className="text-lg sm:text-[2.5rem] md:text-[3rem] py-6 sm:py-10 font-bold bg-clip-text text-transparent bg-[#969696] text-center w-full">
             {text}
           </p>
           <MemoizedStars />
@@ -131,7 +131,9 @@ export const TextRevealCardTitle = ({
   children: React.ReactNode;
   className?: string;
 }) => (
-  <h2 className={twMerge("text-white text-lg mb-2", className)}>{children}</h2>
+  <h2 className={twMerge("text-white text-lg mb-2 text-center", className)}>
+    {children}
+  </h2>
 );
 
 export const TextRevealCardDescription = ({
