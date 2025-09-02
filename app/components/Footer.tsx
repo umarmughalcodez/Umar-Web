@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <footer className="w-full px-10 sm:px-20 py-10 border-t-2 border-t-white/40 text-white bg-black/70 mt-12">
+    <footer className="w-full px-10  xl:px-30 lg:px-26 py-10 border-t-2 border-t-white/40 text-white bg-black/70 mt-12">
       {/* Main Layout - stacks on mobile, row on large screens */}
       <div className="flex flex-col lg:flex-row justify-between items-start lg:items-start gap-12">
         {/* Left Section (Logo + Email Subscription) */}
