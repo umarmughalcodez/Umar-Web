@@ -1,11 +1,17 @@
 "use client";
 import { useRouter } from "next/navigation";
-export default function ShinyButton({ text }: { text: string }) {
+export default function ShinyButton({
+  text,
+  path,
+}: {
+  text: string;
+  path?: string;
+}) {
   const router = useRouter();
   return (
     <button
-      onClick={() => router.push("/contact")}
-      className="relative px-6 py-3 font-semibold text-white rounded-xl 
+      onClick={() => path && router.push(path)}
+      className="relative px-6 py-3 font-semibold text-white rounded-xl cursor-pointer 
                  bg-blue-600 
                  shadow-[0_0_8px_rgba(59,130,246,0.8),0_0_20px_rgba(59,130,246,0.6)] 
                  transition-all duration-300 

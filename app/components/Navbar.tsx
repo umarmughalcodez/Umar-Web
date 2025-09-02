@@ -4,8 +4,13 @@ import { useState, useEffect } from "react";
 import { useScrollDirection } from "@/hooks/useScrollDirection";
 import Link from "next/link";
 import AnimatedButton from "./AnimatedBtn";
+import img from "@/public/logo_resized-removebg-preview.png";
+import Image from "next/image";
+import { useRouter } from "next/navigation";
+import { Button } from "./ui/button";
 
 const Navbar = () => {
+  const router = useRouter();
   const [isVisible, setIsVisible] = useState(true);
   const [isScrolled, setIsScrolled] = useState(false);
   const scrollDirection = useScrollDirection();
@@ -32,6 +37,7 @@ const Navbar = () => {
   const navItems = [
     { name: "Portfolio", href: "#about" },
     { name: "Work", href: "#work" },
+    { name: "About", href: "#about" },
   ];
 
   return (
@@ -49,20 +55,37 @@ const Navbar = () => {
     >
       <div className="container mx-auto px-4 md:px-6 flex justify-between items-center">
         {/* Logo */}
-        <div className="flex items-center">
-          <span className="text-white font-bold text-xl">Logo</span>
+        <div
+          className="relative w-[180px] h-[50px]"
+          onClick={() => router.push("/")}
+        >
+          <Image
+            src={img}
+            alt="Logo"
+            fill
+            className="object-contain cursor-pointer"
+          />
         </div>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center space-x-8">
+        <div className="hidden md:flex items-center space-x-5">
           {navItems.map((item) => (
-            <Link
+            <Button
               key={item.name}
-              href={item.href}
-              className="text-white/80 hover:text-white transition-colors duration-200 text-sm font-medium"
+              onClick={() => router.push(item.href)}
+              variant={"link"}
+              effect={"hoverUnderline"}
+              className="p-1"
             >
               {item.name}
-            </Link>
+            </Button>
+            // <Link
+            //   key={item.name}
+            //   href={item.href}
+            //   className="text-white/80 hover:text-white transition-colors duration-200 text-sm font-medium"
+            // >
+            //   {item.name}
+            // </Link>
           ))}
         </div>
 
