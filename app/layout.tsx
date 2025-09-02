@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar";
 import MovingBackground from "./components/ui/MovingBackground";
 import BottomBlur from "./components/ui/BottomBlur";
 import GradualBlurMemo from "./components/ui/GradualBlur";
+import Footer from "./components/Footer";
 
 const league_spartan = League_Spartan({
   variable: "--font-geist-sans",
@@ -34,6 +35,7 @@ export default function RootLayout({
         <MovingBackground />
         <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );
