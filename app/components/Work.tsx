@@ -5,9 +5,12 @@ import WorkCards from "./WorkCards";
 
 export const Work = () => {
   return (
-    <div className="w-full h-auto flex flex-col items-start justify-center mt-2 p-8 xl:p-26">
+    <div
+      id="strategy"
+      className="w-full h-auto flex flex-col items-start justify-center mt-2 p-8 xl:p-26"
+    >
       <BorderBtn text="How We Work?" />
-      <div className="text-4xl text-white md:text-5xl w-full space-y-8">
+      <div className="text-4xl text-white md:text-5xl w-full space-y-8 mt-4">
         <div className="font-semibold">
           <p>We Simplify Your Journey</p>
           <p>From Concept To Launch</p>
@@ -18,6 +21,7 @@ export const Work = () => {
         </p>
       </div>
       <WorkCards />
+      <div className="w-[90%] h-[1px] bg-gradient-to-r from-transparent via-gray-500 to-transparent" />
     </div>
   );
 };

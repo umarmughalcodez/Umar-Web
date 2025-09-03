@@ -32,7 +32,10 @@ const Projects = () => {
   ];
 
   return (
-    <div className=" flex flex-col items-center justify-center w-full h-auto space-y-8 ">
+    <div
+      id="projects"
+      className=" flex flex-col items-center justify-center w-full h-auto space-y-8 "
+    >
       <div className="p-4 lg:p-12 grid place-items-center">
         <BorderBtn text="Launch Your Website" />
 
@@ -47,6 +50,7 @@ const Projects = () => {
         {/* Pass props correctly */}
       </div>
       <InfiniteCards images={images} texts={texts} descriptions={description} />
+      <div className="w-[90%] h-[1px] bg-gradient-to-r from-transparent via-gray-500 to-transparent mb-16 mt-4" />
     </div>
   );
 };

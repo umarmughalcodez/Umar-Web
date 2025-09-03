@@ -12,9 +12,15 @@ const WorkCards = () => {
         {/* Left column with 3 stage cards */}
         <div className="flex flex-col items-center text-white space-y-8 xl:w-1/2 w-full">
           <div
-            className="relative w-full rounded-3xl 
-        bg-black px-10 py-8 space-y-6 overflow-hidden shadow-xl border border-gray-800"
+            className="relative group w-full rounded-3xl bg-black px-10 py-8 space-y-6 
+  overflow-hidden shadow-xl border border-gray-800"
           >
+            {/* Shine effect overlay */}
+            <span
+              className="pointer-events-none absolute inset-0 -translate-x-full 
+    bg-gradient-to-r from-transparent via-white/20 to-transparent 
+    group-hover:translate-x-full transition-transform duration-1000 ease-in-out h-full"
+            />
             {/* Blue blurred waves (background effects) */}
             <div className="absolute -top-10 -left-10 w-40 h-40 bg-blue-600/50 rounded-full blur-3xl"></div>
             <div className="absolute -bottom-10 -right-10 w-48 h-48 bg-blue-600/50 rounded-full blur-3xl"></div>
@@ -66,9 +72,15 @@ const WorkCards = () => {
             </div>
           </div>
           <div
-            className="relative w-full rounded-3xl 
-        bg-black px-10 py-8 space-y-6 overflow-hidden shadow-xl border border-gray-800"
+            className="relative group w-full rounded-3xl bg-black px-10 py-8 space-y-6 
+  overflow-hidden shadow-xl border border-gray-800"
           >
+            {/* Shine effect overlay */}
+            <span
+              className="pointer-events-none absolute inset-0 -translate-x-full 
+    bg-gradient-to-r from-transparent via-white/20 to-transparent 
+    group-hover:translate-x-full transition-transform duration-1000 ease-in-out h-full"
+            />
             {/* Blue blurred waves (background effects) */}
             <div className="absolute -top-10 -left-10 w-40 h-40 bg-blue-600/50 rounded-full blur-3xl"></div>
             <div className="absolute -bottom-10 -right-10 w-48 h-48 bg-blue-600/50 rounded-full blur-3xl"></div>
@@ -120,9 +132,15 @@ const WorkCards = () => {
             </div>
           </div>
           <div
-            className="relative w-full rounded-3xl 
-        bg-black px-10 py-8 space-y-6 overflow-hidden shadow-xl border border-gray-800"
+            className="relative group w-full rounded-3xl bg-black px-10 py-8 space-y-6 
+  overflow-hidden shadow-xl border border-gray-800"
           >
+            {/* Shine effect overlay */}
+            <span
+              className="pointer-events-none absolute inset-0 -translate-x-full 
+    bg-gradient-to-r from-transparent via-white/20 to-transparent 
+    group-hover:translate-x-full transition-transform duration-1000 ease-in-out h-full"
+            />
             {/* Blue blurred waves (background effects) */}
             <div className="absolute -top-10 -left-10 w-40 h-40 bg-blue-600/50 rounded-full blur-3xl"></div>
             <div className="absolute -bottom-10 -right-10 w-48 h-48 bg-blue-600/50 rounded-full blur-3xl"></div>
@@ -184,7 +202,6 @@ const WorkCards = () => {
           </div>
         </div>
       </div>
-      <div className="w-[95%] h-[1px] bg-gradient-to-r from-transparent via-gray-500 to-transparent mb-3 mt-4" />
     </>
   );
 };

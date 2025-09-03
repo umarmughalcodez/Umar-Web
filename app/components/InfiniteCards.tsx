@@ -14,7 +14,7 @@ interface InfiniteCardsProps {
 export default function InfiniteCards({
   images,
   texts,
-  duration = 100,
+  duration = 80,
   descriptions,
 }: InfiniteCardsProps) {
   const combinedData = images.map((img, i) => ({
@@ -26,7 +26,7 @@ export default function InfiniteCards({
   const scrollingData = [...combinedData, ...combinedData];
 
   return (
-    <div className="relative w-full overflow-hidden py-8">
+    <div className="relative w-full overflow-hidden py-8 mb-8">
       {/* Left smooth fade with blur */}
       <div className="pointer-events-none absolute left-0 top-0 h-full w-20 z-10">
         <div
@@ -64,14 +64,14 @@ export default function InfiniteCards({
         {scrollingData.map((item, idx) => (
           <div
             key={idx}
-            className="relative flex-shrink-0 w-[28rem] h-[34rem] overflow-hidden rounded-2xl shadow-lg border-8 border-gray-900"
+            className="relative flex-shrink-0 w-[28rem] h-[34rem] overflow-hidden rounded-2xl shadow-lg border-8 border-white/20"
           >
             {/* Image */}
             <Image
               src={item.image}
               alt={item.text}
               fill
-              className="object-cover"
+              className="object-cover hover:scale-110 delay-75 transition-all "
             />
 
             {/* Bottom blurred border */}

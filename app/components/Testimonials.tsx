@@ -47,7 +47,10 @@ const Testimonials = () => {
   };
 
   return (
-    <div className="flex items-center justify-center flex-col mt-6 p-6 lg:p-16 xl:p-26">
+    <div
+      className="flex items-center justify-center flex-col mt-6 p-6 lg:py-8 lg:px-16 xl:px-26 xl:py-10"
+      id="testimonials"
+    >
       <BorderBtn text="Testimonials" />
       <div className="font-semibold text-center w-full max-w-3xl">
         <p className="text-4xl text-white md:text-5xl">What Our Clients Say,</p>
@@ -65,9 +68,18 @@ const Testimonials = () => {
         {testimonials.name.map((name, index) => (
           <div
             key={index}
-            className="bg-gray-800/30 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:border-blue-500/30 transition-all duration-300 hover:scale-105"
+            className="relative group bg-gray-800/30 backdrop-blur-sm rounded-2xl p-6 
+             border border-white/10 hover:border-blue-500/30 
+             transition-all duration-300 hover:scale-105 overflow-hidden"
           >
-            <div className="flex items-center mb-4">
+            {/* Shine effect overlay */}
+            <span
+              className="pointer-events-none absolute inset-0 -translate-x-full 
+    bg-gradient-to-r from-transparent via-white/20 to-transparent 
+    group-hover:translate-x-full transition-transform duration-700 ease-in-out"
+            />
+
+            <div className="flex items-center ">
               {/* Image container with blue faded effect */}
               <div className="relative mr-4">
                 <div className="absolute inset-0 bg-blue-500/20 blur-md rounded-full transform scale-110"></div>

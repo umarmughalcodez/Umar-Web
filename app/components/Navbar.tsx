@@ -35,9 +35,8 @@ const Navbar = () => {
 
   // Navbar items data
   const navItems = [
-    { name: "Portfolio", href: "#about" },
-    { name: "Work", href: "#work" },
-    { name: "About", href: "#about" },
+    { name: "Portfolio", href: "/#about" },
+    { name: "Work", href: "/#strategy" },
   ];
 
   return (
@@ -56,7 +55,7 @@ const Navbar = () => {
       <div className="container mx-auto px-4 md:px-6 flex justify-between items-center">
         {/* Logo */}
         <div
-          className="relative w-[180px] h-[50px]"
+          className="relative w-[120px] md:w-[180px] h-[30px] md:h-[60px]"
           onClick={() => router.push("/")}
         >
           <Image
@@ -93,7 +92,7 @@ const Navbar = () => {
         {/* <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200">
           Get In Touch
         </button> */}
-        <AnimatedButton text="Get In Touch" />
+        <AnimatedButton text="Get In Touch" path="/contact" />
 
         {/* Mobile Menu Button (Optional) */}
         {/* <button className="md:hidden text-white">

@@ -7,6 +7,8 @@ import BottomBlur from "./components/ui/BottomBlur";
 import GradualBlurMemo from "./components/ui/GradualBlur";
 import Footer from "./components/Footer";
 import CursorFollower from "./components/ui/CursorFollower";
+import Lenis from "lenis";
+import SmoothScrollProvider from "./components/ui/SmoothScrollProvider";
 
 const league_spartan = League_Spartan({
   variable: "--font-geist-sans",
@@ -36,7 +38,8 @@ export default function RootLayout({
         <CursorFollower />
         <MovingBackground />
         <Navbar />
-        {children}
+        {/* {children} */}
+        <SmoothScrollProvider>{children}</SmoothScrollProvider>
         <Footer />
       </body>
     </html>

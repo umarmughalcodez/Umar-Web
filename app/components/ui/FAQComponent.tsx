@@ -37,6 +37,18 @@ const FAQ = () => {
         "Yes, we provide you with a user-friendly content management system (CMS) that allows you to easily update text, images, and other content without any technical knowledge. We also offer training sessions.",
     },
     {
+      question:
+        "Nobody visits our current site — what’s the point of upgrading?",
+      answer: `That’s exactly the problem we solve.
+We don’t just build pretty websites — we also offer SEO to help you show up on Google, attract the right visitors, and turn them into paying customers.`,
+    },
+    {
+      question:
+        "Our website is old, but it still works — why spend money on a new one?",
+      answer: `Because first impressions matter.
+An outdated or slow website silently turns customers away — even if you never hear about it. A fresh, modern, and mobile-friendly design builds trust, keeps visitors engaged, and makes you look like the professional business you are.`,
+    },
+    {
       question: "What makes you different to other web design agencies?",
       answer:
         "We deliver exceptional websites at affordable prices without compromising quality. Your custom website launches quickly with a personalized design that perfectly reflects your brand and goals—no long waits or generic templates. And unlike other agencies, we provide long term support for your website to ensure it performs well every time.",

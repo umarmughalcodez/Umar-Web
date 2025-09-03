@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
 import verify from "@/public/verify.png";
-import img from "@/public/Linkedin Profile Picture.png";
 import Image from "next/image";
 import { CheckCircle } from "lucide-react";
 import { HiBadgeCheck } from "react-icons/hi";
@@ -9,14 +8,18 @@ import { FaCircleCheck } from "react-icons/fa6";
 import { BsCheck2Circle, BsPatchCheck } from "react-icons/bs";
 import { PiSealCheck, PiSealCheckBold, PiSealCheckFill } from "react-icons/pi";
 import { FaCheckCircle, FaStar } from "react-icons/fa";
+import img from "@/public/image to use.jpeg";
 import ShinyButton from "./AnimatedBtn";
 import { IoStar } from "react-icons/io5";
 
 const About = () => {
   return (
     <>
-      <div className="w-full h-[100vh] flex flex-col items-center p-5 xl:p-26 text-white lg:flex-row">
-        <div className="lg:w-1/2   w-[90%]">
+      <div
+        id="about"
+        className="w-full h-auto flex flex-col items-center p-5 xl:py-14 xl:px-26 text-white lg:flex-row justify-center space-x-3 space-y-8 mb-4"
+      >
+        <div className="lg:w-1/2 w-[90%]">
           <button
             className="relative flex items-center gap-2 px-4 py-2 rounded-lg 
       bg-black/30 border border-white/10 text-white text-sm
@@ -53,7 +56,7 @@ const About = () => {
             </div>
           </div>
           <div className="my-4 flex space-x-6 ">
-            <ShinyButton text="Book Consultation Call" />
+            <ShinyButton text="Book Consultation Call" path="/schedule-call" />
 
             <div className="h-[40px] w-[2px] bg-gradient-to-b from-transparent via-gray-500 to-transparent" />
             <div className="flex-col text-white space-y-2 text-center ">
@@ -73,12 +76,15 @@ const About = () => {
             </div>
           </div>
         </div>
-        <div className="w-[90%] lg:w-1/2 h-full bg-black/30 relative mb-12">
-          Hello World
+        <div className="w-[90%] lg:w-1/2 h-auto relative mb-12 flex items-center justify-center p-3 bg-white/20 rounded-4xl border-2 border-[#686868]">
+          <Image
+            src={img}
+            alt="Umar's Image"
+            className="object-contain rounded-4xl border-2 border-[#686868]"
+          />
         </div>
-        {/* <div className="flex items-center justify-start min-h-[40px] mb-12"> */}
       </div>
-      <div className="w-[90%] h-[1px] bg-gradient-to-r from-transparent via-gray-500 to-transparent mb-3" />
+      <div className="w-[90%] h-[2px] bg-gradient-to-r from-transparent via-gray-500 to-transparent mb-7" />
     </>
   );
 };

@@ -7,7 +7,10 @@ import ShinyButton from "../AnimatedBtn";
 
 const AnimatedGradientCard = () => {
   return (
-    <div className=" w-full mt-20 grid place-items-center p-4 lg:p-16 xl:p-26">
+    <div
+      id="JoinUs"
+      className=" w-full mt-10 grid place-items-center p-4 lg:p-16 xl:p-26"
+    >
       <div className="relative overflow-hidden rounded-2xl bg-black text-white border border-white/50">
         {/* --- Stronger, More Visible Moving Gradient Lines --- */}
         <motion.div
@@ -61,7 +64,7 @@ const AnimatedGradientCard = () => {
           </p>
 
           {/* Call to Action Button */}
-          <ShinyButton text="Book FREE Strategy Call" />
+          <ShinyButton text="Book FREE Strategy Call" path="/schedule-call" />
         </div>
       </div>
     </div>

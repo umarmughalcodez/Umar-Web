@@ -154,3 +154,16 @@
 .drop-shadow-white {
   filter: drop-shadow(0 0 2px white);
 }
+
+/* globals.css */
+html,
+body {
+  scroll-behavior: smooth;
+}
+
+/* Fallback for browsers that don't support smooth scrolling */
+/* @media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+} */
