@@ -3,8 +3,7 @@ import { Geist, Geist_Mono, League_Spartan, Poppins } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import MovingBackground from "./components/ui/MovingBackground";
-import BottomBlur from "./components/ui/BottomBlur";
-import GradualBlurMemo from "./components/ui/GradualBlur";
+
 import Footer from "./components/Footer";
 import CursorFollower from "./components/ui/CursorFollower";
 import Lenis from "lenis";
@@ -36,7 +35,7 @@ export default function RootLayout({
     <html lang="en" data-arp="">
       <body className={`${league_spartan.variable} antialiased bg-black`}>
         <CursorFollower />
-        <MovingBackground />
+        {/* <MovingBackground /> */}
         <Navbar />
         {/* {children} */}
         <SmoothScrollProvider>{children}</SmoothScrollProvider>

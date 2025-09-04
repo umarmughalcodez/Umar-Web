@@ -123,7 +123,7 @@ An outdated or slow website silently turns customers away — even if you never 
                   }}
                   className="overflow-hidden bg-black/10"
                 >
-                  <div className="w-[90%] h-[2px] bg-gradient-to-r from-transparent via-gray-500 to-transparent mb-3 text-white/10" />
+                  <div className="w-[90%] h-[1px] bg-gradient-to-r from-transparent via-gray-500 to-transparent mb-3 text-white/10" />
                   <p className="text-white/80 px-4 p-2">{item.answer}</p>
                 </motion.div>
               )}

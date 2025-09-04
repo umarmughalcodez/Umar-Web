@@ -49,7 +49,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="w-full px-16 xl:px-30 lg:px-26 py-10 border-t-2 border-t-white/40 text-white bg-black/70 mt-12">
+    <footer className="w-full px-16 xl:px-30 lg:px-26 py-10 border-t-2 border-t-white/40 text-white bg-black/10 mt-12">
       <Toaster />
       {/* Main Layout */}
       <div className="flex flex-col lg:flex-row justify-between items-start lg:items-start gap-12">
@@ -72,13 +72,13 @@ const Footer = () => {
 
           {/* Email Subscription */}
           <form
-            className="flex items-center bg-black/40 rounded-xl overflow-hidden border border-white/30 px-1 py-1 pl-3 justify-center max-w-md"
+            className="flex items-center bg-black/40 rounded-xl overflow-hidden border border-white/30 px-1 py-1 pl-3 justify-center max-w-sm"
             onSubmit={handleSubmit}
           >
             <input
               placeholder="Enter Your Email..."
               className="flex-1 bg-transparent text-gray-300 placeholder-gray-500 focus:outline-none 
-              text-sm sm:text-base md:text-lg"
+              text-sm sm:text-base md:text-md"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
@@ -89,7 +89,7 @@ const Footer = () => {
               className="text-white cursor-pointer bg-blue-700 hover:bg-blue-600 
               shadow-[0_0_20px_rgba(59,130,246,0.7)] hover:shadow-[0_0_30px_rgba(59,130,246,1)] 
               transition-all duration-300 font-semibold
-              text-sm sm:text-base md:text-lg px-2 md:px-3 py-0"
+              text-sm sm:text-base md:text-md px-2 md:px-3 py-0"
               iconPlacement="right"
               icon={LucideBell}
             >

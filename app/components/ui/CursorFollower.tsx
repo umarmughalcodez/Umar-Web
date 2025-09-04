@@ -16,8 +16,8 @@ export default function CursorFollower() {
 
     const animate = () => {
       // Smoothly move towards the cursor (lerp effect)
-      dotX.current += (mouseX.current - dotX.current) * 0.05;
-      dotY.current += (mouseY.current - dotY.current) * 0.05;
+      dotX.current += (mouseX.current - dotX.current) * 0.1;
+      dotY.current += (mouseY.current - dotY.current) * 0.1;
 
       if (dotRef.current) {
         dotRef.current.style.transform = `translate(${dotX.current}px, ${dotY.current}px)`;

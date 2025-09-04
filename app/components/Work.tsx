@@ -1,13 +1,13 @@
 "use client";
 import BorderBtn from "./ui/BorderBtn";
-import ScrollStack, { ScrollStackItem } from "./ui/ScrollStack";
+
 import WorkCards from "./WorkCards";
 
 export const Work = () => {
   return (
     <div
       id="strategy"
-      className="w-full h-auto flex flex-col items-start justify-center mt-2 p-8 xl:p-26"
+      className="w-full h-auto flex flex-col items-start justify-center mt-2 px-8 py-4 xl:p-26"
     >
       <BorderBtn text="How We Work?" />
       <div className="text-4xl text-white md:text-5xl w-full space-y-8 mt-4">

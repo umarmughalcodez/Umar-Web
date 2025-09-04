@@ -11,6 +11,7 @@ import { FaCheckCircle, FaStar } from "react-icons/fa";
 import img from "@/public/image to use.jpeg";
 import ShinyButton from "./AnimatedBtn";
 import { IoStar } from "react-icons/io5";
+import BorderBtn from "./ui/BorderBtn";
 
 const About = () => {
   return (
@@ -19,21 +20,8 @@ const About = () => {
         id="about"
         className="w-full h-auto flex flex-col items-center p-5 xl:py-14 xl:px-26 text-white lg:flex-row justify-center space-x-3 space-y-8 mb-4"
       >
-        <div className="lg:w-1/2 w-[90%]">
-          <button
-            className="relative flex items-center gap-2 px-4 py-2 rounded-lg 
-      bg-black/30 border border-white/10 text-white text-sm
-      shadow-md transition"
-          >
-            {/* Blue top highlight */}
-            <span className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-blue-500 to-transparent" />
-
-            {/* Bullet dot */}
-            <span className="w-2 h-2 rounded-full bg-white"></span>
-
-            {/* Text */}
-            <span>About Umar</span>
-          </button>
+        <div className="lg:w-1/2 w-[90%] mt-8">
+          <BorderBtn text="About Umar" />
           <div className="mt-12">
             <div className="md:text-5xl text-4xl font-semibold mb-8">
               <p>Building Trustworthy Brands</p>
@@ -44,7 +32,7 @@ const About = () => {
               <p className=""> Elevate your digital presence in style.</p>
             </div>
             <div className="flex items-center justify-start min-h-[40px] ">
-              <div className="w-[40%] h-[2px] bg-gradient-to-r from-transparent via-gray-500 to-transparent mb-3" />
+              <div className="w-[40%] h-[1px] bg-gradient-to-r from-transparent via-gray-500 to-transparent mb-3" />
             </div>
             <div className="flex space-x-3 mt-2 mb-5">
               <PiSealCheck className="text-green-500 text-2xl" />
@@ -67,7 +55,7 @@ const About = () => {
                 <IoStar />
                 <IoStar />
               </span>
-              <span className="text-sm ">56+ Reviews</span>
+              <span className="text-sm ">5.0 Stars Rating</span>
             </div>
             <div className="h-[40px] w-[2px] bg-gradient-to-b from-transparent via-gray-500 to-transparent" />
             <div className="text-center  flex-col flex">
@@ -84,7 +72,7 @@ const About = () => {
           />
         </div>
       </div>
-      <div className="w-[90%] h-[2px] bg-gradient-to-r from-transparent via-gray-500 to-transparent mb-7" />
+      <div className="w-[90%] h-[1px] bg-gradient-to-r from-transparent via-gray-500 to-transparent mb-7" />
     </>
   );
 };

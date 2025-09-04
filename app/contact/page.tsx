@@ -1,8 +1,10 @@
 // app/contact/page.tsx
 "use client";
 
+import Aurora from "@/components/Aurora";
 import React, { useState } from "react";
 import { toast, Toaster } from "react-hot-toast";
+import { Button } from "../components/ui/button";
 
 interface FormProps {
   f_name: string;
@@ -70,7 +72,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="w-full pt-44 flex items-center justify-center flex-col px-6 md:px-12 lg:px-16">
+    <div className="w-full pt-34 flex items-center justify-center flex-col px-6 md:px-12 lg:px-16 relative">
       <Toaster
         position="top-center"
         toastOptions={{
@@ -81,6 +83,16 @@ const Contact = () => {
           },
         }}
       />
+
+      <div className="absolute inset-0 -z-10">
+        <Aurora
+          colorStops={["#0840b9", "#2563EB", "#0840b9"]}
+          blend={0.5}
+          amplitude={1.0}
+          speed={0.5}
+          // className="custom-rays w-full  h-full"
+        />
+      </div>
 
       <div className="backdrop-blur-xl text-sm rounded-md border border-white/30 py-3 w-auto px-3 text-white/85 mb-16">
         <span className="bg-blue-600 rounded-md font-semibold px-2 py-2 mr-3">
@@ -98,7 +110,7 @@ const Contact = () => {
         </p>
       </div>
 
-      <div className="w-full max-w-4xl mx-auto bg-black/65 border border-white/20 rounded-2xl p-6 sm:p-10 shadow-lg">
+      <div className="w-full max-w-4xl mx-auto bg-black/50 border border-white/20 rounded-2xl p-6 sm:p-10 shadow-lg">
         <form className="space-y-6" onSubmit={handleSubmit}>
           {/* First Row */}
           <div className="flex flex-col sm:flex-row gap-4">
@@ -217,7 +229,8 @@ const Contact = () => {
           </div>
 
           {/* Submit Button */}
-          <button
+          <Button
+            effect={"shineHover"}
             type="submit"
             disabled={isSubmitting}
             className={`w-full bg-gradient-to-r from-blue-600 to-blue-800 text-white py-3 rounded-lg font-semibold 
@@ -227,7 +240,7 @@ const Contact = () => {
             }`}
           >
             {isSubmitting ? "Submitting..." : "Submit Now"}
-          </button>
+          </Button>
         </form>
       </div>
     </div>

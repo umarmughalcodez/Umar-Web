@@ -4,17 +4,28 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Button } from "../components/ui/button";
 import { useRouter } from "next/navigation";
+import Aurora from "@/components/Aurora";
 
 const ScheduleCallPage = () => {
   const router = useRouter();
   return (
-    <div className="w-full pt-44 flex items-center justify-center flex-col px-6 md:px-12 lg:px-16 text-white">
+    <div className="relative w-full min-h-screen flex flex-col items-center justify-center px-6 md:px-12 lg:px-16 text-white">
+      {/* Aurora Background */}
+      <div className="absolute inset-0 -z-10">
+        <Aurora
+          colorStops={["#0840b9", "#2563EB", "#0840b9"]}
+          blend={0.5}
+          amplitude={1.0}
+          speed={0.5}
+        />
+      </div>
+
       {/* Heading */}
       <motion.h1
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="text-3xl md:text-5xl font-bold mb-4 text-center"
+        className="text-4xl md:text-5xl font-bold mb-4 text-center pt-40"
       >
         Schedule Your Free Consultation
       </motion.h1>
@@ -23,7 +34,7 @@ const ScheduleCallPage = () => {
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2, duration: 0.5 }}
-        className="text-gray-400 text-center max-w-xl mb-8"
+        className="text-gray-400 text-center max-w-lg mb-8"
       >
         Pick a time that works for you. Once you book, the slot will be reserved
         and you’ll get a confirmation email with all the details.
@@ -40,13 +51,16 @@ const ScheduleCallPage = () => {
           src="https://calendly.com/umar-umarweb/30min" // ⬅️ REPLACE with your Calendly link
           width="100%"
           height="700"
-          style={{ border: "none", borderRadius: "20px" }}
+          style={{
+            border: "none",
+            borderRadius: "20px",
+          }}
           title="Schedule Call"
         />
       </motion.div>
 
       {/* Extra Tip */}
-      <p className="text-gray-300 text-md mt-6">
+      <p className="text-gray-300 text-md mt-6 text-center">
         Can’t find a suitable time?{" "}
         <Button
           variant={"link"}

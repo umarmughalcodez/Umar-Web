@@ -11,10 +11,10 @@ const AnimatedGradientCard = () => {
       id="JoinUs"
       className=" w-full mt-10 grid place-items-center p-4 lg:p-16 xl:p-26"
     >
-      <div className="relative overflow-hidden rounded-2xl bg-black text-white border border-white/50">
+      <div className="relative overflow-hidden rounded-2xl bg-black/60 text-white border border-white/30">
         {/* --- Stronger, More Visible Moving Gradient Lines --- */}
         <motion.div
-          className="absolute top-1/3 left-0 w-[140%] h-[180px] blur-[180px]"
+          className="absolute top-1/3 left-0 w-[80%] h-[80px] blur-[80px]"
           style={{
             background:
               "linear-gradient(90deg, rgba(30,64,175,0) 0%, rgba(30,64,175,1) 50%, rgba(30,64,175,0) 100%)",
@@ -30,7 +30,7 @@ const AnimatedGradientCard = () => {
         />
 
         <motion.div
-          className="absolute top-2/3 left-0 w-[140%] h-[200px] blur-[200px]"
+          className="absolute top-2/3 left-0 w-[140%] h-[200px] blur-[80px]"
           style={{
             background:
               "linear-gradient(90deg, rgba(59,130,246,0) 0%, rgba(59,130,246,1) 50%, rgba(59,130,246,0) 100%)",
@@ -46,7 +46,7 @@ const AnimatedGradientCard = () => {
         />
 
         {/* --- Foreground Content --- */}
-        <div className="relative z-10 p-10 flex flex-col items-center text-center space-y-6">
+        <div className="relative z-10 p-10 flex flex-col items-center text-center space-y-6 mt-2">
           {/* Small Button */}
           <BorderBtn text="Join Us Now" />
 

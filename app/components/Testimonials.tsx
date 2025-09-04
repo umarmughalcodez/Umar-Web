@@ -15,18 +15,24 @@ const Testimonials = () => {
     image: [
       "/entrepreneur.jpg",
       "/businessman.jpg",
-      "/girl.jpg",
       "/man.jpg",
+      "/girl.jpg",
       "/man-img.jpg",
+      "/2.png",
       "/woman.jpg",
+      "/1.png",
+      "/woman2.jpg",
     ],
     name: [
       "Erick Martinez",
       "Michael Johnson",
-      "Emma Williams",
       "David Chen",
+      "Emma Williams",
       "James Anderson",
       "Lisa Thompson",
+      "Sophia Brown",
+      "Daniel Lee",
+      "Olivia Davis",
     ],
     businessType: [
       "Fitness Studio Owner",
@@ -35,20 +41,26 @@ const Testimonials = () => {
       "Local Bakery Owner",
       "Consulting Firm Partner",
       "Boutique Shop Owner",
+      "Cafe Owner",
+      "Marketing Consultant",
+      "Salon Owner",
     ],
     review: [
-      "Since launching our new website, our membership sign-ups have increased by 4x! The design perfectly captures our brand essence, and the booking system has streamlined our operations completely.",
-      "Our online orders have tripled in just 3 months! The website not only looks incredible but functions flawlessly on mobile. Best investment we've made for our business growth.",
-      "Our website has become our #1 sales channel, generating 5x more leads than before. The SEO optimization alone was worth the investment. Highly recommended for any local business!",
-      "Sales are up 300% since our website launched! The e-commerce integration made it so easy for customers to order online. This was a game-changer for our small business.",
-      "The professional website has elevated our brand perception tremendously. We're closing 4x more clients now, and the ROI was evident within the first month. Exceptional service!",
-      "Our online sales have increased by 350%! The website design perfectly showcases our products, and the user experience keeps customers coming back. Worth every penny!",
+      "I never realized how much a professional website could change things. In 2025, having an online presence isn’t optional — it’s essential. This platform finally puts us where our clients can find us.",
+      "For my fitness studio, the site made booking classes a breeze for clients. Honestly, seeing people sign up online without me calling them feels incredible.",
+      "2025 is incomplete without a proper online presence. It’s where people look first. This website not only looks professional but makes our brand memorable.",
+      "I run a small bakery, and the site has become the window to our creations. People check online before visiting, and that’s increased foot traffic a lot.",
+      "Our website helped travelers discover our packages more easily. A few even mentioned they found us on Google — that visibility alone is worth it.",
+      "I never thought having a website could make my boutique feel so alive online. Customers explore collections before stepping in, which makes them more curious to visit.",
+      "For my cafe, having an online platform that shares the menu and story keeps customers informed. People genuinely appreciate it when they check online before coming.",
+      "In consulting, trust matters. The site communicates professionalism and credibility instantly. Clients know we’re serious, even before a first call.",
+      "I used to rely on social media only, but having this website changed everything. Anyone searching our services in 2025 sees us first and gets all the info at a glance.",
     ],
   };
 
   return (
     <div
-      className="flex items-center justify-center flex-col mt-6 p-6 lg:py-8 lg:px-16 xl:px-26 xl:py-10"
+      className="flex items-center justify-center flex-col p-6 lg:py-8 lg:px-16 xl:px-26 xl:py-10"
       id="testimonials"
     >
       <BorderBtn text="Testimonials" />
@@ -58,8 +70,13 @@ const Testimonials = () => {
           Real Results, Real Growth
         </p>
         <p className="text-sm text-white/70 mt-4 font-normal max-w-2xl mx-auto">
-          Hear from local businesses that have transformed their online presence
-          and skyrocketed their sales with our website services.
+          <p className="text-gray-400 text-sm mt-4">
+            These testimonials reflect common experiences and benefits that our
+            clients have observed after creating a professional website with us.
+            Results may vary depending on the type of business and online
+            efforts. All feedback is shared honestly to help you understand the
+            value of having a strong online presence.
+          </p>
         </p>
       </div>
 
@@ -70,13 +87,13 @@ const Testimonials = () => {
             key={index}
             className="relative group bg-gray-800/30 backdrop-blur-sm rounded-2xl p-6 
              border border-white/10 hover:border-blue-500/30 
-             transition-all duration-300 hover:scale-105 overflow-hidden"
+              overflow-hidden"
           >
             {/* Shine effect overlay */}
             <span
               className="pointer-events-none absolute inset-0 -translate-x-full 
     bg-gradient-to-r from-transparent via-white/20 to-transparent 
-    group-hover:translate-x-full transition-transform duration-700 ease-in-out"
+    group-hover:translate-x-full transition-transform duration-400 ease-in-out"
             />
 
             <div className="flex items-center ">
@@ -99,8 +116,9 @@ const Testimonials = () => {
                 </p>
               </div>
             </div>
+            <div className="w-[90%] h-[1px] bg-gradient-to-r from-transparent via-gray-500 to-transparent mb-2 mt-4" />
 
-            <div className="flex mb-3">
+            <div className="flex mb-3 mt-4">
               {[...Array(5)].map((_, i) => (
                 <svg
                   key={i}
