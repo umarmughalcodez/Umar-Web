@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { Button } from "../components/ui/button";
 import { useRouter } from "next/navigation";
 import Aurora from "@/components/Aurora";
+import BorderBtn from "../components/ui/BorderBtn";
 
 const ScheduleCallPage = () => {
   const router = useRouter();
@@ -21,14 +22,17 @@ const ScheduleCallPage = () => {
       </div>
 
       {/* Heading */}
-      <motion.h1
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        className="text-4xl md:text-5xl font-bold mb-4 text-center pt-40"
-      >
-        Schedule Your Free Consultation
-      </motion.h1>
+      <div className=" text-center pt-40 grid place-items-center space-y-3">
+        <BorderBtn text="Schedule Call" />
+        <motion.h1
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="text-4xl md:text-5xl font-bold mb-4"
+        >
+          Schedule Your Free Consultation
+        </motion.h1>
+      </div>
 
       <motion.p
         initial={{ opacity: 0, y: -10 }}
@@ -42,9 +46,9 @@ const ScheduleCallPage = () => {
 
       {/* Calendly Embed */}
       <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.4, duration: 0.5 }}
+        initial={{ opacity: 0, x: -50 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 1 }}
         className="w-full max-w-3xl bg-white/10 rounded-2xl shadow-lg p-4"
       >
         <iframe

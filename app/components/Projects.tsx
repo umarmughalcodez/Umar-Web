@@ -1,11 +1,10 @@
 "use client";
 import React from "react";
 import InfiniteCards from "./InfiniteCards";
-import { LampContainer } from "./ui/lamp";
 import BorderBtn from "./ui/BorderBtn";
+import { motion } from "framer-motion";
 
 const Projects = () => {
-  // Use root-relative paths (works with next/image)
   const images = [
     "/AI.png",
     "/Feebany Contels.png",
@@ -25,31 +24,49 @@ const Projects = () => {
   const description = [
     "Drives enterprise sign-ups by demystifying complex AI tools",
     "Increased order volume with a simplified menu and loyalty program",
-
     "Streamlines user onboarding and drives subscription growth with a friction-free experience",
     "Secures emergency calls with a prominent, trust-building booking widget",
     "Converts web traffic into a consistent lead generation pipeline",
   ];
 
+  const fadeUp = {
+    hidden: { opacity: 0, y: 40 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+  };
+
   return (
     <div
       id="projects"
-      className=" flex flex-col items-center justify-center w-full h-auto space-y-8 "
+      className="flex flex-col items-center justify-center w-full h-auto space-y-8"
     >
-      <div className="p-4 lg:p-12 grid place-items-center">
-        <BorderBtn text="Launch Your Website" />
+      {/* Title Block */}
+      <motion.div
+        className="p-4 lg:p-12 grid place-items-center"
+        initial="hidden"
+        whileInView="visible"
+        transition={{ staggerChildren: 0.2 }}
+      >
+        <motion.div variants={fadeUp}>
+          <BorderBtn text="Launch Your Website" />
+        </motion.div>
 
-        <div className="text-4xl font-semibold text-gray-100 mt-3 text-center md:text-5xl mb-2">
+        <motion.div
+          variants={fadeUp}
+          className="text-4xl font-semibold text-gray-100 mt-3 text-center md:text-5xl mb-2"
+        >
           <p>Reliable Agency Partner</p>
           <p>For Startups & Growing Businesses</p>
           <p className="text-sm text-gray-400 font-normal mt-8">
             Launch your website quickly with expert setup and dedicated support.
           </p>
-        </div>
+        </motion.div>
+      </motion.div>
 
-        {/* Pass props correctly */}
-      </div>
+      {/* Infinite Cards */}
+
       <InfiniteCards images={images} texts={texts} descriptions={description} />
+
+      {/* Divider */}
       <div className="w-[90%] h-[1px] bg-gradient-to-r from-transparent via-gray-500 to-transparent mb-16 mt-4" />
     </div>
   );

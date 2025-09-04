@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { fadeRight } from "@/lib/animations";
 
 interface FAQItem {
   question: string;
@@ -61,12 +62,25 @@ An outdated or slow website silently turns customers away — even if you never 
 
   return (
     <div className="w-full max-w-4xl mx-auto mt-6">
-      <div className="space-y-6">
+      <motion.div
+        className="space-y-6"
+        initial="hidden"
+        animate="visible"
+        variants={{
+          hidden: { opacity: 0 },
+          visible: {
+            opacity: 1,
+            transition: {
+              staggerChildren: 0.15,
+            },
+          },
+        }}
+      >
         {faqData.map((item, index) => (
           <motion.div
             key={index}
             className="rounded-lg overflow-hidden border border-white"
-            initial={false}
+            variants={fadeRight}
             animate={{
               backgroundColor:
                 activeIndex === index
@@ -76,6 +90,7 @@ An outdated or slow website silently turns customers away — even if you never 
             }}
             transition={{ duration: 0.3 }}
           >
+            {/* Question Button */}
             <button
               onClick={() => toggleFAQ(index)}
               className="flex justify-between items-center w-full p-5 text-left text-white cursor-pointer font-semibold"
@@ -102,35 +117,42 @@ An outdated or slow website silently turns customers away — even if you never 
               </motion.span>
             </button>
 
-            <AnimatePresence>
+            {/* Animated Answer */}
+            <AnimatePresence initial={false}>
               {activeIndex === index && (
                 <motion.div
-                  initial={{
-                    height: 0,
-                    opacity: 0,
-                  }}
-                  animate={{
-                    height: "auto",
-                    opacity: 1,
-                  }}
-                  exit={{
-                    height: 0,
-                    opacity: 0,
-                  }}
+                  key="content"
+                  initial={{ height: 0, opacity: 0, y: -10 }}
+                  animate={{ height: "auto", opacity: 1, y: 0 }}
+                  exit={{ height: 0, opacity: 0, y: -10 }}
                   transition={{
                     duration: 0.4,
-                    ease: "easeInOut",
+                    ease: [0.25, 0.8, 0.25, 1],
                   }}
                   className="overflow-hidden bg-black/10"
                 >
-                  <div className="w-[90%] h-[1px] bg-gradient-to-r from-transparent via-gray-500 to-transparent mb-3 text-white/10" />
-                  <p className="text-white/80 px-4 p-2">{item.answer}</p>
+                  <motion.div
+                    initial={{ scaleX: 0 }}
+                    animate={{ scaleX: 1 }}
+                    exit={{ scaleX: 0 }}
+                    transition={{ duration: 0.3 }}
+                    className="w-[90%] h-[1px] bg-gradient-to-r from-transparent via-gray-500 to-transparent mb-3 mx-auto"
+                  />
+                  <motion.p
+                    initial={{ opacity: 0, y: 5 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 5 }}
+                    transition={{ delay: 0.1, duration: 0.3 }}
+                    className="text-white/80 px-4 pb-4"
+                  >
+                    {item.answer}
+                  </motion.p>
                 </motion.div>
               )}
             </AnimatePresence>
           </motion.div>
         ))}
-      </div>
+      </motion.div>
     </div>
   );
 };

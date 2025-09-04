@@ -19,7 +19,7 @@ const SmoothScrollProvider = ({ children }: { children: React.ReactNode }) => {
     };
   }, []);
 
-  return <>{children}</>;
+  return <div className="overflow-hidden">{children}</div>;
 };
 
 export default SmoothScrollProvider;

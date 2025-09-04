@@ -7,6 +7,8 @@ import logo from "@/public/logo_resized-removebg-preview.png";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import toast, { Toaster } from "react-hot-toast";
+import { motion } from "framer-motion";
+import { fadeRight } from "@/lib/animations";
 
 const Footer = () => {
   const router = useRouter();
@@ -19,12 +21,31 @@ const Footer = () => {
       /^(?!.*\.\.)(?!\.)(?!.*\.$)[A-Za-z0-9.!#$%&'*+/=?^_`{|}~-]+@(?:[A-Za-z0-9](?:[A-Za-z0-9-]{0,61}[A-Za-z0-9])?\.)+[A-Za-z]{2,63}$/;
 
     if (!email) {
-      toast.error("Email is required");
+      toast.error("Email is required", {
+        style: {
+          background: "#1a1a1a",
+          color: "#fff",
+          border: "1px solid rgba(255,255,255,0.1)",
+          padding: "12px 16px",
+          borderRadius: "8px",
+        },
+        iconTheme: { primary: "#ef4444", secondary: "#1a1a1a" },
+      });
       return;
     }
 
     if (!emailRegex.test(email)) {
-      toast.error("Please enter a valid email");
+      toast.error("Please enter a valid email ID", {
+        style: {
+          background: "#1a1a1a",
+          color: "#fff",
+          border: "1px solid rgba(255,255,255,0.1)",
+          padding: "12px 16px",
+          borderRadius: "8px",
+        },
+        iconTheme: { primary: "#ef4444", secondary: "#1a1a1a" },
+      });
+      setEmail("");
       return;
     }
 
@@ -33,15 +54,22 @@ const Footer = () => {
         "https://script.google.com/macros/s/AKfycby11X5LI7VTNXjZEE9Ce-R0vPywM4GQ67sx3DIkJ7oXOyXILeCRw-bXFiFIN6Ve7xoV/exec",
         {
           method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
+          headers: { "Content-Type": "application/json" },
           mode: "no-cors",
           body: JSON.stringify({ email }),
         }
       );
 
-      toast.success("Subscribed successfully!");
+      toast.success("Subscribed successfully!", {
+        style: {
+          background: "#1a1a1a",
+          color: "#fff",
+          border: "1px solid rgba(255,255,255,0.1)",
+          padding: "12px 16px",
+          borderRadius: "8px",
+        },
+        iconTheme: { primary: "#22c55e", secondary: "#1a1a1a" },
+      });
       setEmail("");
     } catch (error) {
       toast.error("Error subscribing. Please try again later.");
@@ -53,7 +81,7 @@ const Footer = () => {
       <Toaster />
       {/* Main Layout */}
       <div className="flex flex-col lg:flex-row justify-between items-start lg:items-start gap-12">
-        {/* Left Section (Logo + Email Subscription) */}
+        {/* Left Section */}
         <div className="flex flex-col w-full lg:w-1/2 xl:w-1/3 space-y-6">
           {/* Logo */}
           <div>
@@ -66,19 +94,23 @@ const Footer = () => {
                 onClick={() => router.push("#home")}
               />
             </div>
-
-            <div className="w-[90%] h-[1px] bg-gradient-to-r from-transparent via-gray-500 to-transparent my-3" />
+            <div className="w-[100%] h-[1px] bg-gradient-to-r from-transparent via-gray-500 to-transparent my-3" />
           </div>
 
           {/* Email Subscription */}
-          <form
-            className="flex items-center bg-black/40 rounded-xl overflow-hidden border border-white/30 px-1 py-1 pl-3 justify-center max-w-sm"
+          <motion.form
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={fadeRight}
+            transition={{ duration: 0.5 }}
+            className="flex items-center bg-black/40 rounded-xl overflow-hidden border border-white/30 px-1 py-1 pl-3 pr-1 justify-center max-w-sm"
             onSubmit={handleSubmit}
           >
             <input
               placeholder="Enter Your Email..."
               className="flex-1 bg-transparent text-gray-300 placeholder-gray-500 focus:outline-none 
-              text-sm sm:text-base md:text-md"
+              text-xs sm:text-sm md:text-base"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
@@ -89,93 +121,96 @@ const Footer = () => {
               className="text-white cursor-pointer bg-blue-700 hover:bg-blue-600 
               shadow-[0_0_20px_rgba(59,130,246,0.7)] hover:shadow-[0_0_30px_rgba(59,130,246,1)] 
               transition-all duration-300 font-semibold
-              text-sm sm:text-base md:text-md px-2 md:px-3 py-0"
+              text-xs sm:text-sm md:text-base px-2 md:px-3 py-0"
               iconPlacement="right"
               icon={LucideBell}
             >
               Subscribe
             </Button>
-          </form>
+          </motion.form>
         </div>
 
         {/* Middle Section (Navigation Links) */}
-        <div className="flex gap-20 lg:gap-30">
+        <motion.div
+          className="flex gap-20 lg:gap-30"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={fadeRight}
+          transition={{ duration: 0.5 }}
+        >
           <div className="flex flex-col space-y-1 text-white/75 items-start justify-center">
             <p className="font-semibold text-white mb-2">Navigations</p>
-
-            {/* Internal Smooth Scroll Buttons */}
             <Button
-              variant={"link"}
-              effect={"hoverUnderline"}
+              variant="link"
+              effect="hoverUnderline"
               onClick={() => router.push("/#about")}
-              className="text-left text-white/75 hover:text-white transition p-0 m-0"
             >
               About
             </Button>
             <Button
-              variant={"link"}
-              effect={"hoverUnderline"}
+              variant="link"
+              effect="hoverUnderline"
               onClick={() => router.push("/#projects")}
-              className="text-left text-white/75 hover:text-white transition p-0 m-0"
             >
               Projects
             </Button>
             <Button
-              variant={"link"}
-              effect={"hoverUnderline"}
+              variant="link"
+              effect="hoverUnderline"
               onClick={() => router.push("/#strategy")}
-              className="text-left text-white/75 hover:text-white transition p-0 m-0"
             >
               Strategy
             </Button>
             <Button
-              variant={"link"}
-              effect={"hoverUnderline"}
+              variant="link"
+              effect="hoverUnderline"
               onClick={() => router.push("/#testimonials")}
-              className="text-left text-white/75 hover:text-white transition p-0 m-0"
             >
               Testimonials
             </Button>
             <Button
-              variant={"link"}
-              effect={"hoverUnderline"}
+              variant="link"
+              effect="hoverUnderline"
               onClick={() => router.push("/#FAQ")}
-              className="text-left text-white/75 hover:text-white transition p-0 m-0"
             >
               FAQ's
             </Button>
-
-            {/* External/Next.js Navigation */}
             <Button
               onClick={() => router.push("/schedule-call")}
-              variant={"link"}
-              effect={"hoverUnderline"}
-              className="text-left text-blue-500 hover:text-blue-400 transition p-0 m-0"
+              variant="link"
+              effect="hoverUnderline"
+              className="text-blue-500 hover:text-blue-400"
             >
               Schedule Free Call
             </Button>
           </div>
 
-          <div className="flex flex-col space-y-2 text-white/75">
+          <motion.div
+            className="flex flex-col space-y-2 text-white/75"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={fadeRight}
+            transition={{ duration: 0.5 }}
+          >
             <p className="font-semibold text-white mb-2">Socials</p>
             <Button
-              variant={"link"}
-              effect={"hoverUnderline"}
+              variant="link"
+              effect="hoverUnderline"
               onClick={() => router.push("#FAQ")}
-              className="text-left text-white/75 hover:text-white transition p-0 m-0"
             >
               Instagram
             </Button>
             <Button
-              variant={"link"}
-              effect={"hoverUnderline"}
+              variant="link"
+              effect="hoverUnderline"
               onClick={() => router.push("/#FAQ")}
-              className="text-left text-white/75 hover:text-white transition p-0 m-0"
             >
               Facebook
             </Button>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
 
       {/* Divider */}

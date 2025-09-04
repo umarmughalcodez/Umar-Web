@@ -5,6 +5,8 @@ import Aurora from "@/components/Aurora";
 import React, { useState } from "react";
 import { toast, Toaster } from "react-hot-toast";
 import { Button } from "../components/ui/button";
+import { motion } from "framer-motion";
+import { fadeRight, fadeUp } from "@/lib/animations";
 
 interface FormProps {
   f_name: string;
@@ -94,23 +96,41 @@ const Contact = () => {
         />
       </div>
 
-      <div className="backdrop-blur-xl text-sm rounded-md border border-white/30 py-3 w-auto px-3 text-white/85 mb-16">
+      <motion.div
+        className="backdrop-blur-xl text-sm rounded-md border border-white/30 py-3 w-auto px-3 text-white/85 mb-16"
+        initial="hidden"
+        whileInView={"visible"}
+        viewport={{ once: true, amount: 0.2 }}
+        variants={fadeUp}
+      >
         <span className="bg-blue-600 rounded-md font-semibold px-2 py-2 mr-3">
           24/7
         </span>
         Let's Work Together
-      </div>
+      </motion.div>
 
-      <div className="text-5xl md:text-6xl text-white font-semibold space-y-3 text-center">
+      <motion.div
+        className="text-5xl md:text-6xl text-white font-semibold space-y-3 text-center"
+        initial="hidden"
+        whileInView={"visible"}
+        viewport={{ once: true, amount: 0.2 }}
+        variants={fadeUp}
+      >
         <p>Any Questions?</p>
         <p className="text-white/70">Feel Free to Ask</p>
         <p className="mt-6 text-sm text-white/60 font-normal text-center mb-16">
           Whether you have a question, need assistance, <br />
           or want to start a new project, our team is here to help.
         </p>
-      </div>
+      </motion.div>
 
-      <div className="w-full max-w-4xl mx-auto bg-black/50 border border-white/20 rounded-2xl p-6 sm:p-10 shadow-lg">
+      <motion.div
+        className="w-full max-w-4xl mx-auto bg-black/50 border border-white/20 rounded-2xl p-6 sm:p-10 shadow-lg"
+        initial="hidden"
+        whileInView={"visible"}
+        viewport={{ once: true, amount: 0.2 }}
+        variants={fadeRight}
+      >
         <form className="space-y-6" onSubmit={handleSubmit}>
           {/* First Row */}
           <div className="flex flex-col sm:flex-row gap-4">
@@ -242,7 +262,7 @@ const Contact = () => {
             {isSubmitting ? "Submitting..." : "Submit Now"}
           </Button>
         </form>
-      </div>
+      </motion.div>
     </div>
   );
 };

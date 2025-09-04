@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function CursorFollower() {
   const dotRef = useRef<HTMLDivElement>(null);
@@ -7,15 +7,24 @@ export default function CursorFollower() {
   const mouseY = useRef(0);
   const dotX = useRef(0);
   const dotY = useRef(0);
+  const [isMouseDevice, setIsMouseDevice] = useState(false);
 
   useEffect(() => {
+    // Detect if the device has a fine pointer (mouse/trackpad)
+    if (window.matchMedia("(pointer: fine)").matches) {
+      setIsMouseDevice(true);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (!isMouseDevice) return;
+
     const handleMouseMove = (e: MouseEvent) => {
       mouseX.current = e.clientX;
       mouseY.current = e.clientY;
     };
 
     const animate = () => {
-      // Smoothly move towards the cursor (lerp effect)
       dotX.current += (mouseX.current - dotX.current) * 0.1;
       dotY.current += (mouseY.current - dotY.current) * 0.1;
 
@@ -30,7 +39,9 @@ export default function CursorFollower() {
     animate();
 
     return () => window.removeEventListener("mousemove", handleMouseMove);
-  }, []);
+  }, [isMouseDevice]);
+
+  if (!isMouseDevice) return null; // Don’t render on touch devices
 
   return (
     <div

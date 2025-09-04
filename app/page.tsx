@@ -7,6 +7,7 @@ import Testimonials from "./components/Testimonials";
 import FAQSection from "./components/FAQ";
 import AnimatedGradientCard from "./components/ui/AnimatedGradient";
 import MovingBackground from "./components/ui/MovingBackground";
+import Reasons from "./components/Reasons";
 
 const Home = () => {
   return (
@@ -23,6 +24,7 @@ const Home = () => {
         <Work />
         <Testimonials />
         <FAQSection />
+        <Reasons />
         <AnimatedGradientCard />
       </div>
     </div>

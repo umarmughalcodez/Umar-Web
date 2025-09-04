@@ -2,6 +2,8 @@
 import React from "react";
 import BorderBtn from "./ui/BorderBtn";
 import Image from "next/image";
+import { motion } from "framer-motion";
+import { fadeRight, fadeUp } from "@/lib/animations";
 
 interface TestProps {
   image: string[];
@@ -64,7 +66,13 @@ const Testimonials = () => {
       id="testimonials"
     >
       <BorderBtn text="Testimonials" />
-      <div className="font-semibold text-center w-full max-w-3xl">
+      <motion.div
+        className="font-semibold text-center w-full max-w-3xl"
+        variants={fadeRight}
+        initial="hidden"
+        whileInView={"visible"}
+        viewport={{ amount: 0.2 }}
+      >
         <p className="text-4xl text-white md:text-5xl">What Our Clients Say,</p>
         <p className="text-4xl text-white/90 mt-2 md:text-5xl">
           Real Results, Real Growth
@@ -78,12 +86,16 @@ const Testimonials = () => {
             value of having a strong online presence.
           </p>
         </p>
-      </div>
+      </motion.div>
 
       {/* Testimonials Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12 w-full max-w-7xl">
         {testimonials.name.map((name, index) => (
-          <div
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            whileInView={"visible"}
+            viewport={{ amount: 0.2 }}
             key={index}
             className="relative group bg-gray-800/30 backdrop-blur-sm rounded-2xl p-6 
              border border-white/10 hover:border-blue-500/30 
@@ -134,7 +146,7 @@ const Testimonials = () => {
             <p className="text-gray-300 text-sm leading-relaxed">
               "{testimonials.review[index]}"
             </p>
-          </div>
+          </motion.div>
         ))}
       </div>
     </div>

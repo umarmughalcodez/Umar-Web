@@ -4,12 +4,13 @@ import React from "react";
 import { motion } from "framer-motion";
 import BorderBtn from "./BorderBtn";
 import ShinyButton from "../AnimatedBtn";
+import { fadeRight, fadeUp } from "@/lib/animations";
 
 const AnimatedGradientCard = () => {
   return (
     <div
       id="JoinUs"
-      className=" w-full mt-10 grid place-items-center p-4 lg:p-16 xl:p-26"
+      className=" w-full mt-10 grid place-items-center p-4 lg:p-16 xl:p-26 pb-12"
     >
       <div className="relative overflow-hidden rounded-2xl bg-black/60 text-white border border-white/30">
         {/* --- Stronger, More Visible Moving Gradient Lines --- */}
@@ -51,20 +52,39 @@ const AnimatedGradientCard = () => {
           <BorderBtn text="Join Us Now" />
 
           {/* Heading */}
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold leading-snug">
+          <motion.h1
+            className="text-3xl sm:text-4xl md:text-5xl font-semibold leading-snug"
+            initial="hidden"
+            whileInView={"visible"}
+            viewport={{ once: true, amount: 0.2 }}
+            variants={fadeUp}
+          >
             <p>Each Project we Undertake</p>
             <span className="text-white/980">is a Unique Opportunity.</span>
-          </h1>
+          </motion.h1>
 
           {/* Subtext */}
-          <p className="text-white/70 mb-6">
+          <motion.p
+            className="text-white/70 mb-6"
+            initial="hidden"
+            whileInView={"visible"}
+            viewport={{ once: true, amount: 0.2 }}
+            variants={fadeUp}
+          >
             Need a site but not sure where to start or want us to audit your
             website? <br />
             Let's map it out together on a free strategy call.
-          </p>
+          </motion.p>
 
           {/* Call to Action Button */}
-          <ShinyButton text="Book FREE Strategy Call" path="/schedule-call" />
+          <motion.div
+            initial="hidden"
+            whileInView={"visible"}
+            viewport={{ once: true, amount: 0.2 }}
+            variants={fadeRight}
+          >
+            <ShinyButton text="Book FREE Strategy Call" path="/schedule-call" />
+          </motion.div>
         </div>
       </div>
     </div>
