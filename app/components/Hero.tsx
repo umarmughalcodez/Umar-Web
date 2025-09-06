@@ -1,7 +1,7 @@
 "use client";
 import { Button } from "./ui/button";
 import { useRouter } from "next/navigation";
-import Aurora from "./ui/Aurora";
+import Aurora from "@/components/Aurora";
 import { FlipWords } from "./ui/flip-words";
 import { motion } from "framer-motion";
 

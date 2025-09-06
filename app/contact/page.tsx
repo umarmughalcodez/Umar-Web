@@ -1,7 +1,7 @@
 // app/contact/page.tsx
 "use client";
 
-import Aurora from "../components/ui/Aurora";
+import Aurora from "@/components/Aurora";
 import React, { useState } from "react";
 import { toast, Toaster } from "react-hot-toast";
 import { Button } from "../components/ui/button";
