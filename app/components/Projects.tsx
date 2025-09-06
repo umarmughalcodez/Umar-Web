@@ -9,22 +9,25 @@ const Projects = () => {
     "/AI.png",
     "/Feebany Contels.png",
     "/Saas.png",
+    "/gym.png",
     "/Services Pricings.png",
     "/digital marketing.png",
   ];
 
   const texts = [
     "Nucleon AI",
-    "Restaurant",
-    "SaaS",
-    "Plumbing",
-    "Digital Marketing",
+    "Restaurant Website",
+    "SaaS Platform",
+    "GYM Website",
+    "Plumbing Services",
+    "Digital Marketing Services",
   ];
 
   const description = [
     "Drives enterprise sign-ups by demystifying complex AI tools",
     "Increased order volume with a simplified menu and loyalty program",
     "Streamlines user onboarding and drives subscription growth with a friction-free experience",
+    "Drives gym sign-ups with online class booking and easy membership plans",
     "Secures emergency calls with a prominent, trust-building booking widget",
     "Converts web traffic into a consistent lead generation pipeline",
   ];

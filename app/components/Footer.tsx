@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { Button } from "./ui/button";
 import { LucideBell } from "lucide-react";
 import Link from "next/link";
-import logo from "@/public/logo_resized-removebg-preview.png";
+import logo from "@/public/logo.png";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import toast, { Toaster } from "react-hot-toast";
@@ -201,13 +201,6 @@ const Footer = () => {
               onClick={() => router.push("#FAQ")}
             >
               Instagram
-            </Button>
-            <Button
-              variant="link"
-              effect="hoverUnderline"
-              onClick={() => router.push("/#FAQ")}
-            >
-              Facebook
             </Button>
           </motion.div>
         </motion.div>
