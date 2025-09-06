@@ -199,7 +199,12 @@ const Footer = () => {
             <Button
               variant="link"
               effect="hoverUnderline"
-              onClick={() => router.push("#FAQ")}
+              onClick={() =>
+                window.open(
+                  "https://www.instagram.com/umarwebofficial/",
+                  "_blank"
+                )
+              }
             >
               Instagram
             </Button>
