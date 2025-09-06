@@ -78,7 +78,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="w-full px-16 xl:px-30 lg:px-26 py-10 border-t-2 border-t-white/40 text-white bg-black/10 mt-12">
+    <footer className="w-full px-12 xl:px-30 lg:px-26 py-10 border-t-2 border-t-white/40 text-white bg-black/10 mt-12">
       <Toaster />
       {/* Main Layout */}
       <div className="flex flex-col lg:flex-row justify-between items-start lg:items-start gap-12">
@@ -133,7 +133,7 @@ const Footer = () => {
 
         {/* Middle Section (Navigation Links) */}
         <motion.div
-          className="flex gap-20 lg:gap-30"
+          className="flex gap-16 lg:gap-30"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
@@ -146,6 +146,7 @@ const Footer = () => {
               variant="link"
               effect="hoverUnderline"
               onClick={() => router.push("/#about")}
+              className="p-0"
             >
               About
             </Button>
@@ -153,11 +154,13 @@ const Footer = () => {
               variant="link"
               effect="hoverUnderline"
               onClick={() => router.push("/#projects")}
+              className="p-0"
             >
               Projects
             </Button>
             <Button
               variant="link"
+              className="p-0"
               effect="hoverUnderline"
               onClick={() => router.push("/#strategy")}
             >
@@ -165,6 +168,7 @@ const Footer = () => {
             </Button>
             <Button
               variant="link"
+              className="p-0"
               effect="hoverUnderline"
               onClick={() => router.push("/#testimonials")}
             >
@@ -174,6 +178,7 @@ const Footer = () => {
               variant="link"
               effect="hoverUnderline"
               onClick={() => router.push("/#FAQ")}
+              className="p-0"
             >
               FAQ&apos;s
             </Button>
@@ -181,14 +186,14 @@ const Footer = () => {
               onClick={() => router.push("/schedule-call")}
               variant="link"
               effect="hoverUnderline"
-              className="text-blue-500 hover:text-blue-400"
+              className="text-blue-500 p-0 hover:text-blue-400"
             >
-              Schedule Free Call
+              Schedule Free Call &#8599;
             </Button>
           </div>
 
           <motion.div
-            className="flex flex-col space-y-2 text-white/75"
+            className="flex flex-col text-white/75 items-start "
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
@@ -197,6 +202,7 @@ const Footer = () => {
           >
             <p className="font-semibold text-white mb-2">Socials</p>
             <Button
+              className="p-0"
               variant="link"
               effect="hoverUnderline"
               onClick={() =>

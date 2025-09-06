@@ -99,7 +99,7 @@ const About = () => {
 
         {/* Right Image */}
         <motion.div
-          className="w-[90%] lg:w-1/2 h-auto relative mb-12 flex items-center justify-center p-3 bg-white/20 rounded-4xl border-2 border-[#686868]"
+          className="w-[90%] lg:w-1/2 h-auto relative mb-12 flex items-center justify-center p-1 bg-[#2563EB] rounded-4xl border-2 border-[#2563Eb]"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}

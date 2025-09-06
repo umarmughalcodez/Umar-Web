@@ -155,15 +155,37 @@
   filter: drop-shadow(0 0 2px white);
 }
 
-/* globals.css */
-html,
-body {
-  scroll-behavior: smooth;
-}
-
 /* Fallback for browsers that don't support smooth scrolling */
 /* @media (prefers-reduced-motion: no-preference) {
   html {
     scroll-behavior: smooth;
   }
 } */
+:root {
+  --vh: 100%;
+}
+
+@media (max-width: 768px) {
+  :root {
+    --vh: 100dvh; /* ✅ use new dynamic vh unit for mobile browsers */
+  }
+}
+
+html,
+body {
+  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+
+  overflow-x: hidden;
+}
+
+/* * {
+  outline: 1px solid red;
+} */
+
+* {
+  /* font-family: var(--font-dm_sans);
+   */
+  font-family: "DM_Sans";
+}

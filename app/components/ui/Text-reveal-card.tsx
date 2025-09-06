@@ -19,6 +19,18 @@ export const TextRevealCard = ({
   const cardRef = useRef<HTMLDivElement | null>(null);
   const [localWidth, setLocalWidth] = useState(0);
   const [isMouseOver, setIsMouseOver] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Check if device is mobile
+  useEffect(() => {
+    const checkIsMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    checkIsMobile();
+    window.addEventListener("resize", checkIsMobile);
+    return () => window.removeEventListener("resize", checkIsMobile);
+  }, []);
 
   // Update dimensions on mount and resize
   useEffect(() => {
@@ -57,69 +69,78 @@ export const TextRevealCard = ({
   const rotateDeg = (widthPercentage - 50) * 0.1;
 
   return (
-    <div
-      ref={cardRef}
-      onMouseEnter={() => setIsMouseOver(true)}
-      onMouseLeave={() => {
-        setIsMouseOver(false);
-        setWidthPercentage(0);
-      }}
-      onMouseMove={mouseMoveHandler}
-      onTouchStart={() => setIsMouseOver(true)}
-      onTouchEnd={() => {
-        setIsMouseOver(false);
-        setWidthPercentage(0);
-      }}
-      onTouchMove={touchMoveHandler}
-      className={cn(
-        "relative w-full rounded-3xl p-6 sm:p-8 overflow-hidden bg-black border border-white/15 shadow-xl",
-        className
-      )}
-    >
-      {/* Background effects */}
-      <div className="absolute -top-10 -left-10 w-32 h-32 sm:w-40 sm:h-40 bg-blue-600/50 rounded-full blur-3xl"></div>
-      <div className="absolute -bottom-10 -right-10 w-40 h-40 sm:w-48 sm:h-48 bg-blue-600/50 rounded-full blur-3xl"></div>
+    <div className="flex flex-col items-center">
+      <div
+        ref={cardRef}
+        onMouseEnter={() => setIsMouseOver(true)}
+        onMouseLeave={() => {
+          setIsMouseOver(false);
+          setWidthPercentage(0);
+        }}
+        onMouseMove={mouseMoveHandler}
+        onTouchStart={() => setIsMouseOver(true)}
+        onTouchEnd={() => {
+          setIsMouseOver(false);
+          setWidthPercentage(0);
+        }}
+        onTouchMove={touchMoveHandler}
+        className={cn(
+          "relative w-full rounded-3xl p-6 sm:p-8 overflow-hidden bg-black border border-white/15 shadow-xl",
+          className
+        )}
+      >
+        {/* Background effects */}
+        <div className="absolute -top-10 -left-10 w-32 h-32 sm:w-40 sm:h-40 bg-blue-600/50 rounded-full blur-3xl"></div>
+        <div className="absolute -bottom-10 -right-10 w-40 h-40 sm:w-48 sm:h-48 bg-blue-600/50 rounded-full blur-3xl"></div>
 
-      {children}
+        {children}
 
-      <div className="h-32 sm:h-40 relative flex items-center justify-center overflow-hidden z-10">
-        {/* Reveal Text */}
-        <motion.div
-          style={{ width: "100%" }}
-          animate={{
-            opacity: isMouseOver && widthPercentage > 0 ? 1 : 0,
-            clipPath: `inset(0 ${100 - widthPercentage}% 0 0)`,
-          }}
-          transition={{ duration: isMouseOver ? 0 : 0.4 }}
-          className="absolute backdrop-blur-md z-20 flex items-center justify-center"
-        >
-          <p
-            style={{ textShadow: "4px 4px 15px rgba(0,0,0,0.5)" }}
-            className="text-[1.8rem] sm:text-[2rem] md:text-[2.5rem] lg:text-[3rem] py-6 sm:py-10 font-bold text-white bg-clip-text bg-gradient-to-b from-white to-neutral-100 text-center w-full"
+        <div className="h-32 sm:h-40 relative flex items-center justify-center overflow-hidden z-10">
+          {/* Reveal Text */}
+          <motion.div
+            style={{ width: "100%" }}
+            animate={{
+              opacity: isMouseOver && widthPercentage > 0 ? 1 : 0,
+              clipPath: `inset(0 ${100 - widthPercentage}% 0 0)`,
+            }}
+            transition={{ duration: isMouseOver ? 0 : 0.4 }}
+            className="absolute backdrop-blur-md z-20 flex items-center justify-center"
           >
-            {revealText}
-          </p>
-        </motion.div>
+            <p
+              style={{ textShadow: "4px 4px 15px rgba(0,0,0,0.5)" }}
+              className="text-[1.8rem] sm:text-[2rem] md:text-[2.5rem] lg:text-[3rem] py-6 sm:py-10 font-bold text-white bg-clip-text bg-gradient-to-b from-white to-neutral-100 text-center w-full"
+            >
+              {revealText}
+            </p>
+          </motion.div>
 
-        {/* Vertical "scanner" bar */}
-        <motion.div
-          animate={{
-            left: `${widthPercentage}%`,
-            rotate: `${rotateDeg}deg`,
-            opacity: widthPercentage > 0 ? 1 : 0,
-          }}
-          transition={{ duration: isMouseOver ? 0 : 0.4 }}
-          className="h-32 sm:h-40 w-[6px] sm:w-[8px] bg-gradient-to-b from-transparent via-blue-500 to-transparent absolute z-50"
-        ></motion.div>
+          {/* Vertical "scanner" bar */}
+          <motion.div
+            animate={{
+              left: `${widthPercentage}%`,
+              rotate: `${rotateDeg}deg`,
+              opacity: widthPercentage > 0 ? 1 : 0,
+            }}
+            transition={{ duration: isMouseOver ? 0 : 0.4 }}
+            className="h-32 sm:h-40 w-[6px] sm:w-[8px] bg-gradient-to-b from-transparent via-blue-500 to-transparent absolute z-50"
+          ></motion.div>
 
-        {/* Base text */}
-        <div className="overflow-hidden [mask-image:linear-gradient(to_bottom,transparent,white,transparent)] w-full flex items-center justify-center">
-          <p className="text-[2rem] sm:text-[2rem] md:text-[2.5rem] lg:text-[3rem] py-6 sm:py-10 font-bold bg-clip-text text-transparent bg-[#969696] text-center w-full">
-            {text}
-          </p>
-          <MemoizedStars />
+          {/* Base text */}
+          <div className="overflow-hidden [mask-image:linear-gradient(to_bottom,transparent,white,transparent)] w-full flex items-center justify-center">
+            <p className="text-[2rem] sm:text-[2rem] md:text-[2.5rem] lg:text-[3rem] py-6 sm:py-10 font-bold bg-clip-text text-transparent bg-[#969696] text-center w-full">
+              {text}
+            </p>
+            <MemoizedStars />
+          </div>
         </div>
       </div>
+
+      {/* Mobile instruction text */}
+      {isMobile && (
+        <p className="text-xs text-gray-400 mt-2 text-center">
+          Swipe to see the process
+        </p>
+      )}
     </div>
   );
 };

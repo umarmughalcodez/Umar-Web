@@ -14,7 +14,7 @@ interface InfiniteCardsProps {
 export default function InfiniteCards({
   images,
   texts,
-  duration = 80,
+  duration = 100,
   descriptions,
 }: InfiniteCardsProps) {
   const combinedData = images.map((img, i) => ({

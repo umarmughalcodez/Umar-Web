@@ -28,7 +28,8 @@ const Reasons = () => {
         variants={fadeRight}
         whileInView={"visible"}
         initial="hidden"
-        viewport={{ amount: 0.3 }}
+        viewport={{ once: true, amount: 0.3 }}
+        className="text-center grid place-items-center"
       >
         <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-center mt-4">
           Why You Should Work With Us?
@@ -47,14 +48,14 @@ const Reasons = () => {
         variants={fadeUp}
         whileInView={"visible"}
         initial="hidden"
-        viewport={{ amount: 0.3, once: true }}
+        viewport={{ once: true, amount: 0.3 }}
       >
         {reasons.map((r, i) => (
           <motion.div
             variants={fadeUp}
             whileInView={"visible"}
             initial="hidden"
-            viewport={{ amount: 0.3, once: true }}
+            viewport={{ once: true, amount: 0.3 }}
             key={i}
             className="flex items-start space-x-3 text-base md:text-md"
           >

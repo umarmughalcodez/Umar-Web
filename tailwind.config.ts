@@ -8,9 +8,13 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ["var(--font-poppins)"],
+      },
       backgroundImage: {
         "radial-gradient": "radial-gradient(circle, var(--tw-gradient-stops))",
       },
+
       keyframes: {
         shine: {
           "0%": { backgroundPosition: "200% 0" },

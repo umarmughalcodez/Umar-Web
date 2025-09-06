@@ -7,20 +7,45 @@ export default function GradualBlurWrapper() {
   const [showBlur, setShowBlur] = useState(true);
 
   useEffect(() => {
-    const footer = document.querySelector("footer");
-    if (!footer) return;
+    let observer: IntersectionObserver | null = null;
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const entry = entries[0];
-        // Hide blur if footer is visible
-        setShowBlur(!entry.isIntersecting);
-      },
-      { threshold: 0.1 }
-    );
+    const initObserver = () => {
+      const footer = document.querySelector("footer");
+      if (!footer) return;
 
-    observer.observe(footer);
-    return () => observer.disconnect();
+      // Disconnect existing observer if re-initializing
+      if (observer) observer.disconnect();
+
+      observer = new IntersectionObserver(
+        (entries) => {
+          const entry = entries[0];
+          // Hide blur if footer is visible
+          setShowBlur(!entry.isIntersecting);
+        },
+        { threshold: 0.1 }
+      );
+
+      observer.observe(footer);
+    };
+
+    // Delay initialization slightly to ensure layout is ready
+    const timeout = setTimeout(initObserver, 100);
+
+    // Listen for resize or orientation change to re-initialize
+    const handleResize = () => {
+      if (observer) observer.disconnect();
+      initObserver();
+    };
+
+    window.addEventListener("resize", handleResize);
+    window.addEventListener("orientationchange", handleResize);
+
+    return () => {
+      clearTimeout(timeout);
+      if (observer) observer.disconnect();
+      window.removeEventListener("resize", handleResize);
+      window.removeEventListener("orientationchange", handleResize);
+    };
   }, []);
 
   if (!showBlur) return null;

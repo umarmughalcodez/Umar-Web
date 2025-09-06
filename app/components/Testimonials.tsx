@@ -71,13 +71,13 @@ const Testimonials = () => {
         variants={fadeRight}
         initial="hidden"
         whileInView={"visible"}
-        viewport={{ amount: 0.2 }}
+        viewport={{ once: true, amount: 0.2 }}
       >
         <p className="text-4xl text-white md:text-5xl">What Our Clients Say,</p>
         <p className="text-4xl text-white/90 mt-2 md:text-5xl">
           Real Results, Real Growth
         </p>
-        <p className="text-sm text-white/70 mt-4 font-normal max-w-2xl mx-auto">
+        <div className="text-sm text-white/70 mt-4 font-normal max-w-2xl mx-auto">
           <p className="text-gray-400 text-sm mt-4">
             These testimonials reflect common experiences and benefits that our
             clients have observed after creating a professional website with us.
@@ -85,7 +85,7 @@ const Testimonials = () => {
             efforts. All feedback is shared honestly to help you understand the
             value of having a strong online presence.
           </p>
-        </p>
+        </div>
       </motion.div>
 
       {/* Testimonials Grid */}
@@ -95,7 +95,7 @@ const Testimonials = () => {
             variants={fadeUp}
             initial="hidden"
             whileInView={"visible"}
-            viewport={{ amount: 0.2 }}
+            viewport={{ once: true, amount: 0.2 }}
             key={index}
             className="relative group bg-gray-800/30 backdrop-blur-sm rounded-2xl p-6 
              border border-white/10 hover:border-blue-500/30 

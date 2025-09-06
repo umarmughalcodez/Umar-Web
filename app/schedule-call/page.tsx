@@ -15,9 +15,9 @@ const ScheduleCallPage = () => {
       <div className="absolute inset-0 -z-10">
         <Aurora
           colorStops={["#0840b9", "#2563EB", "#0840b9"]}
-          blend={0.5}
-          amplitude={1.0}
-          speed={0.5}
+          blend={0.8}
+          amplitude={1.1}
+          speed={1}
         />
       </div>
 

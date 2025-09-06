@@ -45,7 +45,7 @@ const Hero = () => {
             colorStops={["#0840b9", "#2563EB", "#0840b9"]}
             blend={0.5}
             amplitude={1.0}
-            speed={0.5}
+            speed={1}
           />
         </div>
 
