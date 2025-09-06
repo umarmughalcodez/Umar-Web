@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { motion } from "framer-motion";
+import { motion, easeOut } from "framer-motion";
 import { Button } from "./ui/button";
 import { PiLightbulb, PiRocketLaunch } from "react-icons/pi";
 import { BsCodeSlash } from "react-icons/bs";
@@ -9,7 +9,7 @@ import { TextRevealCard } from "./ui/Text-reveal-card";
 // Reusable animation variant
 const cardVariants = {
   hidden: { opacity: 0, y: 50 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: easeOut } },
 };
 
 const WorkCards = () => {
@@ -96,8 +96,9 @@ const WorkCards = () => {
           </span>
           <p className="text-gray-300 text-sm relative z-10">
             Once the plan is ready, we transform your vision into a stunning,
-            functional website. You'll see progress in real-time, share feedback
-            easily, and stay fully in the loop as your site takes shape.
+            functional website. You will see progress in real-time, share
+            feedback easily, and stay fully in the loop as your site takes
+            shape.
           </p>
 
           <div className="space-x-4 relative z-10 space-y-3">
@@ -141,7 +142,7 @@ const WorkCards = () => {
           </span>
           <p className="text-gray-300 text-sm relative z-10">
             After every detail is fine-tuned, we prep everything for a smooth,
-            stress-free launch. You'll walk away with all the tools, training,
+            stress-free launch. You will walk away with all the tools, training,
             and support to keep your site thriving.
           </p>
 

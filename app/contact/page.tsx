@@ -1,7 +1,7 @@
 // app/contact/page.tsx
 "use client";
 
-import Aurora from "@/components/Aurora";
+import Aurora from "../components/ui/Aurora";
 import React, { useState } from "react";
 import { toast, Toaster } from "react-hot-toast";
 import { Button } from "../components/ui/button";
@@ -67,7 +67,9 @@ const Contact = () => {
         toast.error(data.error || "Failed to submit form");
       }
     } catch (error) {
-      toast.error("Network error. Please try again.");
+      if (error instanceof Error) {
+        toast.error("Network Error. Please try again later.");
+      }
     } finally {
       setIsSubmitting(false);
     }
@@ -106,7 +108,7 @@ const Contact = () => {
         <span className="bg-blue-600 rounded-md font-semibold px-2 py-2 mr-3">
           24/7
         </span>
-        Let's Work Together
+        Let&apos;s Work Together
       </motion.div>
 
       <motion.div

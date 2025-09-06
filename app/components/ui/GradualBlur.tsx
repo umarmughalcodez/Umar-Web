@@ -126,44 +126,56 @@ const getGradientDirection = (position: string): string => {
   return directions[position] || "to bottom";
 };
 
-const debounce = <T extends (...a: any[]) => void>(fn: T, wait: number) => {
+const debounce = <T extends (...args: unknown[]) => void>(
+  fn: T,
+  wait: number
+) => {
   let t: ReturnType<typeof setTimeout>;
-  return (...a: Parameters<T>) => {
+  return (...args: Parameters<T>) => {
     clearTimeout(t);
-    t = setTimeout(() => fn(...a), wait);
+    t = setTimeout(() => fn(...args), wait);
   };
 };
+
 const useResponsiveDimension = (
   responsive: boolean | undefined,
   config: Partial<GradualBlurProps>,
   key: keyof GradualBlurProps
-) => {
-  const [val, setVal] = useState<any>(config[key]);
+): string | undefined => {
+  const [val, setVal] = useState<string | undefined>(
+    config[key] as string | undefined
+  );
+
   useEffect(() => {
     if (!responsive) return;
+
     const calc = () => {
       const w = window.innerWidth;
-      let v: any = config[key];
+      let v = config[key] as string | undefined;
       const cap = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
       const k = cap(key as string);
-      if (w <= 480 && (config as any)["mobile" + k])
-        v = (config as any)["mobile" + k];
-      else if (w <= 768 && (config as any)["tablet" + k])
-        v = (config as any)["tablet" + k];
-      else if (w <= 1024 && (config as any)["desktop" + k])
-        v = (config as any)["desktop" + k];
+
+      if (w <= 480 && config[`mobile${k}` as keyof GradualBlurProps])
+        v = config[`mobile${k}` as keyof GradualBlurProps] as string;
+      else if (w <= 768 && config[`tablet${k}` as keyof GradualBlurProps])
+        v = config[`tablet${k}` as keyof GradualBlurProps] as string;
+      else if (w <= 1024 && config[`desktop${k}` as keyof GradualBlurProps])
+        v = config[`desktop${k}` as keyof GradualBlurProps] as string;
+
       setVal(v);
     };
+
     const deb = debounce(calc, 100);
     calc();
     window.addEventListener("resize", deb);
     return () => window.removeEventListener("resize", deb);
   }, [responsive, config, key]);
-  return responsive ? val : (config as any)[key];
+
+  return responsive ? val : (config[key] as string | undefined);
 };
 
 const useIntersectionObserver = (
-  ref: React.RefObject<HTMLDivElement>,
+  ref: React.RefObject<HTMLDivElement | null>,
   shouldObserve: boolean = false
 ) => {
   const [isVisible, setIsVisible] = useState(!shouldObserve);
@@ -184,12 +196,10 @@ const useIntersectionObserver = (
 };
 
 const GradualBlur: React.FC<GradualBlurProps> = (props) => {
-  const containerRef = useRef<HTMLDivElement>(
-    null
-  ) as React.RefObject<HTMLDivElement>;
+  const containerRef = useRef<HTMLDivElement>(null);
   const [isHovered, setIsHovered] = useState(false);
 
-  const config = useMemo(() => {
+  const config = useMemo<Required<GradualBlurProps>>(() => {
     const presetConfig =
       props.preset && PRESETS[props.preset] ? PRESETS[props.preset] : {};
     return mergeConfigs(
@@ -298,17 +308,19 @@ const GradualBlur: React.FC<GradualBlurProps> = (props) => {
     return baseStyle;
   }, [config, responsiveHeight, responsiveWidth, isVisible]);
 
-  const { hoverIntensity, animated, onAnimationComplete, duration } =
-    config as any;
   useEffect(() => {
-    if (isVisible && animated === "scroll" && onAnimationComplete) {
+    if (
+      isVisible &&
+      config.animated === "scroll" &&
+      config.onAnimationComplete
+    ) {
       const t = setTimeout(
-        () => onAnimationComplete(),
-        parseFloat(duration) * 1000
+        () => config.onAnimationComplete?.(),
+        parseFloat(config.duration) * 1000
       );
       return () => clearTimeout(t);
     }
-  }, [isVisible, animated, onAnimationComplete, duration]);
+  }, [isVisible, config]);
 
   return (
     <div
@@ -317,8 +329,12 @@ const GradualBlur: React.FC<GradualBlurProps> = (props) => {
         config.target === "page" ? "gradual-blur-page" : "gradual-blur-parent"
       } ${config.className}`}
       style={containerStyle}
-      onMouseEnter={hoverIntensity ? () => setIsHovered(true) : undefined}
-      onMouseLeave={hoverIntensity ? () => setIsHovered(false) : undefined}
+      onMouseEnter={
+        config.hoverIntensity ? () => setIsHovered(true) : undefined
+      }
+      onMouseLeave={
+        config.hoverIntensity ? () => setIsHovered(false) : undefined
+      }
     >
       <div className="relative w-full h-full">{blurDivs}</div>
       {props.children && <div className="relative">{props.children}</div>}
@@ -326,10 +342,17 @@ const GradualBlur: React.FC<GradualBlurProps> = (props) => {
   );
 };
 
-const GradualBlurMemo = React.memo(GradualBlur);
+interface GradualBlurMemoType
+  extends React.MemoExoticComponent<typeof GradualBlur> {
+  PRESETS: typeof PRESETS;
+  CURVE_FUNCTIONS: typeof CURVE_FUNCTIONS;
+}
+
+const GradualBlurMemo = React.memo(GradualBlur) as GradualBlurMemoType;
 GradualBlurMemo.displayName = "GradualBlur";
-(GradualBlurMemo as any).PRESETS = PRESETS;
-(GradualBlurMemo as any).CURVE_FUNCTIONS = CURVE_FUNCTIONS;
+GradualBlurMemo.PRESETS = PRESETS;
+GradualBlurMemo.CURVE_FUNCTIONS = CURVE_FUNCTIONS;
+
 export default GradualBlurMemo;
 
 const injectStyles = () => {
@@ -341,6 +364,7 @@ const injectStyles = () => {
   el.textContent = `.gradual-blur{pointer-events:none;transition:opacity .3s ease-out}.gradual-blur-inner{pointer-events:none}`;
   document.head.appendChild(el);
 };
+
 if (typeof document !== "undefined") {
   injectStyles();
 }

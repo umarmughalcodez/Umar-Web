@@ -7,7 +7,6 @@ import Footer from "./components/Footer";
 import CursorFollower from "./components/ui/CursorFollower";
 import SmoothScrollProvider from "./components/ui/SmoothScrollProvider";
 import Script from "next/script";
-import GradualBlurMemo from "@/components/GradualBlur";
 import GradualBlurWrapper from "./components/ui/GradualBlurWrapper";
 
 const league_spartan = League_Spartan({

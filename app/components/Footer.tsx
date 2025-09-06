@@ -2,7 +2,6 @@
 import React, { useState } from "react";
 import { Button } from "./ui/button";
 import { LucideBell } from "lucide-react";
-import Link from "next/link";
 import logo from "@/public/logo.png";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
@@ -72,7 +71,9 @@ const Footer = () => {
       });
       setEmail("");
     } catch (error) {
-      toast.error("Error subscribing. Please try again later.");
+      if (error instanceof Error) {
+        toast.error("Error subscribing. Please try again later.");
+      }
     }
   };
 
@@ -174,7 +175,7 @@ const Footer = () => {
               effect="hoverUnderline"
               onClick={() => router.push("/#FAQ")}
             >
-              FAQ's
+              FAQ&apos;s
             </Button>
             <Button
               onClick={() => router.push("/schedule-call")}

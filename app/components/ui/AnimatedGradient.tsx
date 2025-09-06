@@ -73,7 +73,7 @@ const AnimatedGradientCard = () => {
           >
             Need a site but not sure where to start or want us to audit your
             website? <br />
-            Let's map it out together on a free strategy call.
+            Let&apos;s map it out together on a free strategy call.
           </motion.p>
 
           {/* Call to Action Button */}
