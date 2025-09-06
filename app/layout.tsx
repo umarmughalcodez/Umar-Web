@@ -13,6 +13,7 @@ const league_spartan = League_Spartan({
   variable: "--font-geist-sans",
   subsets: ["latin"],
   weight: ["400", "500", "700"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
