@@ -32,6 +32,9 @@ const Navbar = () => {
   const navItems = [
     { name: "Portfolio", href: "/#about" },
     { name: "Work", href: "/#strategy" },
+    { name: "Testimonials", href: "/#testimonials" },
+    { name: "Schedule  Free Call", href: "/schedule-call" },
+    { name: "Contact", href: "/contact" },
   ];
 
   return (

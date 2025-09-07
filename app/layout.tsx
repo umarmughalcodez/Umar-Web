@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { DM_Sans } from "next/font/google";
+import { League_Spartan } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 
@@ -9,8 +9,8 @@ import SmoothScrollProvider from "./components/ui/SmoothScrollProvider";
 import Script from "next/script";
 import GradualBlurWrapper from "./components/ui/GradualBlurWrapper";
 
-const dm_sans = DM_Sans({
-  variable: "--font-dm_sans",
+const league_spartan = League_Spartan({
+  variable: "--font-league_spartan",
   subsets: ["latin"],
 });
 
@@ -74,7 +74,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" data-arp="" dir="ltr">
-      <body className={`${dm_sans.variable} antialiased bg-black`}>
+      <body className={`${league_spartan.variable} antialiased bg-black`}>
         <CursorFollower />
         <Navbar />
         <SmoothScrollProvider>{children}</SmoothScrollProvider>
