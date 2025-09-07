@@ -8,9 +8,6 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      fontFamily: {
-        sans: ["var(--font-poppins)"],
-      },
       backgroundImage: {
         "radial-gradient": "radial-gradient(circle, var(--tw-gradient-stops))",
       },

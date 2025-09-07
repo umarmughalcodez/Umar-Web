@@ -12,8 +12,10 @@ const Hero = () => {
     "Fast",
     "Reliable",
     "Secure",
-    "SEO-Optimized",
-    "Mobile-Friendly",
+    "SEO-Ready",
+    "Mobile-First",
+    "Scalable",
+    "Responsive",
     "Optimized",
   ];
 
@@ -37,7 +39,7 @@ const Hero = () => {
     <>
       <section
         id="home"
-        className="relative min-h-screen text-white flex items-center px-5 sm:px-6 md:px-12 lg:px-24 pt-26 md:pt-32 pb-12"
+        className="relative min-h-screen text-white flex items-center px-4 sm:px-7 md:px-12 lg:px-24 pt-26 md:pt-32 pb-12"
       >
         {/* Background */}
         <div className="absolute inset-0 -z-10">
@@ -69,7 +71,7 @@ const Hero = () => {
 
           {/* Heading */}
           <motion.h1
-            className="text-5xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight"
+            className="text-5xl sm:text-4xl md:text-6xl lg:text-7xl font-semibold leading-tight"
             variants={fadeUp}
           >
             Smart, Modern, & <br />
