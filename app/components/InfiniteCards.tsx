@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Button } from "./ui/button";
+import { useEffect, useState } from "react";
 
 interface InfiniteCardsProps {
   images: string[];
@@ -14,9 +15,26 @@ interface InfiniteCardsProps {
 export default function InfiniteCards({
   images,
   texts,
-  duration = 100,
+  duration = 60,
   descriptions,
 }: InfiniteCardsProps) {
+  const [adjustedDuration, setAdjustedDuration] = useState(duration);
+
+  // Detect screen size and adjust speed
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 768) {
+        setAdjustedDuration(duration / 4); // Faster scroll on mobile
+      } else {
+        setAdjustedDuration(duration);
+      }
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, [duration]);
+
   const combinedData = images.map((img, i) => ({
     image: img,
     text: texts[i] || "",
@@ -55,7 +73,7 @@ export default function InfiniteCards({
         animate={{ x: ["0%", "-50%"] }}
         transition={{
           repeat: Infinity,
-          duration: duration,
+          duration: adjustedDuration,
           ease: "linear",
           repeatType: "loop",
         }}
@@ -64,31 +82,45 @@ export default function InfiniteCards({
         {scrollingData.map((item, idx) => (
           <div
             key={idx}
-            className="relative flex-shrink-0 w-[28rem] h-[34rem] overflow-hidden rounded-2xl shadow-lg border-8 border-white/20"
+            className="
+              relative flex-shrink-0 
+              md:w-[28rem] md:h-[34rem] 
+              sm:w-[18rem] sm:h-[22rem] 
+              w-[16rem] h-[20rem] 
+              overflow-hidden rounded-2xl shadow-lg border-8 border-white/20
+            "
           >
             {/* Image */}
             <Image
               src={item.image}
               alt={item.text}
               fill
-              className="object-cover hover:scale-110 delay-75 transition-all "
+              className="object-cover hover:scale-110 delay-75 transition-all"
             />
 
             {/* Bottom blurred border */}
-            <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-black/90 via-black/70 to-transparent backdrop-blur-md" />
+            <div className="absolute bottom-0 left-0 w-full h-16 sm:h-20 bg-gradient-to-t from-black/90 via-black/70 to-transparent backdrop-blur-md" />
 
             {/* Content Overlay */}
-            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 w-[90%] bg-black/90 backdrop-blur-sm p-5 text-gray-100 rounded-2xl">
-              <p className="text-xl font-semibold mb-2">{item.text}</p>
+            <div
+              className="
+                absolute bottom-2 sm:bottom-3 left-1/2 -translate-x-1/2 
+                w-[85%] sm:w-[90%] 
+                bg-black/80 sm:bg-black/90 
+                backdrop-blur-sm 
+                p-2 sm:p-4 
+                text-gray-100 rounded-xl sm:rounded-2xl
+              "
+            >
+              <p className="text-base sm:text-xl font-semibold mb-1 sm:mb-2 text-center leading-snug">
+                {item.text}
+              </p>
 
-              <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-gray-500 to-transparent mb-3" />
+              <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-gray-500 to-transparent mb-2 sm:mb-3" />
 
-              <span className="text-gray-300 space-y-2">
+              <span className="text-gray-300 text-xs sm:text-base space-y-1 sm:space-y-2">
                 <p>{item.description}</p>
-                <Button
-                  // disabled
-                  className="border border-gray-600 mt-1 text-gray-200"
-                >
+                <Button className="border border-gray-600 mt-1 text-gray-200 w-full text-xs sm:text-sm py-1 sm:py-2">
                   New Addition
                 </Button>
               </span>
