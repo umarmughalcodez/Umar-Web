@@ -103,6 +103,7 @@ const Footer = () => {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
+            style={{ willChange: "transform, opacity" }}
             variants={fadeRight}
             transition={{ duration: 0.5 }}
             className="flex items-center bg-black/40 rounded-xl overflow-hidden border border-white/30 px-1 py-1 pl-3 pr-1 justify-center max-w-sm"
@@ -137,6 +138,7 @@ const Footer = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
+          style={{ willChange: "transform, opacity" }}
           variants={fadeRight}
           transition={{ duration: 0.5 }}
         >
@@ -197,6 +199,7 @@ const Footer = () => {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
+            style={{ willChange: "transform, opacity" }}
             variants={fadeRight}
             transition={{ duration: 0.5 }}
           >

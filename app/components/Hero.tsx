@@ -56,7 +56,7 @@ const Hero = () => {
           className="max-w-3xl"
           initial="hidden"
           animate="visible"
-          transition={{ staggerChildren: 0.2 }}
+          transition={{ staggerChildren: 0.15 }}
         >
           {/* Badge */}
           <motion.div

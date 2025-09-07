@@ -72,6 +72,7 @@ const Testimonials = () => {
         initial="hidden"
         whileInView={"visible"}
         viewport={{ once: true, amount: 0.2 }}
+        style={{ willChange: "transform, opacity" }}
       >
         <p className="text-4xl text-white md:text-5xl">What Our Clients Say,</p>
         <p className="text-4xl text-white/90 mt-2 md:text-5xl">
@@ -96,6 +97,7 @@ const Testimonials = () => {
             initial="hidden"
             whileInView={"visible"}
             viewport={{ once: true, amount: 0.2 }}
+            style={{ willChange: "transform, opacity" }}
             key={index}
             className="relative group bg-gray-800/30 backdrop-blur-sm rounded-2xl p-6 
              border border-white/10 hover:border-blue-500/30 

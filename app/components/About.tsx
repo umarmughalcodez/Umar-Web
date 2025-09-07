@@ -30,7 +30,7 @@ const About = () => {
           className="lg:w-1/2 w-[90%] mt-8"
           initial="hidden"
           whileInView="visible"
-          transition={{ staggerChildren: 0.2 }}
+          transition={{ staggerChildren: 0.15 }}
         >
           <motion.div variants={fadeUp}>
             <BorderBtn text="About Umar" />
@@ -102,8 +102,9 @@ const About = () => {
           className="w-[90%] lg:w-1/2 h-auto relative mb-12 flex items-center justify-center p-1 bg-[#2563EB] rounded-4xl border-2 border-[#2563Eb]"
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
           variants={fadeRight}
+          viewport={{ once: true, amount: 0.2 }}
+          style={{ willChange: "transform, opacity" }}
         >
           <Image
             src={img}

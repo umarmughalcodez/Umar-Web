@@ -28,7 +28,8 @@ const Reasons = () => {
         variants={fadeRight}
         whileInView={"visible"}
         initial="hidden"
-        viewport={{ once: true, amount: 0.3 }}
+        viewport={{ once: true, amount: 0.2 }}
+        style={{ willChange: "transform, opacity" }}
         className="text-center grid place-items-center"
       >
         <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-center mt-4">
@@ -48,14 +49,16 @@ const Reasons = () => {
         variants={fadeUp}
         whileInView={"visible"}
         initial="hidden"
-        viewport={{ once: true, amount: 0.3 }}
+        viewport={{ once: true, amount: 0.2 }}
+        style={{ willChange: "transform, opacity" }}
       >
         {reasons.map((r, i) => (
           <motion.div
             variants={fadeUp}
             whileInView={"visible"}
             initial="hidden"
-            viewport={{ once: true, amount: 0.3 }}
+            viewport={{ once: true, amount: 0.2 }}
+            style={{ willChange: "transform, opacity" }}
             key={i}
             className="flex items-start space-x-3 text-base md:text-md"
           >

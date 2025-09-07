@@ -103,6 +103,7 @@ const Contact = () => {
         initial="hidden"
         whileInView={"visible"}
         viewport={{ once: true, amount: 0.2 }}
+        style={{ willChange: "transform, opacity" }}
         variants={fadeUp}
       >
         <span className="bg-blue-600 rounded-md font-semibold px-2 py-2 mr-3">
@@ -116,6 +117,7 @@ const Contact = () => {
         initial="hidden"
         whileInView={"visible"}
         viewport={{ once: true, amount: 0.2 }}
+        style={{ willChange: "transform, opacity" }}
         variants={fadeUp}
       >
         <p>Any Questions?</p>
@@ -131,6 +133,7 @@ const Contact = () => {
         initial="hidden"
         whileInView={"visible"}
         viewport={{ once: true, amount: 0.2 }}
+        style={{ willChange: "transform, opacity" }}
         variants={fadeRight}
       >
         <form className="space-y-6" onSubmit={handleSubmit}>

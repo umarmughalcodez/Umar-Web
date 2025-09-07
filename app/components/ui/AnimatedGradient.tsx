@@ -57,6 +57,7 @@ const AnimatedGradientCard = () => {
             initial="hidden"
             whileInView={"visible"}
             viewport={{ once: true, amount: 0.2 }}
+            style={{ willChange: "transform, opacity" }}
             variants={fadeUp}
           >
             <p>Each Project we Undertake</p>
@@ -70,6 +71,7 @@ const AnimatedGradientCard = () => {
             whileInView={"visible"}
             viewport={{ once: true, amount: 0.2 }}
             variants={fadeUp}
+            style={{ willChange: "transform, opacity" }}
           >
             Need a site but not sure where to start or want us to audit your
             website? <br />
@@ -81,6 +83,7 @@ const AnimatedGradientCard = () => {
             initial="hidden"
             whileInView={"visible"}
             viewport={{ once: true, amount: 0.2 }}
+            style={{ willChange: "transform, opacity" }}
             variants={fadeRight}
           >
             <ShinyButton text="Book FREE Strategy Call" path="/schedule-call" />

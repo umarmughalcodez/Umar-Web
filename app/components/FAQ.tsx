@@ -18,7 +18,8 @@ const FAQSection = () => {
           className="text-4xl md:text-5xl mt-3 text-white font-semibold space-y-3 text-center"
           initial="hidden"
           whileInView={"visible"}
-          viewport={{ once: true, amount: 0.4 }}
+          viewport={{ once: true, amount: 0.2 }}
+          style={{ willChange: "transform, opacity" }}
           variants={fadeUp}
         >
           <p>Frequently</p>

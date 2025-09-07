@@ -47,7 +47,7 @@ const Projects = () => {
         className="p-4 lg:p-12 grid place-items-center"
         initial="hidden"
         whileInView="visible"
-        transition={{ staggerChildren: 0.2 }}
+        transition={{ staggerChildren: 0.15 }}
       >
         <motion.div variants={fadeUp}>
           <BorderBtn text="Launch Your Website" />
