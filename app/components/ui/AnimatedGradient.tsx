@@ -56,7 +56,7 @@ const AnimatedGradientCard = () => {
             className="text-3xl sm:text-4xl md:text-5xl font-semibold leading-snug"
             initial="hidden"
             whileInView={"visible"}
-            viewport={{ once: true, amount: 0.2 }}
+            viewport={{ once: true, amount: 0.1 }}
             style={{ willChange: "transform, opacity" }}
             variants={fadeUp}
           >
@@ -69,7 +69,7 @@ const AnimatedGradientCard = () => {
             className="text-white/70 mb-6"
             initial="hidden"
             whileInView={"visible"}
-            viewport={{ once: true, amount: 0.2 }}
+            viewport={{ once: true, amount: 0.1 }}
             variants={fadeUp}
             style={{ willChange: "transform, opacity" }}
           >
@@ -82,7 +82,7 @@ const AnimatedGradientCard = () => {
           <motion.div
             initial="hidden"
             whileInView={"visible"}
-            viewport={{ once: true, amount: 0.2 }}
+            viewport={{ once: true, amount: 0.1 }}
             style={{ willChange: "transform, opacity" }}
             variants={fadeRight}
           >

@@ -71,7 +71,7 @@ const Testimonials = () => {
         variants={fadeRight}
         initial="hidden"
         whileInView={"visible"}
-        viewport={{ once: true, amount: 0.2 }}
+        viewport={{ once: true, amount: 0.1 }}
         style={{ willChange: "transform, opacity" }}
       >
         <p className="text-4xl text-white md:text-5xl">What Our Clients Say,</p>
@@ -96,7 +96,7 @@ const Testimonials = () => {
             variants={fadeUp}
             initial="hidden"
             whileInView={"visible"}
-            viewport={{ once: true, amount: 0.2 }}
+            viewport={{ once: true, amount: 0.1 }}
             style={{ willChange: "transform, opacity" }}
             key={index}
             className="relative group bg-gray-800/30 backdrop-blur-sm rounded-2xl p-6 

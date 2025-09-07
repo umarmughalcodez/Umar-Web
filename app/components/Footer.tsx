@@ -102,7 +102,7 @@ const Footer = () => {
           <motion.form
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
+            viewport={{ once: true, amount: 0.1 }}
             style={{ willChange: "transform, opacity" }}
             variants={fadeRight}
             transition={{ duration: 0.5 }}
@@ -137,7 +137,7 @@ const Footer = () => {
           className="flex gap-16 lg:gap-30"
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
+          viewport={{ once: true, amount: 0.1 }}
           style={{ willChange: "transform, opacity" }}
           variants={fadeRight}
           transition={{ duration: 0.5 }}
@@ -198,7 +198,7 @@ const Footer = () => {
             className="flex flex-col text-white/75 items-start "
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
+            viewport={{ once: true, amount: 0.1 }}
             style={{ willChange: "transform, opacity" }}
             variants={fadeRight}
             transition={{ duration: 0.5 }}

@@ -28,7 +28,7 @@ const Reasons = () => {
         variants={fadeRight}
         whileInView={"visible"}
         initial="hidden"
-        viewport={{ once: true, amount: 0.2 }}
+        viewport={{ once: true, amount: 0.1 }}
         style={{ willChange: "transform, opacity" }}
         className="text-center grid place-items-center"
       >
@@ -49,7 +49,7 @@ const Reasons = () => {
         variants={fadeUp}
         whileInView={"visible"}
         initial="hidden"
-        viewport={{ once: true, amount: 0.2 }}
+        viewport={{ once: true, amount: 0.1 }}
         style={{ willChange: "transform, opacity" }}
       >
         {reasons.map((r, i) => (
@@ -57,7 +57,7 @@ const Reasons = () => {
             variants={fadeUp}
             whileInView={"visible"}
             initial="hidden"
-            viewport={{ once: true, amount: 0.2 }}
+            viewport={{ once: true, amount: 0.1 }}
             style={{ willChange: "transform, opacity" }}
             key={i}
             className="flex items-start space-x-3 text-base md:text-md"

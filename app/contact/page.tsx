@@ -102,7 +102,7 @@ const Contact = () => {
         className="backdrop-blur-xl text-sm rounded-md border border-white/30 py-3 w-auto px-3 text-white/85 mb-16"
         initial="hidden"
         whileInView={"visible"}
-        viewport={{ once: true, amount: 0.2 }}
+        viewport={{ once: true, amount: 0.1 }}
         style={{ willChange: "transform, opacity" }}
         variants={fadeUp}
       >
@@ -116,7 +116,7 @@ const Contact = () => {
         className="text-5xl md:text-6xl text-white font-semibold space-y-3 text-center"
         initial="hidden"
         whileInView={"visible"}
-        viewport={{ once: true, amount: 0.2 }}
+        viewport={{ once: true, amount: 0.1 }}
         style={{ willChange: "transform, opacity" }}
         variants={fadeUp}
       >
@@ -132,7 +132,7 @@ const Contact = () => {
         className="w-full max-w-4xl mx-auto bg-black/50 border border-white/20 rounded-2xl p-6 sm:p-10 shadow-lg"
         initial="hidden"
         whileInView={"visible"}
-        viewport={{ once: true, amount: 0.2 }}
+        viewport={{ once: true, amount: 0.1 }}
         style={{ willChange: "transform, opacity" }}
         variants={fadeRight}
       >

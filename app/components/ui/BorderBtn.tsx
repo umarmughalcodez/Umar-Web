@@ -8,7 +8,7 @@ const BorderBtn = ({ text }: { text: string }) => {
     <motion.button
       initial="hidden"
       whileInView={"visible"}
-      viewport={{ once: true, amount: 0.2 }}
+      viewport={{ once: true, amount: 0.1 }}
       style={{ willChange: "transform, opacity" }}
       variants={fadeUp}
       className="relative flex items-center justify-center gap-2 

@@ -22,7 +22,7 @@ const WorkCards = () => {
           variants={cardVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }} // animate once when 20% visible
+          viewport={{ once: true, amount: 0.1 }} // animate once when 20% visible
           style={{ willChange: "transform, opacity" }}
           className="relative group w-full rounded-3xl bg-black px-10 py-8 space-y-6 
           overflow-hidden shadow-xl border border-gray-800"
@@ -71,7 +71,7 @@ const WorkCards = () => {
           variants={cardVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
+          viewport={{ once: true, amount: 0.1 }}
           style={{ willChange: "transform, opacity" }}
           className="relative group w-full rounded-3xl bg-black px-10 py-8 space-y-6 
           overflow-hidden shadow-xl border border-gray-800"
@@ -118,7 +118,7 @@ const WorkCards = () => {
           variants={cardVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
+          viewport={{ once: true, amount: 0.1 }}
           style={{ willChange: "transform, opacity" }}
           className="relative group w-full rounded-3xl bg-black px-10 py-8 space-y-6 
           overflow-hidden shadow-xl border border-gray-800"
@@ -167,7 +167,7 @@ const WorkCards = () => {
           variants={cardVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
+          viewport={{ once: true, amount: 0.1 }}
           style={{ willChange: "transform, opacity" }}
         >
           <TextRevealCard

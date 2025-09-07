@@ -103,7 +103,7 @@ const About = () => {
           initial="hidden"
           whileInView="visible"
           variants={fadeRight}
-          viewport={{ once: true, amount: 0.2 }}
+          viewport={{ once: true, amount: 0.1 }}
           style={{ willChange: "transform, opacity" }}
         >
           <Image

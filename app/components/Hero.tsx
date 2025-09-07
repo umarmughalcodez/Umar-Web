@@ -39,7 +39,7 @@ const Hero = () => {
     <>
       <section
         id="home"
-        className="relative min-h-screen text-white flex items-center px-4 sm:px-7 md:px-12 lg:px-24 pt-26 md:pt-32 pb-12"
+        className="relative min-h-screen text-white flex items-center px-6 sm:px-7 md:px-12 lg:px-24 pt-26 md:pt-32 pb-12"
       >
         {/* Background */}
         <div className="absolute inset-0 -z-10">
