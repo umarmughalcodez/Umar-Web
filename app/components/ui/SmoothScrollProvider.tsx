@@ -6,9 +6,9 @@ import React, { useEffect } from "react";
 const SmoothScrollProvider = ({ children }: { children: React.ReactNode }) => {
   useEffect(() => {
     const lenis = new Lenis({
-      duration: 1.2,
+      duration: 0.8,
       smoothWheel: true,
-      lerp: 0.125,
+      lerp: 0.1,
     });
 
     function raf(time: number) {

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { League_Spartan } from "next/font/google";
+import { Montserrat } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 
@@ -9,9 +9,10 @@ import SmoothScrollProvider from "./components/ui/SmoothScrollProvider";
 import Script from "next/script";
 import GradualBlurWrapper from "./components/ui/GradualBlurWrapper";
 
-const league_spartan = League_Spartan({
-  variable: "--font-league_spartan",
+const montserrat = Montserrat({
+  variable: "--font-montserrat",
   subsets: ["latin"],
+  weight: ["300", "400", "600"],
 });
 
 export const metadata: Metadata = {
@@ -74,11 +75,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" data-arp="" dir="ltr">
-      <body className={`${league_spartan.variable} antialiased bg-black`}>
+      <body className={`${montserrat.variable} antialiased bg-black`}>
         <CursorFollower />
         <Navbar />
         <SmoothScrollProvider>{children}</SmoothScrollProvider>
-        {/* {children} */}
         <GradualBlurWrapper />
 
         <Footer />

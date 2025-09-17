@@ -51,25 +51,22 @@ const Hero = () => {
           />
         </div>
 
-        {/* Content */}
         <motion.div
           className="max-w-3xl"
           initial="hidden"
           animate="visible"
           transition={{ staggerChildren: 0.15 }}
         >
-          {/* Badge */}
           <motion.div
-            className="mb-8 backdrop-blur-lg text-xs md:text-sm rounded-md border border-white/30 py-2 px-4 inline-flex items-center text-white/85"
+            className="mb-8 backdrop-blur-lg text-xs md:text-sm rounded-md border border-white/30 py-1 pr-2 pl-2 inline-flex items-center text-white/85"
             variants={fadeUp}
           >
-            <span className="bg-blue-600 rounded-sm font-semibold px-2 py-1 mr-2">
+            <span className="bg-blue-600 rounded-sm font-semibold px-2 py-2 mr-2">
               NEW
             </span>
             Trusted by businesses worldwide
           </motion.div>
 
-          {/* Heading */}
           <motion.h1
             className="text-5xl sm:text-4xl md:text-6xl lg:text-7xl font-semibold leading-tight"
             variants={fadeUp}
@@ -81,37 +78,19 @@ const Hero = () => {
 
           {/* Subtext */}
           <motion.p
-            className="mt-6 text-base sm:text-lg md:text-xl text-gray-300 max-w-xl"
+            className="mt-6 text-base sm:text-md md:text-lg text-gray-300 max-w-xl"
             variants={fadeRight}
           >
             We specialize in developing custom websites and systems that reflect
             your brand’s identity and convert customers into sales.
           </motion.p>
 
-          {/* Buttons */}
-          {/* <div className="mt-8 flex flex-wrap gap-4">
-            <Button
-              className="bg-blue-600 hover:bg-blue-700 text-base md:text-md text-white border border-white/30 font-semibold md:px-6 md:py-3 px-4 py-2"
-              onClick={() => router.push("/schedule-call")}
-              effect={"shineHover"}
-            >
-              FREE Strategy Call
-            </Button>
-            <Button
-              effect={"shineHover"}
-              className="bg-black/50 hover:bg-black/60 text-md border border-white/30 font-semibold px-6 py-3"
-              onClick={() => router.push("#strategy")}
-            >
-              Our Process
-            </Button>
-          </div> */}
-          {/* Buttons */}
           <motion.div
             className="mt-8 flex flex-wrap gap-3"
             variants={fadeRight}
           >
             <Button
-              className="bg-blue-600 hover:bg-blue-700 text-sm sm:text-base md:text-md text-white border border-white/30 font-semibold px-3 py-2 sm:px-5 sm:py-2.5 md:px-6 md:py-3"
+              className="bg-blue-600 hover:bg-blue-700 text-sm  md:text-md text-white border border-white/30 font-semibold px-3 py-2 md:px-4 md:py-2"
               onClick={() => router.push("/schedule-call")}
               effect={"shineHover"}
             >
@@ -119,7 +98,7 @@ const Hero = () => {
             </Button>
             <Button
               effect={"shineHover"}
-              className="bg-black/50 hover:bg-black/60 text-sm sm:text-base md:text-md border border-white/30 font-semibold px-3 py-2 sm:px-5 sm:py-2.5 md:px-6 md:py-3"
+              className="bg-black/50 hover:bg-black/60 text-sm md:text-md border border-white/30 font-semibold px-3 py-2 md:px-4 md:py-2"
               onClick={() => router.push("/#strategy")}
             >
               Our Process

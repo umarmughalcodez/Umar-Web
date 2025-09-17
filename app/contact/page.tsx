@@ -99,14 +99,14 @@ const Contact = () => {
       </div>
 
       <motion.div
-        className="backdrop-blur-xl text-sm rounded-md border border-white/30 py-3 w-auto px-3 text-white/85 mb-16"
+        className="backdrop-blur-xl text-sm rounded-md border border-white/30 py-3 w-auto pr-2 pl-1 text-white/85 mb-16"
         initial="hidden"
         whileInView={"visible"}
         viewport={{ once: true, amount: 0.1 }}
         style={{ willChange: "transform, opacity" }}
         variants={fadeUp}
       >
-        <span className="bg-blue-600 rounded-md font-semibold px-2 py-2 mr-3">
+        <span className="bg-blue-600 rounded-md font-semibold px-2 py-2 mr-2">
           24/7
         </span>
         Let&apos;s Work Together

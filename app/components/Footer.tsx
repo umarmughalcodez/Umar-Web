@@ -92,27 +92,30 @@ const Footer = () => {
                 alt="Umar Web Logo"
                 className="object-cover cursor-pointer"
                 fill
-                onClick={() => router.push("#home")}
+                onClick={() => router.push("/#home")}
               />
             </div>
-            <div className="w-[100%] h-[1px] bg-gradient-to-r from-transparent via-gray-500 to-transparent my-3" />
+            <div className="w-[100%] h-[1px] bg-gradient-to-r from-transparent via-gray-500 to-transparent mt-6" />
           </div>
 
           {/* Email Subscription */}
+          <div className="font-semibold text-2xl mt-6">
+            Be the First to Know
+          </div>
           <motion.form
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.1 }}
+            viewport={{ once: true, amount: 0.2 }}
             style={{ willChange: "transform, opacity" }}
             variants={fadeRight}
             transition={{ duration: 0.5 }}
-            className="flex items-center bg-black/40 rounded-xl overflow-hidden border border-white/30 px-1 py-1 pl-3 pr-1 justify-center max-w-sm"
+            className="flex items-center bg-black/40 rounded-xl overflow-hidden border border-white/30 px-1 py-1 pl-3 pr-1 justify-center max-w-md"
             onSubmit={handleSubmit}
           >
             <input
               placeholder="Enter Your Email..."
               className="flex-1 bg-transparent text-gray-300 placeholder-gray-500 focus:outline-none 
-              text-xs sm:text-sm md:text-base"
+              text-xs sm:text-sm md:text-sm"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
@@ -130,6 +133,17 @@ const Footer = () => {
               Subscribe
             </Button>
           </motion.form>
+          <div className="flex items-center">
+            Or Feel Free to{" "}
+            <Button
+              onClick={() => router.push("mailto:umar@umarweb.com")}
+              variant={"link"}
+              effect={"hoverUnderline"}
+              className="text-blue-500 hover:text-blue-400 hover:cursor-pointer p-0 mx-2 text-base"
+            >
+              Email Us &#8599;
+            </Button>
+          </div>
         </div>
 
         {/* Middle Section (Navigation Links) */}

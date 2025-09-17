@@ -30,8 +30,6 @@ const Navbar = () => {
   }, [scrollDirection]);
 
   const navItems = [
-    { name: "Portfolio", href: "/#about" },
-    { name: "Work", href: "/#strategy" },
     { name: "Testimonials", href: "/#testimonials" },
     { name: "Schedule  Free Call", href: "/schedule-call" },
     { name: "Contact", href: "/contact" },
@@ -63,7 +61,7 @@ const Navbar = () => {
         </div>
 
         {/* Middle Links - hidden on small screens */}
-        <div className="hidden md:flex items-center space-x-5">
+        <div className="hidden md:flex items-center space-x-5 mx-5">
           {navItems.map((item) => (
             <Button
               key={item.name}

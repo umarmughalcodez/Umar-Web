@@ -47,10 +47,10 @@ const WorkCards = () => {
             </button>
           </div>
 
-          <span className="text-lg font-semibold mb-4 relative z-10">
+          <span className="text-2xl font-semibold mb-6 relative z-10">
             Vision
           </span>
-          <p className="text-gray-300 text-sm relative z-10">
+          <p className="text-gray-300 text-sm relative z-10 mt-2">
             We start by diving deep into your brand — your story, goals, and
             style. Together, we craft a rock-solid plan that sets the stage for
             a website built to convert and impress.
@@ -93,10 +93,10 @@ const WorkCards = () => {
             </button>
           </div>
 
-          <span className="text-lg font-semibold mb-4 relative z-10">
+          <span className="text-2xl font-semibold mb-6 relative z-10">
             Build
           </span>
-          <p className="text-gray-300 text-sm relative z-10">
+          <p className="text-gray-300 text-sm relative z-10 mt-2">
             Once the plan is ready, we transform your vision into a stunning,
             functional website. You will see progress in real-time, share
             feedback easily, and stay fully in the loop as your site takes
@@ -140,10 +140,10 @@ const WorkCards = () => {
             </button>
           </div>
 
-          <span className="text-lg font-semibold mb-4 relative z-10">
+          <span className="text-2xl font-semibold mb-6 relative z-10">
             Launch
           </span>
-          <p className="text-gray-300 text-sm relative z-10">
+          <p className="text-gray-300 text-sm relative z-10 mt-2">
             After every detail is fine-tuned, we prep everything for a smooth,
             stress-free launch. You will walk away with all the tools, training,
             and support to keep your site thriving.

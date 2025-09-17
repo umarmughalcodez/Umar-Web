@@ -14,7 +14,7 @@ const BorderBtn = ({ text }: { text: string }) => {
       className="relative flex items-center justify-center gap-2 
         px-3 py-1.5 sm:px-3 sm:py-1.5 md:px-4.5 md:py-2 
         rounded-md bg-black/30 border border-white/10 
-        text-xs sm:text-sm md:text-base lg:text-md 
+        text-xs  md:text-sm lg:text-base 
         text-white shadow-md transition mb-8 sm:mb-10 md:mb-12"
     >
       {/* Blue top highlight */}
