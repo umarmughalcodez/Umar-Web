@@ -12,10 +12,8 @@ import Reasons from "./components/Reasons";
 const Home = () => {
   return (
     <div>
-      {/* Hero with its Aurora background */}
       <Hero />
 
-      {/* Wrap all sections except Hero in a container */}
       <div className="relative">
         <MovingBackground />
 
