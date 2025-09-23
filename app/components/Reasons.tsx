@@ -32,8 +32,9 @@ const Reasons = () => {
         style={{ willChange: "transform, opacity" }}
         className="text-center grid place-items-center"
       >
-        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-center mt-4">
-          Why You Should Work With Us?
+        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-center mt-4 flex-col flex space-y-2">
+          <span>Why You Should</span>
+          <span className="text-white/70">Work With Us?</span>
         </h2>
 
         {/* Subheading */}

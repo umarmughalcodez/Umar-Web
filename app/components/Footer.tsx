@@ -253,7 +253,7 @@ const Footer = () => {
 
       {/* Bottom Section */}
       <div className="text-center text-gray-400 text-sm">
-        © {new Date().getFullYear()} UmarWeb. All rights reserved.
+        © {new Date().getFullYear()} UmarWeb. All rights reserved. &nbsp;
       </div>
     </footer>
   );

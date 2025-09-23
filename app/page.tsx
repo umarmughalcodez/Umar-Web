@@ -6,7 +6,6 @@ import { Work } from "./components/Work";
 import Testimonials from "./components/Testimonials";
 import FAQSection from "./components/FAQ";
 import AnimatedGradientCard from "./components/ui/AnimatedGradient";
-import MovingBackground from "./components/ui/MovingBackground";
 import Reasons from "./components/Reasons";
 
 const Home = () => {
@@ -15,8 +14,6 @@ const Home = () => {
       <Hero />
 
       <div className="relative">
-        <MovingBackground />
-
         <About />
         <Projects />
         <Work />
