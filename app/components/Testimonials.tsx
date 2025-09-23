@@ -26,12 +26,12 @@ const Testimonials = () => {
     ],
     name: [
       "Erick Martinez",
-      "Michael Johnson",
+      "Michael",
       "David Chen",
-      "James Anderson",
+      "James",
       "Lisa Thompson",
       "Sophia Brown",
-      "Daniel Lee",
+      "Daniel",
       "Olivia Davis",
     ],
     businessType: [
