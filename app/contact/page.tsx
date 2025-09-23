@@ -279,7 +279,7 @@ const Contact = () => {
         variants={fadeUp}
       >
         <p className="text-2xl font-semibold text-white/90 my-3">
-          Let's Connect Together
+          Let&apos;s Connect Together
         </p>
         <p className="text-gray-300 text-md md:text-xl flex items-center justify-center gap-2 font-semibold">
           <LucideMail className="text-blue-400" size={22} />
