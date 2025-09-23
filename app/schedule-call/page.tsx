@@ -65,7 +65,7 @@ const ScheduleCallPage = () => {
 
       {/* Extra Tip */}
       <p className="text-gray-300 text-md mt-6 text-center">
-        Can’t find a suitable time?{" "}
+        Can’t find a suitable time or Getting Error?{" "}
         <Button
           variant={"link"}
           effect={"hoverUnderline"}

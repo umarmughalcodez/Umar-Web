@@ -219,7 +219,7 @@ const Footer = () => {
           >
             <p className="font-semibold text-white mb-2">Socials</p>
             <Button
-              className="p-0"
+              className="p-0 hover:text-pink-500"
               variant="link"
               effect="hoverUnderline"
               onClick={() =>
@@ -229,7 +229,20 @@ const Footer = () => {
                 )
               }
             >
-              Instagram
+              Instagram &#8599;
+            </Button>
+            <Button
+              variant="link"
+              effect="hoverUnderline"
+              className="hover:text-green-400 p-0"
+              onClick={() =>
+                window.open(
+                  "https://wa.me/923364190319?text=Hi%2C%20I%E2%80%99d%20like%20to%20discuss%20a%20website%20design%20for%20my%20business.",
+                  "_blank"
+                )
+              }
+            >
+              Whatsapp &#8599;
             </Button>
           </motion.div>
         </motion.div>
