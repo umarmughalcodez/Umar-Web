@@ -174,14 +174,7 @@ const Footer = () => {
             >
               Projects
             </Button>
-            <Button
-              variant="link"
-              className="p-0"
-              effect="hoverUnderline"
-              onClick={() => router.push("/#strategy")}
-            >
-              Strategy
-            </Button>
+
             <Button
               variant="link"
               className="p-0"
@@ -199,12 +192,20 @@ const Footer = () => {
               FAQ&apos;s
             </Button>
             <Button
+              onClick={() => router.push("/contact")}
+              variant="link"
+              effect="hoverUnderline"
+              className="text-blue-500 p-0 hover:text-blue-400"
+            >
+              Contact Us
+            </Button>
+            <Button
               onClick={() => router.push("/schedule-call")}
               variant="link"
               effect="hoverUnderline"
               className="text-blue-500 p-0 hover:text-blue-400"
             >
-              Schedule Free Call &#8599;
+              Schedule Free Call
             </Button>
           </div>
 

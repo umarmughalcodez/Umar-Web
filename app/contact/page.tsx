@@ -7,6 +7,8 @@ import { toast, Toaster } from "react-hot-toast";
 import { Button } from "../components/ui/button";
 import { motion } from "framer-motion";
 import { fadeRight, fadeUp } from "@/lib/animations";
+import { LucideMail, Phone } from "lucide-react";
+import { redirect } from "next/navigation";
 
 interface FormProps {
   f_name: string;
@@ -267,6 +269,43 @@ const Contact = () => {
             {isSubmitting ? "Submitting..." : "Submit Now"}
           </Button>
         </form>
+      </motion.div>
+      <motion.div
+        className="w-full max-w-2xl mx-auto bg-black/30 border border-gray-600 rounded-xl p-6 mb-10 text-center mt-10"
+        initial="hidden"
+        whileInView={"visible"}
+        viewport={{ once: true, amount: 0.1 }}
+        style={{ willChange: "transform, opacity" }}
+        variants={fadeUp}
+      >
+        <p className="text-2xl font-semibold text-white/90 my-3">
+          Let's Connect Together
+        </p>
+        <p className="text-gray-300 text-md md:text-xl flex items-center justify-center gap-2 font-semibold">
+          <LucideMail className="text-blue-400" size={22} />
+          Email:{" "}
+          <Button
+            onClick={() => redirect("mailto:hello@umarweb.com")}
+            variant="link"
+            effect="hoverUnderline"
+            className="text-blue-500 p-0 text-md md:text-xl hover:text-blue-400 font-normal"
+          >
+            hello@umarweb.com
+          </Button>
+        </p>
+
+        <p className="text-gray-300 mt-2 text-md md:text-xl flex items-center justify-center gap-2 font-semibold">
+          <Phone className="text-blue-400" size={22} />
+          Phone:{" "}
+          <Button
+            onClick={() => redirect("tel:+923364190319")}
+            variant="link"
+            effect="hoverUnderline"
+            className="text-blue-500 p-0  text-md md:text-xl hover:text-blue-400 font-normal"
+          >
+            (92) 336 4190319
+          </Button>
+        </p>
       </motion.div>
     </div>
   );
