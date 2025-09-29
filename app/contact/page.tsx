@@ -8,7 +8,7 @@ import { Button } from "../components/ui/button";
 import { motion } from "framer-motion";
 import { fadeRight, fadeUp } from "@/lib/animations";
 import { LucideMail, Phone } from "lucide-react";
-import { redirect } from "next/navigation";
+import { useRouter } from "next/navigation";
 
 interface FormProps {
   f_name: string;
@@ -21,6 +21,7 @@ interface FormProps {
 }
 
 const Contact = () => {
+  const router = useRouter();
   const [form, setForm] = useState<FormProps>({
     f_name: "",
     l_name: "",
@@ -285,7 +286,7 @@ const Contact = () => {
           <LucideMail className="text-blue-400" size={22} />
           Email:{" "}
           <Button
-            onClick={() => redirect("mailto:hello@umarweb.com")}
+            onClick={() => router.push("mailto:hello@umarweb.com")}
             variant="link"
             effect="hoverUnderline"
             className="text-blue-500 p-0 text-md md:text-xl hover:text-blue-400 font-normal"
@@ -298,7 +299,7 @@ const Contact = () => {
           <Phone className="text-blue-400" size={22} />
           Phone:{" "}
           <Button
-            onClick={() => redirect("tel:+923364190319")}
+            onClick={() => router.push("tel:+923364190319")}
             variant="link"
             effect="hoverUnderline"
             className="text-blue-500 p-0  text-md md:text-xl hover:text-blue-400 font-normal"
