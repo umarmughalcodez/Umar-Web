@@ -42,14 +42,14 @@ const Hero = () => {
         className="relative min-h-screen text-white flex items-center px-6 sm:px-7 md:px-12 lg:px-24 pt-26 md:pt-32 pb-12"
       >
         {/* Background */}
-        <div className="absolute inset-0 -z-10">
+        {/* <div className="absolute inset-0 -z-10">
           <Aurora
             colorStops={["#0840b9", "#2563EB", "#0840b9"]}
             blend={0.5}
             amplitude={1.0}
             speed={1}
           />
-        </div>
+        </div> */}
 
         <motion.div
           className="max-w-3xl"

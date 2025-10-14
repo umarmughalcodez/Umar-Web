@@ -15,12 +15,12 @@ const Home = () => {
 
       <div className="relative">
         <About />
-        <Projects />
+        {/* <Projects /> */}
         <Work />
         <Testimonials />
         <FAQSection />
         <Reasons />
-        <AnimatedGradientCard />
+        {/* <AnimatedGradientCard /> */}
       </div>
     </div>
   );

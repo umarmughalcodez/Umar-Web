@@ -4,7 +4,6 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Button } from "../components/ui/button";
 import { useRouter } from "next/navigation";
-import Aurora from "@/components/Aurora";
 import BorderBtn from "../components/ui/BorderBtn";
 
 const ScheduleCallPage = () => {
@@ -12,15 +11,7 @@ const ScheduleCallPage = () => {
   return (
     <div className="relative w-full min-h-screen flex flex-col items-center justify-center px-6 md:px-12 lg:px-16 text-white">
       {/* Aurora Background */}
-      <div className="absolute inset-0 -z-10">
-        <Aurora
-          colorStops={["#0840b9", "#2563EB", "#0840b9"]}
-          blend={0.8}
-          amplitude={1.1}
-          speed={1}
-        />
-      </div>
-
+      
       {/* Heading */}
       <div className=" text-center pt-40 grid place-items-center space-y-3">
         <BorderBtn text="Schedule Call" />

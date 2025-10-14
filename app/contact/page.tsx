@@ -1,7 +1,6 @@
 // app/contact/page.tsx
 "use client";
 
-import Aurora from "@/components/Aurora";
 import React, { useState } from "react";
 import { toast, Toaster } from "react-hot-toast";
 import { Button } from "../components/ui/button";
@@ -91,15 +90,7 @@ const Contact = () => {
         }}
       />
 
-      <div className="absolute inset-0 -z-10">
-        <Aurora
-          colorStops={["#0840b9", "#2563EB", "#0840b9"]}
-          blend={0.5}
-          amplitude={1.0}
-          speed={1}
-          // className="custom-rays w-full  h-full"
-        />
-      </div>
+      
 
       <motion.div
         className="backdrop-blur-xl text-sm rounded-md border border-white/30 py-3 w-auto pr-2 pl-1 text-white/85 mb-16"
