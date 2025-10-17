@@ -11,50 +11,67 @@ interface FAQItem {
 const FAQ = () => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
-  const faqData: FAQItem[] = [
-    {
-      question: "Why should I get a website for my business?",
-      answer:
-        "A website is essential for any business to enhance credibility, reach a wider audience, and drive growth. Also by streamlining operations by automating tasks and backend systems makes it a valuable long-term asset. Even for businesses that don't rely on online sales, a website ensures potential customers can easily find information and contact you, ultimately contributing to sustained business success.",
-    },
-    {
-      question: "How long does it take to build a website?",
-      answer:
-        "Typically, we deliver complete websites within 2-5 weeks depending on complexity. We follow an efficient process that includes planning, design, development, and testing phases to ensure quality while meeting deadlines.",
-    },
-    {
-      question: "Do you provide website maintenance after launch?",
-      answer:
-        "Yes, we offer comprehensive maintenance packages that include regular updates, security monitoring, backups, and technical support. This ensures your website remains secure and performs optimally long after launch.",
-    },
-    {
-      question: "Will my website be mobile-friendly?",
-      answer:
-        "Absolutely! All our websites are built with a mobile-first approach and are fully responsive. They adapt seamlessly to all screen sizes, ensuring an optimal experience for visitors on smartphones, tablets, and desktops.",
-    },
-    {
-      question: "Can I update the website content myself?",
-      answer:
-        "Yes, we provide you with a user-friendly content management system (CMS) that allows you to easily update text, images, and other content without any technical knowledge. We also offer training sessions.",
-    },
-    {
-      question:
-        "Nobody visits our current site — what’s the point of upgrading?",
-      answer: `That’s exactly the problem we solve.
-We don’t just build pretty websites — we also offer SEO to help you show up on Google, attract the right visitors, and turn them into paying customers.`,
-    },
-    {
-      question:
-        "Our website is old, but it still works — why spend money on a new one?",
-      answer: `Because first impressions matter.
-An outdated or slow website silently turns customers away — even if you never hear about it. A fresh, modern, and mobile-friendly design builds trust, keeps visitors engaged, and makes you look like the professional business you are.`,
-    },
-    {
-      question: "What makes you different to other web design agencies?",
-      answer:
-        "We deliver exceptional websites at affordable prices without compromising quality. Your custom website launches quickly with a personalized design that perfectly reflects your brand and goals—no long waits or generic templates. And unlike other agencies, we provide long term support for your website to ensure it performs well every time.",
-    },
-  ];
+const faqData: FAQItem[] = [
+  {
+  question: "Why do I need a website for my pet grooming business when I already use Instagram?",
+  answer:
+    "While social media helps with visibility, a website builds trust, drives repeat bookings, and turns visitors into loyal clients. We design emotionally engaging, pet-owner–focused websites that reflect your brand and experience. Plus, we integrate smart features like appointment reminders and recurring visit notifications — helping you retain customers and keep your grooming schedule full every-time.",
+},
+
+  {
+    question: "How long will it take to get my pet grooming website ready?",
+    answer:
+      "We deliver fully functional, beautiful websites within just 2–3 weeks. Our streamlined process ensures fast turnaround without compromising quality — so your business can start welcoming new clients as soon as possible.",
+  },
+  {
+    question: "Do you provide website maintenance or updates after launch?",
+    answer:
+      "Yes, we offer affordable monthly subscription plans for every budget. These plans include regular content updates, performance checks, and SEO optimization to keep your website running smoothly and ranking higher on Google.",
+  },
+  {
+  question: "What is the cost of a website you design?",
+  answer:
+    "We keep it simple and budget-friendly for pet grooming businesses. You can choose our affordable monthly subscription that includes regular updates, ongoing SEO optimization, and 24/7 support — perfect for keeping your website fresh and growing. Or, if you prefer a one-time purchase, we’ll build and launch your site without monthly payments, so you fully own it from day one.",
+},
+
+  {
+    question: "Will my website be optimized for SEO?",
+    answer:
+      "Definitely. Every website we build is optimized for search engines from day one — including meta tags, fast loading speed, and mobile responsiveness. Plus, we continue to refine your SEO each month so your business stays visible and competitive online.",
+  },
+  {
+    question: "What if I want to add something new to my site later?",
+    answer:
+      "Of course! Simply contact us with the details of what you’d like to add — whether it’s a new service, a photo gallery, or a special offer — and we’ll update your site within 24 hours. Quick, professional, and hassle-free.",
+  },
+  {
+    question: "Will my website look great on all devices?",
+    answer:
+      "Yes. All our websites are fully responsive and designed to look perfect on smartphones, tablets, and desktops — ensuring a smooth experience for your clients wherever they visit from.",
+  },
+  {
+    question: "Can I update my services, photos, or pricing myself?",
+    answer:
+      "Absolutely. We provide a user-friendly content management system (CMS) so you can easily update your content anytime. We also offer quick training and support if you ever need help managing your site.",
+  },
+  {
+    question: "What if no one is visiting my current website?",
+    answer:
+      "That’s exactly what we fix. Along with stunning design, we apply SEO strategies and conversion-focused layouts to help your website attract the right visitors — and turn them into real, paying clients.",
+  },
+  {
+    question: "My old website still works — why invest in a new one?",
+    answer:
+      "Because your website is often your first impression. An outdated or slow site can make clients lose trust instantly. A modern, fast, and well-optimized website communicates professionalism, builds trust, and increases bookings.",
+  },
+  {
+    question: "What makes your agency different from others?",
+    answer:
+      "We specialize in pet industry websites, understand your business needs, and deliver high-performing, visually stunning sites in just 2–3 weeks. You’ll enjoy flexible options — from one-time builds to affordable monthly plans with continuous support, updates, and SEO improvements. No generic templates, no hidden fees — just results that help your grooming business shine.",
+  },
+];
+
+
 
   const toggleFAQ = (index: number) => {
     setActiveIndex(activeIndex === index ? null : index);
@@ -84,16 +101,19 @@ An outdated or slow website silently turns customers away — even if you never 
             animate={{
               backgroundColor:
                 activeIndex === index
-                  ? "rgba(17, 24, 39, 0.8)"
-                  : "rgba(31, 41, 55, 0.4)",
-              borderColor: activeIndex === index ? "#4B5563" : "#374151",
+                  ? "rgba(34, 197, 94, 1)"
+                  : "rgba(255, 255, 255)",
+              borderColor: activeIndex === index ? "#22C55E" : "#16A34A",
             }}
             transition={{ duration: 0.3 }}
           >
             {/* Question Button */}
             <button
               onClick={() => toggleFAQ(index)}
-              className="flex justify-between items-center w-full p-5 text-left text-white cursor-pointer font-semibold"
+              className={`flex justify-between items-center w-full p-5 text-left cursor-pointer font-semibold transition-colors duration-300 ${
+  activeIndex === index ? "text-white" : "text-black"
+}`}
+
             >
               <span>{item.question}</span>
               <motion.span
@@ -102,11 +122,12 @@ An outdated or slow website silently turns customers away — even if you never 
                 className="ml-4"
               >
                 <svg
-                  className="w-5 h-5"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
+  className="w-5 h-5 text-green-600"
+  fill="none"
+  stroke="currentColor"
+  viewBox="0 0 24 24"
+>
+
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
@@ -129,14 +150,14 @@ An outdated or slow website silently turns customers away — even if you never 
                     duration: 0.4,
                     ease: [0.25, 0.8, 0.25, 1],
                   }}
-                  className="overflow-hidden bg-black/10"
+                  className="overflow-hidden bg-green/10"
                 >
                   <motion.div
                     initial={{ scaleX: 0 }}
                     animate={{ scaleX: 1 }}
                     exit={{ scaleX: 0 }}
                     transition={{ duration: 0.3 }}
-                    className="w-[90%] h-[1px] bg-gradient-to-r from-transparent via-gray-500 to-transparent mb-3 mx-auto"
+                    className="w-[90%] h-[1px] bg-gradient-to-r from-transparent via-white to-transparent mb-3 mx-auto"
                   />
                   <motion.p
                     initial={{ opacity: 0, y: 5 }}

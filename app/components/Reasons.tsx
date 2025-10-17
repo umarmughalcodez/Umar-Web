@@ -19,7 +19,7 @@ const Reasons = () => {
   ];
 
   return (
-    <div className="pt-16 text-white flex flex-col items-center justify-center w-full px-6 md:px-12 lg:px-20">
+    <div className="pt-16 text-black flex flex-col items-center justify-center w-full px-6 md:px-12 lg:px-20">
       {/* Top button */}
       <BorderBtn text="Reasons" />
 
@@ -34,7 +34,7 @@ const Reasons = () => {
       >
         <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-center mt-4 flex-col flex space-y-2">
           <span>Why You Should</span>
-          <span className="text-white/70">Work With Us?</span>
+          <span className="text-black/70">Work With Us?</span>
         </h2>
 
         {/* Subheading */}
@@ -64,11 +64,11 @@ const Reasons = () => {
             className="flex items-start space-x-3 text-base md:text-md"
           >
             <PiSealCheck className="text-green-500 text-2xl shrink-0" />
-            <span className="text-white/80">{r}</span>
+            <span className="text-black/80">{r}</span>
           </motion.div>
         ))}
       </motion.div>
-      <div className="w-[100%] h-[1px] bg-gradient-to-r from-transparent via-gray-500 to-transparent mt-12 text-white/10" />
+      <div className="w-[100%] h-[1px] bg-gradient-to-r from-transparent via-gray-500 to-transparent mt-12 text-black/10" />
     </div>
   );
 };

@@ -12,7 +12,7 @@ const AnimatedGradientCard = () => {
       id="JoinUs"
       className=" w-full mt-10 grid place-items-center p-4 lg:p-16 xl:p-26 pb-12"
     >
-      <div className="relative overflow-hidden rounded-2xl bg-black/60 text-white border border-white/30">
+      <div className="relative overflow-hidden rounded-2xl bg-black/60 text-black border border-white/30">
         {/* --- Stronger, More Visible Moving Gradient Lines --- */}
         <motion.div
           className="absolute top-1/3 left-0 w-[80%] h-[80px] blur-[80px]"
@@ -61,12 +61,12 @@ const AnimatedGradientCard = () => {
             variants={fadeUp}
           >
             <p>Each Project we Undertake</p>
-            <span className="text-white/980">is a Unique Opportunity.</span>
+            <span className="text-black/980">is a Unique Opportunity.</span>
           </motion.h1>
 
           {/* Subtext */}
           <motion.p
-            className="text-white/70 mb-6"
+            className="text-black/70 mb-6"
             initial="hidden"
             whileInView={"visible"}
             viewport={{ once: true, amount: 0.1 }}

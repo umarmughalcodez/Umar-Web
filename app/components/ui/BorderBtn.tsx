@@ -13,15 +13,15 @@ const BorderBtn = ({ text }: { text: string }) => {
       variants={fadeUp}
       className="relative flex items-center justify-center gap-2 
         px-3 py-1.5 sm:px-3 sm:py-1.5 md:px-4.5 md:py-2 
-        rounded-md bg-black/30 border border-white/10 
+        rounded-md bg-white/10 border border-white/10 
         text-xs  md:text-sm lg:text-base 
-        text-white shadow-md transition mb-8 sm:mb-10 md:mb-12"
+        text-black shadow-lg transition mb-8 sm:mb-10 md:mb-12 shadow-[#999]"
     >
       {/* Blue top highlight */}
-      <span className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-blue-500 to-transparent" />
+      <span className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-green-500 to-transparent" />
 
       {/* Bullet dot */}
-      <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-white"></span>
+      <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-green-600"></span>
 
       {/* Text */}
       <span>{text}</span>

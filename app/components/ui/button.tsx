@@ -16,7 +16,7 @@ const buttonVariants = cva(
         secondary:
           "bg-secondary text-secondary-foreground hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
-        link: "text-primary underline-offset-4 hover:underline text-white/85 hover:text-white cursor-pointer ",
+        link: "text-primary underline-offset-4 hover:underline text-black/85 hover:text-black cursor-pointer ",
       },
       effect: {
         expandIcon: "group gap-0 relative",

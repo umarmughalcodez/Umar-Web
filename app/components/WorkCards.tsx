@@ -14,9 +14,9 @@ const cardVariants = {
 
 const WorkCards = () => {
   return (
-    <div className="w-full flex flex-col items-center text-white mt-4 xl:flex-row xl:items-start xl:space-x-6 mb-12">
+    <div className="w-full flex flex-col items-center text-black mt-4 xl:flex-row xl:items-start xl:space-x-6 mb-12">
       {/* Left column with animated stage cards */}
-      <div className="flex flex-col items-center text-white space-y-8 xl:w-1/2 w-full">
+      <div className="flex flex-col items-center text-black space-y-8 xl:w-1/2 w-full">
         {/* Stage 1 */}
         <motion.div
           variants={cardVariants}
@@ -31,17 +31,17 @@ const WorkCards = () => {
           <span className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent group-hover:translate-x-full transition-transform duration-1000 ease-in-out h-full" />
 
           {/* Blue blurred waves */}
-          <div className="absolute -top-10 -left-10 w-40 h-40 bg-blue-600/50 rounded-full blur-3xl" />
-          <div className="absolute -bottom-10 -right-10 w-48 h-48 bg-blue-600/50 rounded-full blur-3xl" />
+          <div className="absolute -top-10 -left-10 w-40 h-40 bg-green-600/50 rounded-full blur-3xl" />
+          <div className="absolute -bottom-10 -right-10 w-48 h-48 bg-green-600/50 rounded-full blur-3xl" />
 
           <div className="flex items-center justify-between relative z-10">
-            <button className="relative flex items-center px-4 py-2 rounded-lg bg-black/30 border border-white/10 text-white text-sm shadow-md transition mb-8 shadow-blue-950">
+            <button className="relative flex items-center px-4 py-2 rounded-lg bg-black/30 border border-white/10 text-black text-sm shadow-md transition mb-8 shadow-blue-950">
               <span className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-blue-400 to-transparent" />
               <span className="text-2xl font-extralight">
                 <PiLightbulb />
               </span>
             </button>
-            <button className="relative flex items-center px-4 py-2 rounded-lg bg-black/30 border border-white/10 text-white text-sm shadow-md transition mb-8 shadow-blue-950">
+            <button className="relative flex items-center px-4 py-2 rounded-lg bg-black/30 border border-white/10 text-black text-sm shadow-md transition mb-8 shadow-blue-950">
               <span className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-blue-400 to-transparent" />
               <span>Stage 1</span>
             </button>
@@ -77,17 +77,17 @@ const WorkCards = () => {
           overflow-hidden shadow-xl border border-gray-800"
         >
           <span className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent group-hover:translate-x-full transition-transform duration-1000 ease-in-out h-full" />
-          <div className="absolute -top-10 -left-10 w-40 h-40 bg-blue-600/50 rounded-full blur-3xl" />
-          <div className="absolute -bottom-10 -right-10 w-48 h-48 bg-blue-600/50 rounded-full blur-3xl" />
+          <div className="absolute -top-10 -left-10 w-40 h-40 bg-green-600/50 rounded-full blur-3xl" />
+          <div className="absolute -bottom-10 -right-10 w-48 h-48 bg-green-600/50 rounded-full blur-3xl" />
 
           <div className="flex items-center justify-between relative z-10">
-            <button className="relative flex items-center px-4 py-2 rounded-lg bg-black/30 border border-white/10 text-white text-sm shadow-md transition mb-8 shadow-blue-950">
+            <button className="relative flex items-center px-4 py-2 rounded-lg bg-black/30 border border-white/10 text-black text-sm shadow-md transition mb-8 shadow-blue-950">
               <span className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-blue-400 to-transparent" />
               <span className="text-2xl font-extralight">
                 <BsCodeSlash />
               </span>
             </button>
-            <button className="relative flex items-center px-4 py-2 rounded-lg bg-black/30 border border-white/10 text-white text-sm shadow-md transition mb-8 shadow-blue-950">
+            <button className="relative flex items-center px-4 py-2 rounded-lg bg-black/30 border border-white/10 text-black text-sm shadow-md transition mb-8 shadow-blue-950">
               <span className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-blue-400 to-transparent" />
               <span>Stage 2</span>
             </button>
@@ -124,17 +124,17 @@ const WorkCards = () => {
           overflow-hidden shadow-xl border border-gray-800"
         >
           <span className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent group-hover:translate-x-full transition-transform duration-1000 ease-in-out h-full" />
-          <div className="absolute -top-10 -left-10 w-40 h-40 bg-blue-600/50 rounded-full blur-3xl" />
-          <div className="absolute -bottom-10 -right-10 w-48 h-48 bg-blue-600/50 rounded-full blur-3xl" />
+          <div className="absolute -top-10 -left-10 w-40 h-40 bg-green-600/50 rounded-full blur-3xl" />
+          <div className="absolute -bottom-10 -right-10 w-48 h-48 bg-green-600/50 rounded-full blur-3xl" />
 
           <div className="flex items-center justify-between relative z-10">
-            <button className="relative flex items-center px-4 py-2 rounded-lg bg-black/30 border border-white/10 text-white text-sm shadow-md transition mb-8 shadow-blue-950">
+            <button className="relative flex items-center px-4 py-2 rounded-lg bg-black/30 border border-white/10 text-black text-sm shadow-md transition mb-8 shadow-blue-950">
               <span className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-blue-400 to-transparent" />
               <span className="text-2xl font-extralight">
                 <PiRocketLaunch />
               </span>
             </button>
-            <button className="relative flex items-center px-4 py-2 rounded-lg bg-black/30 border border-white/10 text-white text-sm shadow-md transition mb-8 shadow-blue-950">
+            <button className="relative flex items-center px-4 py-2 rounded-lg bg-black/30 border border-white/10 text-black text-sm shadow-md transition mb-8 shadow-blue-950">
               <span className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-blue-400 to-transparent" />
               <span>Stage 3</span>
             </button>

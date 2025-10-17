@@ -93,21 +93,21 @@ const Contact = () => {
       
 
       <motion.div
-        className="backdrop-blur-xl text-sm rounded-md border border-white/30 py-3 w-auto pr-2 pl-1 text-white/85 mb-16"
+        className="backdrop-blur-xl text-sm rounded-md border border-white/30 py-3 w-auto pr-2 pl-1 text-black/85 mb-16"
         initial="hidden"
         whileInView={"visible"}
         viewport={{ once: true, amount: 0.1 }}
         style={{ willChange: "transform, opacity" }}
         variants={fadeUp}
       >
-        <span className="bg-blue-600 rounded-md font-semibold px-2 py-2 mr-2">
+        <span className="bg-green-600 rounded-md font-semibold px-2 py-2 mr-2">
           24/7
         </span>
         Let&apos;s Work Together
       </motion.div>
 
       <motion.div
-        className="text-5xl md:text-6xl text-white font-semibold space-y-3 text-center"
+        className="text-5xl md:text-6xl text-black font-semibold space-y-3 text-center"
         initial="hidden"
         whileInView={"visible"}
         viewport={{ once: true, amount: 0.1 }}
@@ -115,8 +115,8 @@ const Contact = () => {
         variants={fadeUp}
       >
         <p>Any Questions?</p>
-        <p className="text-white/70">Feel Free to Ask</p>
-        <p className="mt-6 text-sm text-white/60 font-normal text-center mb-16">
+        <p className="text-black/70">Feel Free to Ask</p>
+        <p className="mt-6 text-sm text-black/60 font-normal text-center mb-16">
           Whether you have a question, need assistance, <br />
           or want to start a new project, our team is here to help.
         </p>
@@ -142,7 +142,7 @@ const Contact = () => {
                 type="text"
                 name="f_name"
                 placeholder="Jane"
-                className="w-full bg-black/20 border border-gray-700 text-white rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full bg-black/20 border border-gray-700 text-black rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
                 value={form.f_name}
                 onChange={handleChange}
                 disabled={isSubmitting}
@@ -156,7 +156,7 @@ const Contact = () => {
                 type="text"
                 name="l_name"
                 placeholder="Smith"
-                className="w-full bg-black/20 border border-gray-700 text-white rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full bg-black/20 border border-gray-700 text-black rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
                 value={form.l_name}
                 onChange={handleChange}
                 disabled={isSubmitting}
@@ -174,7 +174,7 @@ const Contact = () => {
                 type="email"
                 name="email"
                 placeholder="name@email.com"
-                className="w-full bg-black/20 border border-gray-700 text-white rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full bg-black/20 border border-gray-700 text-black rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
                 value={form.email}
                 onChange={handleChange}
                 required
@@ -189,7 +189,7 @@ const Contact = () => {
                 type="tel"
                 name="phone"
                 placeholder="+012-345-6789"
-                className="w-full bg-black/20 border border-gray-700 text-white rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full bg-black/20 border border-gray-700 text-black rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
                 value={form.phone}
                 onChange={handleChange}
                 required
@@ -208,7 +208,7 @@ const Contact = () => {
                 type="text"
                 name="business_name"
                 placeholder="FastLane Productions"
-                className="w-full bg-black/20 border border-gray-700 text-white rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full bg-black/20 border border-gray-700 text-black rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
                 value={form.business_name}
                 onChange={handleChange}
                 disabled={isSubmitting}
@@ -222,7 +222,7 @@ const Contact = () => {
                 name="industry"
                 type="text"
                 placeholder="Film Production"
-                className="w-full bg-black/20 border border-gray-700 text-white rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full bg-black/20 border border-gray-700 text-black rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
                 value={form.industry}
                 onChange={handleChange}
                 disabled={isSubmitting}
@@ -238,7 +238,7 @@ const Contact = () => {
             <textarea
               placeholder="Type your message..."
               rows={5}
-              className="w-full bg-black/20 border border-gray-700 text-white rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full bg-black/20 border border-gray-700 text-black rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
               value={form.message}
               onChange={handleChange}
               name="message"
@@ -252,7 +252,7 @@ const Contact = () => {
             effect={"shineHover"}
             type="submit"
             disabled={isSubmitting}
-            className={`w-full bg-gradient-to-r from-blue-600 to-blue-800 text-white py-3 rounded-lg font-semibold 
+            className={`w-full bg-gradient-to-r from-green-600 to-blue-800 text-black py-3 rounded-lg font-semibold 
             shadow-[0_0_20px_rgba(59,130,246,0.7)] hover:shadow-[0_0_30px_rgba(59,130,246,1)] 
             transition-all duration-300 cursor-pointer ${
               isSubmitting ? "opacity-70 cursor-not-allowed" : ""
@@ -270,7 +270,7 @@ const Contact = () => {
         style={{ willChange: "transform, opacity" }}
         variants={fadeUp}
       >
-        <p className="text-2xl font-semibold text-white/90 my-3">
+        <p className="text-2xl font-semibold text-black/90 my-3">
           Let&apos;s Connect Together
         </p>
         <p className="text-gray-300 text-md md:text-xl flex items-center justify-center gap-2 font-semibold">
@@ -280,7 +280,7 @@ const Contact = () => {
             onClick={() => router.push("mailto:hello@umarweb.com")}
             variant="link"
             effect="hoverUnderline"
-            className="text-blue-500 p-0 text-md md:text-xl hover:text-blue-400 font-normal"
+            className="text-green-500 p-0 text-md md:text-xl hover:text-blue-400 font-normal"
           >
             hello@umarweb.com
           </Button>
@@ -293,7 +293,7 @@ const Contact = () => {
             onClick={() => router.push("tel:+923364190319")}
             variant="link"
             effect="hoverUnderline"
-            className="text-blue-500 p-0  text-md md:text-xl hover:text-blue-400 font-normal"
+            className="text-green-500 p-0  text-md md:text-xl hover:text-blue-400 font-normal"
           >
             (92) 336 4190319
           </Button>

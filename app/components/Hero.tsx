@@ -1,23 +1,13 @@
 "use client";
+
+import Image from "next/image";
+import img from "@/public/hero.jpg"; // your hero image
 import { Button } from "./ui/button";
 import { useRouter } from "next/navigation";
-import Aurora from "@/components/Aurora";
-import { FlipWords } from "./ui/flip-words";
 import { motion } from "framer-motion";
 
 const Hero = () => {
   const router = useRouter();
-  const words = [
-    "Powerful",
-    "Fast",
-    "Reliable",
-    "Secure",
-    "SEO-Ready",
-    "Mobile-First",
-    "Scalable",
-    "Responsive",
-    "Optimized",
-  ];
 
   const fadeUp = {
     hidden: { opacity: 0, y: 40 },
@@ -29,87 +19,85 @@ const Hero = () => {
     visible: {
       opacity: 1,
       x: 0,
-      transition: {
-        duration: 0.9,
-      },
+      transition: { duration: 0.9 },
     },
   };
 
   return (
-    <>
-      <section
-        id="home"
-        className="relative min-h-screen text-white flex items-center px-6 sm:px-7 md:px-12 lg:px-24 pt-26 md:pt-32 pb-12"
+    <section
+      id="home"
+      className="min-h-screen w-full flex flex-col md:flex-row items-center justify-between px-6 sm:px-10 lg:px-20 py-16 bg-[#FFF8E7] mt-16"
+    >
+      {/* LEFT TEXT SECTION */}
+      <motion.div
+        className="w-full md:w-1/2 flex flex-col justify-center items-center md:items-start text-center md:text-left"
+        initial="hidden"
+        animate="visible"
+        transition={{ staggerChildren: 0.15 }}
       >
-        {/* Background */}
-        {/* <div className="absolute inset-0 -z-10">
-          <Aurora
-            colorStops={["#0840b9", "#2563EB", "#0840b9"]}
-            blend={0.5}
-            amplitude={1.0}
-            speed={1}
-          />
-        </div> */}
+        <motion.div
+          className="mb-6 text-xs md:text-sm rounded-md bg-white/50 backdrop-blur-sm py-1 px-3 inline-flex items-center text-black border border-gray-200"
+          variants={fadeUp}
+        >
+          <span className="bg-green-600 rounded-sm font-semibold px-2 py-1 mr-2 text-white">
+            NEW
+          </span>
+          Trusted by businesses worldwide
+        </motion.div>
+
+        <motion.h1
+          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-gray-900"
+          variants={fadeUp}
+        >
+          AMERICA&apos;S <span className="text-green-600">BEST</span> WEB DESIGN
+          AGENCY <br /> FOR <span className="text-green-600">PET GROOMERS</span>
+        </motion.h1>
+
+        <motion.p
+          className="mt-6 text-base sm:text-lg text-gray-700 max-w-md"
+          variants={fadeRight}
+        >
+          We specialize in developing custom websites and systems that reflect
+          your brand’s identity and convert customers into loyal clients.
+        </motion.p>
 
         <motion.div
-          className="max-w-3xl"
-          initial="hidden"
-          animate="visible"
-          transition={{ staggerChildren: 0.15 }}
+          className="mt-8 flex flex-wrap justify-center md:justify-start gap-4"
+          variants={fadeRight}
         >
-          <motion.div
-            className="mb-8 backdrop-blur-lg text-xs md:text-sm rounded-md border border-white/30 py-1 pr-2 pl-2 inline-flex items-center text-white/85"
-            variants={fadeUp}
+          <Button
+            className="bg-green-600 hover:bg-green-700 text-sm md:text-md text-white font-semibold px-4 py-2 md:px-6 md:py-3 rounded-lg shadow"
+            onClick={() => router.push("/schedule-call")}
           >
-            <span className="bg-blue-600 rounded-sm font-semibold px-2 py-2 mr-2">
-              NEW
-            </span>
-            Trusted by businesses worldwide
-          </motion.div>
-
-          <motion.h1
-            className="text-5xl sm:text-4xl md:text-6xl lg:text-7xl font-semibold leading-tight"
-            variants={fadeUp}
+            FREE Strategy Call
+          </Button>
+          <Button
+            className="bg-gray-900 hover:bg-gray-800 text-sm md:text-md text-white font-semibold px-4 py-2 md:px-6 md:py-3 rounded-lg shadow"
+            onClick={() => router.push("/#strategy")}
           >
-            Smart, Modern, & <br />
-            <FlipWords words={words} className="text-blue-500" /> <br />
-            Websites to grow your business
-          </motion.h1>
-
-          {/* Subtext */}
-          <motion.p
-            className="mt-6 text-base sm:text-md md:text-lg text-gray-300 max-w-xl"
-            variants={fadeRight}
-          >
-            We specialize in developing custom websites and systems that reflect
-            your brand’s identity and convert customers into sales.
-          </motion.p>
-
-          <motion.div
-            className="mt-8 flex flex-wrap gap-3"
-            variants={fadeRight}
-          >
-            <Button
-              className="bg-blue-600 hover:bg-blue-700 text-sm  md:text-md text-white border border-white/30 font-semibold px-3 py-2 md:px-4 md:py-2"
-              onClick={() => router.push("/schedule-call")}
-              effect={"shineHover"}
-            >
-              FREE Strategy Call
-            </Button>
-            <Button
-              effect={"shineHover"}
-              className="bg-black/50 hover:bg-black/60 text-sm md:text-md border border-white/30 font-semibold px-3 py-2 md:px-4 md:py-2"
-              onClick={() => router.push("/#strategy")}
-            >
-              Our Process
-            </Button>
-          </motion.div>
+            Our Process
+          </Button>
         </motion.div>
-      </section>
+      </motion.div>
 
-      {/* Divider */}
-      <div className="w-[90%] mx-auto h-[1px] bg-gradient-to-r from-transparent via-gray-500 to-transparent" />
-    </>
+      {/* RIGHT IMAGE SECTION */}
+      <motion.div
+        className="w-full md:w-1/2 flex justify-center mt-10 md:mt-0"
+        initial={{ opacity: 0, x: 50 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.8 }}
+      >
+        <div className="relative w-full max-w-md md:max-w-lg lg:max-w-xl h-[300px] sm:h-[400px] md:h-[500px]">
+          <Image
+            src={img}
+            alt="Pet Grooming Hero"
+            fill
+            className="object-cover rounded-2xl"
+            priority
+          />
+        </div>
+      </motion.div>
+    </section>
   );
 };
 

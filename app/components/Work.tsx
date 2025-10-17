@@ -12,7 +12,7 @@ export const Work = () => {
     >
       <BorderBtn text="How We Work?" />
       <motion.div
-        className="text-4xl text-white md:text-5xl w-full space-y-8 mt-4"
+        className="text-4xl text-black md:text-5xl w-full space-y-8 mt-4"
         initial="hidden"
         whileInView={"visible"}
         variants={fadeRight}

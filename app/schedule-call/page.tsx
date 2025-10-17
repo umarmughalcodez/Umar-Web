@@ -9,7 +9,7 @@ import BorderBtn from "../components/ui/BorderBtn";
 const ScheduleCallPage = () => {
   const router = useRouter();
   return (
-    <div className="relative w-full min-h-screen flex flex-col items-center justify-center px-6 md:px-12 lg:px-16 text-white">
+    <div className="relative w-full min-h-screen flex flex-col items-center justify-center px-6 md:px-12 lg:px-16 text-black">
       {/* Aurora Background */}
       
       {/* Heading */}

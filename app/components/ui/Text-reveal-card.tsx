@@ -90,8 +90,8 @@ export const TextRevealCard = ({
         )}
       >
         {/* Background effects */}
-        <div className="absolute -top-10 -left-10 w-32 h-32 sm:w-40 sm:h-40 bg-blue-600/50 rounded-full blur-3xl"></div>
-        <div className="absolute -bottom-10 -right-10 w-40 h-40 sm:w-48 sm:h-48 bg-blue-600/50 rounded-full blur-3xl"></div>
+        <div className="absolute -top-10 -left-10 w-32 h-32 sm:w-40 sm:h-40 bg-green-600/50 rounded-full blur-3xl"></div>
+        <div className="absolute -bottom-10 -right-10 w-40 h-40 sm:w-48 sm:h-48 bg-green-600/50 rounded-full blur-3xl"></div>
 
         {children}
 
@@ -108,7 +108,7 @@ export const TextRevealCard = ({
           >
             <p
               style={{ textShadow: "4px 4px 15px rgba(0,0,0,0.5)" }}
-              className="text-[1.8rem] sm:text-[2rem] md:text-[2.5rem] lg:text-[3rem] py-6 sm:py-10 font-bold text-white bg-clip-text bg-gradient-to-b from-white to-neutral-100 text-center w-full"
+              className="text-[1.8rem] sm:text-[2rem] md:text-[2.5rem] lg:text-[3rem] py-6 sm:py-10 font-bold text-black bg-clip-text bg-gradient-to-b from-white to-neutral-100 text-center w-full"
             >
               {revealText}
             </p>
@@ -122,7 +122,7 @@ export const TextRevealCard = ({
               opacity: widthPercentage > 0 ? 1 : 0,
             }}
             transition={{ duration: isMouseOver ? 0 : 0.4 }}
-            className="h-32 sm:h-40 w-[6px] sm:w-[8px] bg-gradient-to-b from-transparent via-blue-500 to-transparent absolute z-50"
+            className="h-32 sm:h-40 w-[6px] sm:w-[8px] bg-gradient-to-b from-transparent via-green-500 to-transparent absolute z-50"
           ></motion.div>
 
           {/* Base text */}
@@ -152,7 +152,7 @@ export const TextRevealCardTitle = ({
   children: React.ReactNode;
   className?: string;
 }) => (
-  <h2 className={twMerge("text-white text-lg mb-2 text-center", className)}>
+  <h2 className={twMerge("text-black text-lg mb-2 text-center", className)}>
     {children}
   </h2>
 );

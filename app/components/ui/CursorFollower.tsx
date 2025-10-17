@@ -46,7 +46,7 @@ export default function CursorFollower() {
   return (
     <div
       ref={dotRef}
-      className="pointer-events-none fixed top-0 left-0 w-3 h-3 rounded-full bg-white z-[9999]"
+      className="pointer-events-none fixed top-0 left-0 w-3 h-3 rounded-full bg-green-500 z-[9999]"
       style={{ transform: "translate(-50%, -50%)" }}
     />
   );

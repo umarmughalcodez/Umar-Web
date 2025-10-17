@@ -78,7 +78,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="w-full px-12 xl:px-30 lg:px-26 py-10 border-t-2 border-t-white/40 text-white bg-black/10 mt-12">
+    <footer className="w-full px-12 xl:px-30 lg:px-26 py-10 border-t-2 border-t-white/40 text-black bg-black/10 mt-12">
       <Toaster />
       {/* Main Layout */}
       <div className="flex flex-col lg:flex-row justify-between items-start lg:items-start gap-12">
@@ -123,7 +123,7 @@ const Footer = () => {
               type="submit"
               variant="default"
               effect="expandIcon"
-              className="text-white cursor-pointer bg-blue-700 hover:bg-blue-600 
+              className="text-black cursor-pointer bg-blue-700 hover:bg-green-600 
               shadow-[0_0_20px_rgba(59,130,246,0.7)] hover:shadow-[0_0_30px_rgba(59,130,246,1)] 
               transition-all duration-300 font-semibold
               text-xs sm:text-sm md:text-base px-2 md:px-3 py-0"
@@ -139,7 +139,7 @@ const Footer = () => {
               onClick={() => router.push("mailto:umar@umarweb.com")}
               variant={"link"}
               effect={"hoverUnderline"}
-              className="text-blue-500 hover:text-blue-400 hover:cursor-pointer p-0 mx-2 text-base"
+              className="text-green-500 hover:text-blue-400 hover:cursor-pointer p-0 mx-2 text-base"
             >
               Email Us &#8599;
             </Button>
@@ -156,8 +156,8 @@ const Footer = () => {
           variants={fadeRight}
           transition={{ duration: 0.5 }}
         >
-          <div className="flex flex-col space-y-1 text-white/75 items-start justify-center">
-            <p className="font-semibold text-white mb-2">Navigations</p>
+          <div className="flex flex-col space-y-1 text-black/75 items-start justify-center">
+            <p className="font-semibold text-black mb-2">Navigations</p>
             <Button
               variant="link"
               effect="hoverUnderline"
@@ -195,7 +195,7 @@ const Footer = () => {
               onClick={() => router.push("/contact")}
               variant="link"
               effect="hoverUnderline"
-              className="text-blue-500 p-0 hover:text-blue-400"
+              className="text-green-500 p-0 hover:text-blue-400"
             >
               Contact Us
             </Button>
@@ -203,14 +203,14 @@ const Footer = () => {
               onClick={() => router.push("/schedule-call")}
               variant="link"
               effect="hoverUnderline"
-              className="text-blue-500 p-0 hover:text-blue-400"
+              className="text-green-500 p-0 hover:text-blue-400"
             >
               Schedule Free Call
             </Button>
           </div>
 
           <motion.div
-            className="flex flex-col text-white/75 items-start "
+            className="flex flex-col text-black/75 items-start "
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.1 }}
@@ -218,7 +218,7 @@ const Footer = () => {
             variants={fadeRight}
             transition={{ duration: 0.5 }}
           >
-            <p className="font-semibold text-white mb-2">Socials</p>
+            <p className="font-semibold text-black mb-2">Socials</p>
             <Button
               className="p-0 hover:text-pink-500"
               variant="link"

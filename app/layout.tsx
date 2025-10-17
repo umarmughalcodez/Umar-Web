@@ -8,6 +8,7 @@ import CursorFollower from "./components/ui/CursorFollower";
 import SmoothScrollProvider from "./components/ui/SmoothScrollProvider";
 import Script from "next/script";
 import GradualBlurWrapper from "./components/ui/GradualBlurWrapper";
+import FlyonuiScript from "@/components/FlyonuiScript";
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",
@@ -75,7 +76,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" data-arp="" dir="ltr">
-      <body className={`${montserrat.variable} antialiased bg-black`}>
+      <body className={`${montserrat.variable} antialiased bg-white`}>
         <CursorFollower />
         <Navbar />
         <SmoothScrollProvider>{children}</SmoothScrollProvider>
@@ -103,6 +104,7 @@ export default function RootLayout({
             }),
           }}
         />
+        <FlyonuiScript />
       </body>
     </html>
   );
