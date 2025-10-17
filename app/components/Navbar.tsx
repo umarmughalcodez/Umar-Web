@@ -6,7 +6,7 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import AnimatedButton from "./AnimatedBtn";
 import { Button } from "./ui/button";
-import img from "@/public/logo.png";
+import img from "@/public/Updated.png";
 
 const Navbar = () => {
   const router = useRouter();

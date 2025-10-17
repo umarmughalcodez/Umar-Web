@@ -26,7 +26,7 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="min-h-screen w-full flex flex-col md:flex-row items-center justify-between px-6 sm:px-10 lg:px-20 py-16 bg-[#FFF8E7] mt-16"
+      className="min-h-screen w-full flex flex-col md:flex-row items-center justify-between px-6 sm:px-10 lg:px-20 py-16 bg-white mt-16"
     >
       {/* LEFT TEXT SECTION */}
       <motion.div
