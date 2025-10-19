@@ -9,7 +9,7 @@ import { motion } from "framer-motion";
 import {
   ReactCompareSlider,
   ReactCompareSliderImage,
-} from "react-compare-slider"; // ✅ Correct import
+} from "react-compare-slider";
 
 const About = () => {
   const fadeUp = {
@@ -23,104 +23,93 @@ const About = () => {
   };
 
   return (
-    <>
-      <div
-        id="about"
-        className="w-full h-auto flex flex-col items-center p-5 xl:py-14 xl:px-26 text-black lg:flex-row justify-center space-x-3 space-y-8 mb-4"
+    <section
+      id="about"
+      className="w-full flex flex-col lg:flex-row items-center justify-center text-black py-16 px-6 md:px-12 xl:px-24 bg-white"
+    >
+      {/* Left Section */}
+      <motion.div
+        className="lg:w-1/2 w-full max-w-xl space-y-8"
+        initial="hidden"
+        whileInView="visible"
+        transition={{ staggerChildren: 0.15 }}
       >
-        {/* Left Content */}
-        <motion.div
-          className="lg:w-1/2 w-[90%] mt-8 px-10"
-          initial="hidden"
-          whileInView="visible"
-          transition={{ staggerChildren: 0.15 }}
-        >
-          <motion.div variants={fadeUp}>
-            <BorderBtn text="About Umar" />
-          </motion.div>
-
-          <motion.div variants={fadeUp} className="mt-12">
-            <div className="md:text-5xl text-4xl font-semibold mb-8">
-              <p>Building 
-                <span className="text-green-500">
-
-                {" "}Trustworthy {""}
-                </span>
-                 Websites, Turning</p>
-              <p>Visitors Into <span className="text-green-500">
-
-                {""}Loyal Pet Parents!{""}
-                </span></p>
-            </div>
-            <div className="text-gray-800">
-              <p>Crafting stunning websites that reflect your salon’s care, comfort, and love for pets.</p>
-              <p> Helping pet grooming businesses shine online and attract more furry clients effortlessly.</p>
-            </div>
-          </motion.div>
-
-          {/* Checkpoints */}
-          <motion.div
-            variants={fadeUp}
-            className="flex items-center justify-start min-h-[40px]"
-          >
-            <div className="w-[40%] h-[1px] bg-gradient-to-r from-transparent via-green-500 to-transparent mb-3 mt-3" />
-          </motion.div>
-          <motion.div variants={fadeUp} className="flex space-x-3 mt-2 mb-5">
-            <PiSealCheck className="text-green-500 text-2xl" />
-            <span>Expert in Pet Grooming Website Design</span>
-          </motion.div>
-          <motion.div variants={fadeUp} className="flex space-x-3 mt-2 mb-5">
-            <PiSealCheck className="text-green-500 text-2xl" />
-            <span>Track Record of Driving Online Growth</span>
-          </motion.div>
-          <motion.div variants={fadeUp} className="flex space-x-3 mt-2 mb-12">
-            <PiSealCheck className="text-green-500 text-2xl" />
-            <span>Proven Success in Boosting Bookings for Grooming Businesses</span>
-          </motion.div>
-          
-
-          {/* Buttons + Ratings + Experience */}
-          <motion.div
-            variants={fadeUp}
-            className="my-6 flex flex-col sm:flex-row items-center sm:space-x-6 space-y-6 sm:space-y-0 text-black"
-          >
-            <ShinyButton text="Get Free Demo" path="/schedule-call" />
-
-            {/* Divider */}
-            <div className="hidden sm:block h-[60px] w-[1px] bg-gradient-to-b from-transparent via-green-500 to-transparent" />
-
-            {/* Rating */}
-            <div className="flex flex-col items-center text-center space-y-2">
-              <span className="flex space-x-1 text-lg">
-                <IoStar />
-                <IoStar />
-                <IoStar />
-                <IoStar />
-                <IoStar />
-              </span>
-              <span className="text-sm text-gray-300">5.0 Stars Rating</span>
-            </div>
-
-            {/* Divider */}
-            <div className="hidden sm:block h-[60px] w-[1px] bg-gradient-to-b from-transparent via-green-500 to-transparent" />
-
-            {/* Experience */}
-            <div className="flex flex-col items-center text-center">
-              <span className="font-semibold">3+ Years</span>
-              <span className="text-sm text-gray-300">Experience</span>
-            </div>
-          </motion.div>
+        <motion.div variants={fadeUp}>
+          <BorderBtn text="About Umar" />
         </motion.div>
 
-        {/* Right Compare Image Section */}
+        <motion.div variants={fadeUp}>
+          <h2 className="text-4xl md:text-5xl font-semibold leading-tight mb-6">
+            Building{" "}
+            <span className="text-green-500">Trustworthy</span> Websites,
+            Turning <br />
+            Visitors Into{" "}
+            <span className="text-green-500">Loyal Pet Parents!</span>
+          </h2>
+          <p className="text-gray-700 leading-relaxed">
+            We craft stunning, high-converting websites that reflect your
+            grooming salon’s love, care, and comfort for pets — helping your
+            business attract more furry clients and grow effortlessly.
+          </p>
+        </motion.div>
+
+        {/* Highlights */}
+        <motion.div variants={fadeUp} className="mt-6 space-y-4">
+          <div className="flex items-center space-x-3">
+            <PiSealCheck className="text-green-500 text-2xl" />
+            <span>Expert in Pet Grooming Website Design</span>
+          </div>
+          <div className="flex items-center space-x-3">
+            <PiSealCheck className="text-green-500 text-2xl" />
+            <span>Proven Record of Boosting Online Growth</span>
+          </div>
+          <div className="flex items-center space-x-3">
+            <PiSealCheck className="text-green-500 text-2xl" />
+            <span>Increased Client Bookings for Grooming Businesses</span>
+          </div>
+        </motion.div>
+
+        {/* CTA + Ratings + Experience */}
         <motion.div
-          className="w-[90%] lg:w-1/2 h-auto relative mb-12 flex items-center justify-center p-2 bg-green-500 rounded-3xl"
-          initial="hidden"
-          whileInView="visible"
-          variants={fadeRight}
-          viewport={{ once: true, amount: 0.1 }}
-          style={{ willChange: "transform, opacity" }}
+          variants={fadeUp}
+          className="mt-10 flex flex-col sm:flex-row items-center justify-start sm:space-x-8 space-y-6 sm:space-y-0"
         >
+          {/* CTA Button */}
+          <ShinyButton text="Free Website Audit" path="/schedule-call" />
+
+          {/* Divider */}
+          <div className="hidden sm:block h-[60px] w-[1px] bg-gradient-to-b from-transparent via-green-500 to-transparent" />
+
+          {/* Rating */}
+          <div className="flex flex-col items-center text-center space-y-1">
+            <div className="flex space-x-1 text-green-500">
+              {[...Array(5)].map((_, i) => (
+                <IoStar key={i} />
+              ))}
+            </div>
+            <p className="text-sm text-gray-600">5.0 Stars Rating</p>
+          </div>
+
+          {/* Divider */}
+          <div className="hidden sm:block h-[60px] w-[1px] bg-gradient-to-b from-transparent via-green-500 to-transparent" />
+
+          {/* Experience */}
+          <div className="flex flex-col items-center text-center">
+            <span className="font-semibold text-lg text-green-500">Affordable Prices</span>
+            <span className="text-sm text-gray-600">Different Plans Available</span>
+          </div>
+        </motion.div>
+      </motion.div>
+
+      {/* Right Compare Section */}
+      <motion.div
+        className="w-full lg:w-1/2 flex justify-center mt-12 lg:mt-0"
+        initial="hidden"
+        whileInView="visible"
+        variants={fadeRight}
+        viewport={{ once: true }}
+      >
+        <div className="w-full max-w-xl bg-green-500 p-3 rounded-3xl">
           <ReactCompareSlider
             boundsPadding={0}
             itemOne={
@@ -139,7 +128,6 @@ const About = () => {
                 }}
               />
             }
-            keyboardIncrement="5%"
             position={50}
             style={{
               width: "100%",
@@ -147,12 +135,9 @@ const About = () => {
               borderRadius: "1rem",
             }}
           />
-        </motion.div>
-      </div>
-      
-
-      <div className="w-[90%] h-[1px] bg-gradient-to-r from-transparent via-gray-500 to-transparent mb-7" />
-    </>
+        </div>
+      </motion.div>
+    </section>
   );
 };
 

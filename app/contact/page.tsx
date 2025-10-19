@@ -1,4 +1,3 @@
-// app/contact/page.tsx
 "use client";
 
 import React, { useState } from "react";
@@ -68,73 +67,69 @@ const Contact = () => {
       } else {
         toast.error(data.error || "Failed to submit form");
       }
-    } catch (error) {
-      if (error instanceof Error) {
-        toast.error("Network Error. Please try again later.");
-      }
+    } catch {
+      toast.error("Network Error. Please try again later.");
     } finally {
       setIsSubmitting(false);
     }
   };
 
   return (
-    <div className="w-full pt-34 flex items-center justify-center flex-col px-6 md:px-12 lg:px-16 relative">
+    <div className="w-full pt-34 flex items-center justify-center flex-col px-6 md:px-12 lg:px-16 relative bg-white text-gray-900">
       <Toaster
         position="top-center"
         toastOptions={{
           duration: 4000,
           style: {
-            background: "#363636",
+            background: "#16A34A",
             color: "#fff",
           },
         }}
       />
 
-      
-
+      {/* Header Tag */}
       <motion.div
-        className="backdrop-blur-xl text-sm rounded-md border border-white/30 py-3 w-auto pr-2 pl-1 text-black/85 mb-16"
+        className="text-sm rounded-md border border-green-200 py-2 px-3 bg-green-50 text-green-700 mb-16 font-semibold"
         initial="hidden"
         whileInView={"visible"}
         viewport={{ once: true, amount: 0.1 }}
-        style={{ willChange: "transform, opacity" }}
         variants={fadeUp}
       >
-        <span className="bg-green-600 rounded-md font-semibold px-2 py-2 mr-2">
+        <span className="bg-green-600 rounded-md text-white font-semibold px-2 py-1 mr-2">
           24/7
         </span>
         Let&apos;s Work Together
       </motion.div>
 
+      {/* Title */}
       <motion.div
-        className="text-5xl md:text-6xl text-black font-semibold space-y-3 text-center"
+        className="text-5xl md:text-6xl text-gray-900 font-bold space-y-3 text-center"
         initial="hidden"
         whileInView={"visible"}
         viewport={{ once: true, amount: 0.1 }}
-        style={{ willChange: "transform, opacity" }}
         variants={fadeUp}
       >
         <p>Any Questions?</p>
-        <p className="text-black/70">Feel Free to Ask</p>
-        <p className="mt-6 text-sm text-black/60 font-normal text-center mb-16">
+        <p className="text-green-600">Feel Free to Ask</p>
+        <p className="mt-6 text-base text-gray-600 font-normal text-center mb-16">
           Whether you have a question, need assistance, <br />
-          or want to start a new project, our team is here to help.
+          or want to start a new project — our team is here to help.
         </p>
       </motion.div>
 
+      {/* Form */}
       <motion.div
-        className="w-full max-w-4xl mx-auto bg-black/50 border border-white/20 rounded-2xl p-6 sm:p-10 shadow-lg"
+        className="w-full max-w-4xl mx-auto bg-green-50 border border-green-200 rounded-2xl p-6 sm:p-10 shadow-lg"
         initial="hidden"
         whileInView={"visible"}
         viewport={{ once: true, amount: 0.1 }}
-        style={{ willChange: "transform, opacity" }}
         variants={fadeRight}
       >
         <form className="space-y-6" onSubmit={handleSubmit}>
           {/* First Row */}
           <div className="flex flex-col sm:flex-row gap-4">
             <div className="flex-1">
-              <label className="block text-sm text-gray-300 mb-1">
+              <label className="block text-sm text-gray-700 mb-1">
                 First name *
               </label>
               <input
@@ -142,21 +137,21 @@ const Contact = () => {
                 type="text"
                 name="f_name"
                 placeholder="Jane"
-                className="w-full bg-black/20 border border-gray-700 text-black rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
+                className="w-full bg-white border border-green-300 text-gray-900 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
                 value={form.f_name}
                 onChange={handleChange}
                 disabled={isSubmitting}
               />
             </div>
             <div className="flex-1">
-              <label className="block text-sm text-gray-300 mb-1">
+              <label className="block text-sm text-gray-700 mb-1">
                 Last Name
               </label>
               <input
                 type="text"
                 name="l_name"
                 placeholder="Smith"
-                className="w-full bg-black/20 border border-gray-700 text-black rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
+                className="w-full bg-white border border-green-300 text-gray-900 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
                 value={form.l_name}
                 onChange={handleChange}
                 disabled={isSubmitting}
@@ -167,14 +162,12 @@ const Contact = () => {
           {/* Second Row */}
           <div className="flex flex-col sm:flex-row gap-4">
             <div className="flex-1">
-              <label className="block text-sm text-gray-300 mb-1">
-                Email *
-              </label>
+              <label className="block text-sm text-gray-700 mb-1">Email *</label>
               <input
                 type="email"
                 name="email"
                 placeholder="name@email.com"
-                className="w-full bg-black/20 border border-gray-700 text-black rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
+                className="w-full bg-white border border-green-300 text-gray-900 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
                 value={form.email}
                 onChange={handleChange}
                 required
@@ -182,14 +175,12 @@ const Contact = () => {
               />
             </div>
             <div className="flex-1">
-              <label className="block text-sm text-gray-300 mb-1">
-                Phone *
-              </label>
+              <label className="block text-sm text-gray-700 mb-1">Phone *</label>
               <input
                 type="tel"
                 name="phone"
                 placeholder="+012-345-6789"
-                className="w-full bg-black/20 border border-gray-700 text-black rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
+                className="w-full bg-white border border-green-300 text-gray-900 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
                 value={form.phone}
                 onChange={handleChange}
                 required
@@ -201,28 +192,26 @@ const Contact = () => {
           {/* Third Row */}
           <div className="flex flex-col sm:flex-row gap-4">
             <div className="flex-1">
-              <label className="block text-sm text-gray-300 mb-1">
+              <label className="block text-sm text-gray-700 mb-1">
                 Business Name
               </label>
               <input
                 type="text"
                 name="business_name"
-                placeholder="FastLane Productions"
-                className="w-full bg-black/20 border border-gray-700 text-black rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
+                placeholder="Happy Tails Studio"
+                className="w-full bg-white border border-green-300 text-gray-900 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
                 value={form.business_name}
                 onChange={handleChange}
                 disabled={isSubmitting}
               />
             </div>
             <div className="flex-1">
-              <label className="block text-sm text-gray-300 mb-1">
-                Industry
-              </label>
+              <label className="block text-sm text-gray-700 mb-1">Industry</label>
               <input
                 name="industry"
                 type="text"
-                placeholder="Film Production"
-                className="w-full bg-black/20 border border-gray-700 text-black rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
+                placeholder="Pet Grooming"
+                className="w-full bg-white border border-green-300 text-gray-900 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
                 value={form.industry}
                 onChange={handleChange}
                 disabled={isSubmitting}
@@ -232,13 +221,11 @@ const Contact = () => {
 
           {/* Message Field */}
           <div>
-            <label className="block text-sm text-gray-300 mb-1">
-              Message *
-            </label>
+            <label className="block text-sm text-gray-700 mb-1">Message *</label>
             <textarea
-              placeholder="Type your message..."
+              placeholder="Tell us how we can help your grooming business shine!"
               rows={5}
-              className="w-full bg-black/20 border border-gray-700 text-black rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
+              className="w-full bg-white border border-green-300 text-gray-900 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
               value={form.message}
               onChange={handleChange}
               name="message"
@@ -252,9 +239,7 @@ const Contact = () => {
             effect={"shineHover"}
             type="submit"
             disabled={isSubmitting}
-            className={`w-full bg-gradient-to-r from-green-600 to-blue-800 text-black py-3 rounded-lg font-semibold 
-            shadow-[0_0_20px_rgba(59,130,246,0.7)] hover:shadow-[0_0_30px_rgba(59,130,246,1)] 
-            transition-all duration-300 cursor-pointer ${
+            className={`w-full bg-green-600 text-white py-3 rounded-lg font-semibold shadow-lg hover:bg-green-700 transition-all duration-300 ${
               isSubmitting ? "opacity-70 cursor-not-allowed" : ""
             }`}
           >
@@ -262,38 +247,39 @@ const Contact = () => {
           </Button>
         </form>
       </motion.div>
+
+      {/* Contact Info Section */}
       <motion.div
-        className="w-full max-w-2xl mx-auto bg-black/30 border border-gray-600 rounded-xl p-6 mb-10 text-center mt-10"
+        className="w-full max-w-2xl mx-auto bg-green-50 border border-green-200 rounded-xl p-6 mb-10 text-center mt-10"
         initial="hidden"
         whileInView={"visible"}
         viewport={{ once: true, amount: 0.1 }}
-        style={{ willChange: "transform, opacity" }}
         variants={fadeUp}
       >
-        <p className="text-2xl font-semibold text-black/90 my-3">
+        <p className="text-2xl font-semibold text-gray-900 my-3">
           Let&apos;s Connect Together
         </p>
-        <p className="text-gray-300 text-md md:text-xl flex items-center justify-center gap-2 font-semibold">
-          <LucideMail className="text-blue-400" size={22} />
+        <p className="text-gray-700 text-md md:text-xl flex items-center justify-center gap-2 font-semibold">
+          <LucideMail className="text-green-600" size={22} />
           Email:{" "}
           <Button
             onClick={() => router.push("mailto:hello@umarweb.com")}
             variant="link"
             effect="hoverUnderline"
-            className="text-green-500 p-0 text-md md:text-xl hover:text-blue-400 font-normal"
+            className="text-green-700 p-0 text-md md:text-xl hover:text-green-800 font-normal"
           >
             hello@umarweb.com
           </Button>
         </p>
 
-        <p className="text-gray-300 mt-2 text-md md:text-xl flex items-center justify-center gap-2 font-semibold">
-          <Phone className="text-blue-400" size={22} />
+        <p className="text-gray-700 mt-2 text-md md:text-xl flex items-center justify-center gap-2 font-semibold">
+          <Phone className="text-green-600" size={22} />
           Phone:{" "}
           <Button
             onClick={() => router.push("tel:+923364190319")}
             variant="link"
             effect="hoverUnderline"
-            className="text-green-500 p-0  text-md md:text-xl hover:text-blue-400 font-normal"
+            className="text-green-700 p-0 text-md md:text-xl hover:text-green-800 font-normal"
           >
             (92) 336 4190319
           </Button>

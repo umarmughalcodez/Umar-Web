@@ -86,9 +86,9 @@ export default function TestimonialsCarousel() {
   const handleTouchEnd = () => setIsDragging(false);
 
   return (
-    <section className="relative overflow-hidden py-16 bg-gradient-to-b from-[#f6fff9] to-[#e7fbee] border-t border-green-100">
+    <section className="relative overflow-hidden py-16 bg-white">
       <div className="max-w-6xl mx-auto px-6">
-        <h2 className="text-center text-3xl sm:text-4xl font-bold text-green-700 mb-10">
+        <h2 className="text-center text-3xl sm:text-4xl font-bold text-green-500 mb-10">
           What Our Happy Clients Say 🐾
         </h2>
 

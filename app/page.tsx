@@ -20,12 +20,13 @@ const Home = () => {
       <div className="relative">
         <StatsSection />
         <About />
-        <div className="w-screen">
+      <FrustrationsToSolutions />
+        <div className="w-screen mt-10 mb-6">
 
          <CurvedLoop 
       marqueeText="
 
-✦ Your next client is just one click away ✦ Turn fur trims into full bookings ✦ Build a brand pets (and owners) love ✦ Be the name every pet parent remembers ✦ Websites that make tails wag ✦ Transform your salon into a local legend ✦ Look premium, Book premium ✦ Stand out, Book out "
+✦ Your next client is just one click away ✦ Turn fur trims into full bookings ✦ Build a brand pets & Owners love ✦ Be the name every pet parent remembers ✦ Websites that make tails wag ✦ Transform your salon into a local legend ✦ Look premium, Book premium ✦ Stand out, Book out "
       speed={6}
       curveAmount={0}
       direction="left"
@@ -33,14 +34,13 @@ const Home = () => {
       className="text-black bg-red-500"
       />
       </div>
-      <FrustrationsToSolutions />
       <OurCommitment />
         {/* <Projects /> */}
         <Work />
         <Testimonials />
         <FAQSection />
         <Reasons />
-        {/* <AnimatedGradientCard /> */}
+        <AnimatedGradientCard />
       </div>
     </div>
   );

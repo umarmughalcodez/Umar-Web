@@ -89,7 +89,7 @@ export default function OurCommitment() {
           <div className="relative w-[320px] h-[320px] md:w-[400px] md:h-[400px] rounded-2xl overflow-hidden shadow-lg">
             <Image
               src={img} // replace with actual image path
-              alt="Dean White - Pawfect Web Design Agency"
+              alt="Umar Web Pet Grooming Web Design Agency"
               fill
               className="object-cover"
               priority

@@ -73,9 +73,12 @@ const StatsSection = () => {
   ];
 
   return (
+    <>
+      <div className="w-[100%] h-[1px] bg-gradient-to-r from-transparent via-green-500 to-transparent mt-6" />
+    
     <section
       ref={ref}
-      className="w-full bg-[#FFF8E7] py-12 border-t border-green-100"
+      className="w-full bg-white py-4"
     >
       <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
         {stats.map((stat, index) => (
@@ -102,6 +105,9 @@ const StatsSection = () => {
         ))}
       </div>
     </section>
+      <div className="w-[100%] h-[1px] bg-gradient-to-r from-transparent via-green-500 to-transparent mb-7" />
+
+</>
   );
 };
 

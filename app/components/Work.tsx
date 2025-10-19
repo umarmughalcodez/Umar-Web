@@ -9,7 +9,7 @@ export const Work = () => {
   return (
     <div
       id="strategy"
-      className="w-full h-auto flex flex-col items-start justify-center mt-2 px-8 py-4 xl:p-26 bg-gradient-to-b from-white to-green-50"
+      className="w-full h-auto flex flex-col items-start justify-center mt-2 px-8 py-4 xl:p-26 bg-gradient-to-b from-white via-green-100 to-white"
     >
       <BorderBtn text="How We Work?" />
 

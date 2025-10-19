@@ -78,7 +78,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="w-full px-12 xl:px-30 lg:px-26 py-10 border-t-2 border-t-white/40 text-black bg-black/10 mt-12">
+    <footer className="w-full px-12 xl:px-30 lg:px-26 py-10 border-t-2 border-t-green-200 text-black bg-gradient-to-b from-white to-green-200 mt-12">
       <Toaster />
       {/* Main Layout */}
       <div className="flex flex-col lg:flex-row justify-between items-start lg:items-start gap-12">
@@ -95,7 +95,7 @@ const Footer = () => {
                 onClick={() => router.push("/#home")}
               />
             </div>
-            <div className="w-[100%] h-[1px] bg-gradient-to-r from-transparent via-gray-500 to-transparent mt-6" />
+            <div className="w-[100%] h-[1px] bg-gradient-to-r from-transparent via-green-500 to-transparent mt-6" />
           </div>
 
           {/* Email Subscription */}
@@ -109,29 +109,30 @@ const Footer = () => {
             style={{ willChange: "transform, opacity" }}
             variants={fadeRight}
             transition={{ duration: 0.5 }}
-            className="flex items-center bg-black/40 rounded-xl overflow-hidden border border-white/30 px-1 py-1 pl-3 pr-1 justify-center max-w-md"
+            className="flex items-center bg-green-50 rounded-xl overflow-hidden border border-green-200 px-1 py-1 pl-3 pr-1 justify-center max-w-md"
             onSubmit={handleSubmit}
           >
             <input
               placeholder="Enter Your Email..."
-              className="flex-1 bg-transparent text-gray-300 placeholder-gray-500 focus:outline-none 
+              className="flex-1 bg-transparent text-green-500 placeholder-green-500 focus:outline-none 
               text-xs sm:text-sm md:text-sm"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
             <Button
-              type="submit"
-              variant="default"
-              effect="expandIcon"
-              className="text-black cursor-pointer bg-blue-700 hover:bg-green-600 
-              shadow-[0_0_20px_rgba(59,130,246,0.7)] hover:shadow-[0_0_30px_rgba(59,130,246,1)] 
-              transition-all duration-300 font-semibold
-              text-xs sm:text-sm md:text-base px-2 md:px-3 py-0"
-              iconPlacement="right"
-              icon={LucideBell}
-            >
-              Subscribe
-            </Button>
+  type="submit"
+  variant="default"
+  effect="expandIcon"
+  className="text-white cursor-pointer bg-green-600 hover:bg-green-700 
+  shadow-[0_0_20px_rgba(22,163,74,0.6)] hover:shadow-[0_0_30px_rgba(22,163,74,0.8)] 
+  transition-all duration-300 font-semibold
+  text-xs sm:text-sm md:text-base px-2 md:px-3 py-0 rounded-lg"
+  iconPlacement="right"
+  icon={LucideBell}
+>
+  Subscribe
+</Button>
+
           </motion.form>
           <div className="flex items-center">
             Or Feel Free to{" "}

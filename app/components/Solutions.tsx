@@ -5,14 +5,14 @@ import { FaPaw, FaCheckCircle } from "react-icons/fa";
 export default function PetGroomingFrustrations() {
   return (
     <section className="bg-white py-16 px-6 md:px-20">
-      <h2 className="text-center text-3xl md:text-4xl font-bold text-green-500 mb-10">
-        Pet Groomers’{" "}
-        <span className="text-gray-800">&nbsp;Frustrations Into&nbsp;</span>
-        <span className="text-green-500 inline-flex items-center">
-          PAW-FECT Solutions&nbsp;
-          <FaPaw className="text-green-500 w-6 h-6 md:w-7 md:h-7" />
-        </span>
-      </h2>
+      <div className="text-center text-3xl md:text-4xl font-bold text-green-500 mb-10">
+  Pet Groomers’{" "}
+  <span className="text-gray-800">&nbsp;Frustrations Into&nbsp;</span>
+  <span className="text-green-500 inline-flex items-center justify-center">
+    PAW-FECT Solutions
+  </span>
+</div>
+
 
       <div className="grid md:grid-cols-2 gap-8 items-stretch">
         {/* LEFT SIDE - FRUSTRATIONS */}

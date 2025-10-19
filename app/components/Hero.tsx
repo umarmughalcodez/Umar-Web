@@ -75,7 +75,7 @@ const Hero = () => {
             className="bg-gray-900 hover:bg-gray-800 text-sm md:text-md text-white font-semibold px-4 py-2 md:px-6 md:py-3 rounded-lg shadow"
             onClick={() => router.push("/#strategy")}
           >
-            Our Process
+            Request Demo Site
           </Button>
         </motion.div>
       </motion.div>

@@ -7,16 +7,18 @@ import { fadeRight, fadeUp } from "@/lib/animations";
 
 const Reasons = () => {
   const reasons = [
-    "Fully Mobile-Friendly Website for All Devices",
-    "Rank Higher on Google & Be Found Locally & Easily",
-    "Affordable Packages Designed for Small Businesses",
-    "Fast Loading, Zero Frustration",
-    "Modern & Professional Designs That Build Trust",
-    "Proven Results with 3+ Years of Experience",
-    "Safe, Secure, and Always Reliable",
-    "24/7 Ongoing Support & Guidance",
-    "SEO, Marketing, and Growth Ready",
-  ];
+  "No More 'Ruff' Websites — Get a Paw-fect Design Clients Love",
+  "Fully Mobile-Friendly — Looks Great on Every Screen, Big or Small",
+  "Show Up on Google When Pet Parents Search Nearby",
+  "Affordable Packages (Monthly & One-time) Made for Small Grooming Businesses",
+  "Fast, Smooth & No More 'Slow as a Snail' Sites",
+  "Modern, Trust-Building Designs That Make Pet Owners Book Instantly",
+  "Over 2 Years of Proven Experience in Grooming Web Design",
+  "Safe, Secure & Stress-Free — You Focus on Pets, We Handle Tech",
+  "24/7 Support — Because Pet Pros Deserve Peace of Mind",
+  "SEO + Marketing Ready — Built to Grow Your Grooming Brand",
+];
+
 
   return (
     <div className="pt-16 text-black flex flex-col items-center justify-center w-full px-6 md:px-12 lg:px-20">
@@ -34,7 +36,7 @@ const Reasons = () => {
       >
         <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-center mt-4 flex-col flex space-y-2">
           <span>Why You Should</span>
-          <span className="text-black/70">Work With Us?</span>
+          <span className="text-green-400">Work With Us?</span>
         </h2>
 
         {/* Subheading */}
@@ -68,7 +70,7 @@ const Reasons = () => {
           </motion.div>
         ))}
       </motion.div>
-      <div className="w-[100%] h-[1px] bg-gradient-to-r from-transparent via-gray-500 to-transparent mt-12 text-black/10" />
+      <div className="w-[100%] h-[1px] bg-gradient-to-r from-transparent via-green-500 to-transparent mt-12 text-black/10" />
     </div>
   );
 };

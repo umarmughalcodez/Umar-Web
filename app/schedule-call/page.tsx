@@ -9,19 +9,19 @@ import BorderBtn from "../components/ui/BorderBtn";
 const ScheduleCallPage = () => {
   const router = useRouter();
   return (
-    <div className="relative w-full min-h-screen flex flex-col items-center justify-center px-6 md:px-12 lg:px-16 text-black">
-      {/* Aurora Background */}
-      
+    <div className="relative w-full min-h-screen flex flex-col items-center justify-center px-6 md:px-12 lg:px-16 text-gray-900 bg-white">
       {/* Heading */}
-      <div className=" text-center pt-40 grid place-items-center space-y-3">
+      <div className="text-center pt-40 grid place-items-center space-y-3">
         <BorderBtn text="Schedule Call" />
         <motion.h1
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="text-4xl md:text-5xl font-bold mb-4"
+          className="text-4xl md:text-5xl font-bold mb-4 text-gray-900"
         >
-          Schedule Your Free Consultation
+          Schedule Your <span className="text-green-500">
+            Free Consultation
+            </span> 
         </motion.h1>
       </div>
 
@@ -29,7 +29,7 @@ const ScheduleCallPage = () => {
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2, duration: 0.5 }}
-        className="text-gray-400 text-center max-w-lg mb-8"
+        className="text-gray-600 text-center max-w-lg mb-8"
       >
         Pick a time that works for you. Once you book, the slot will be reserved
         and you’ll get a confirmation email with all the details.
@@ -40,10 +40,10 @@ const ScheduleCallPage = () => {
         initial={{ opacity: 0, x: -50 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 1 }}
-        className="w-full max-w-3xl bg-white/10 rounded-2xl shadow-lg p-4"
+        className="w-full max-w-3xl bg-green-50 rounded-2xl shadow-lg p-4 border border-green-200"
       >
         <iframe
-          src="https://calendly.com/umar-umarweb/30min" // ⬅️ REPLACE with your Calendly link
+          src="https://calendly.com/umar-umarweb/30min"
           width="100%"
           height="700"
           style={{
@@ -55,13 +55,13 @@ const ScheduleCallPage = () => {
       </motion.div>
 
       {/* Extra Tip */}
-      <p className="text-gray-300 text-md mt-6 text-center">
+      <p className="text-gray-700 text-md mt-6 text-center">
         Can’t find a suitable time or Getting Error?{" "}
         <Button
           variant={"link"}
           effect={"hoverUnderline"}
           onClick={() => router.push("mailto:umar@umarweb.com")}
-          className="text-blue-400 p-1 hover:underline"
+          className="text-green-600 p-1 hover:underline"
         >
           Email me
         </Button>{" "}
