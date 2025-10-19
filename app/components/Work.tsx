@@ -9,7 +9,7 @@ export const Work = () => {
   return (
     <div
       id="strategy"
-      className="w-full h-auto flex flex-col items-start justify-center mt-2 px-8 py-4 xl:p-26 bg-gradient-to-b from-white via-green-100 to-white"
+      className="w-full h-auto flex flex-col items-center justify-center mt-2 px-8 py-4 xl:p-26 bg-gradient-to-b from-white via-green-100 to-white"
     >
       <BorderBtn text="How We Work?" />
 
@@ -21,11 +21,11 @@ export const Work = () => {
         variants={fadeRight}
       >
         <div className="font-semibold">
-          <p className="text-gray-800 flex items-center gap-2">
+          <div className="text-gray-800 flex items-center gap-2 flex-col text-center">
             We Groom Your Online Presence{" "}
-            <FaPaw className="text-green-600 w-6 h-6" />
-          </p>
-          <p className="text-green-600">Step by Step — Paw by Paw</p>
+            {/* <FaPaw className="text-green-600 w-6 h-6" /> */}
+            <span className="text-green-600">Step by Step — Paw by Paw</span>
+          </div>
         </div>
         <p className="text-sm md:text-base text-gray-700 w-[90%] md:w-[70%] mb-8 leading-relaxed">
           Every pet deserves love, and every grooming business deserves a

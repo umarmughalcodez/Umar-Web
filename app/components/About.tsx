@@ -10,8 +10,11 @@ import {
   ReactCompareSlider,
   ReactCompareSliderImage,
 } from "react-compare-slider";
+import { Button } from "./ui/button";
+import { useRouter } from "next/navigation";
 
 const About = () => {
+  const router = useRouter();
   const fadeUp = {
     hidden: { opacity: 0, y: 40 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
@@ -35,14 +38,13 @@ const About = () => {
         transition={{ staggerChildren: 0.15 }}
       >
         <motion.div variants={fadeUp}>
-          <BorderBtn text="About Umar" />
+          <BorderBtn text="Our Success" />
         </motion.div>
 
         <motion.div variants={fadeUp}>
           <h2 className="text-4xl md:text-5xl font-semibold leading-tight mb-6">
-            Building{" "}
-            <span className="text-green-500">Trustworthy</span> Websites,
-            Turning <br />
+            Building <span className="text-green-500">Trustworthy</span>{" "}
+            Websites, Turning <br />
             Visitors Into{" "}
             <span className="text-green-500">Loyal Pet Parents!</span>
           </h2>
@@ -95,15 +97,19 @@ const About = () => {
 
           {/* Experience */}
           <div className="flex flex-col items-center text-center">
-            <span className="font-semibold text-lg text-green-500">Affordable Prices</span>
-            <span className="text-sm text-gray-600">Different Plans Available</span>
+            <span className="font-semibold text-lg text-green-500">
+              Affordable Prices
+            </span>
+            <span className="text-sm text-gray-600">
+              Different Plans Available
+            </span>
           </div>
         </motion.div>
       </motion.div>
 
       {/* Right Compare Section */}
       <motion.div
-        className="w-full lg:w-1/2 flex justify-center mt-12 lg:mt-0"
+        className="w-full lg:w-1/2 flex items-center space-y-3 justify-center mt-12 lg:mt-0 flex-col"
         initial="hidden"
         whileInView="visible"
         variants={fadeRight}
@@ -115,17 +121,17 @@ const About = () => {
             itemOne={
               <ReactCompareSliderImage
                 alt="Before Website Redesign"
-                src="https://raw.githubusercontent.com/nerdyman/stuff/main/libs/react-compare-slider/demo-images/lady-1.png"
+                src="https://res.cloudinary.com/xcorpion/image/upload/v1760896447/gy5ewge6kgojbtwlmqpw.png"
               />
             }
             itemTwo={
               <ReactCompareSliderImage
                 alt="After Website Redesign"
-                src="https://raw.githubusercontent.com/nerdyman/stuff/main/libs/react-compare-slider/demo-images/lady-2.png"
-                style={{
-                  filter:
-                    "saturate(1.25) contrast(1.1) drop-shadow(2px 4px 6px black)",
-                }}
+                src="https://res.cloudinary.com/xcorpion/image/upload/v1760896447/t4cokyrk5kl87kvgpfbn.png"
+                // style={{
+                //   filter:
+                //     "saturate(1.25) contrast(1.1) drop-shadow(2px 4px 6px black)",
+                // }}
               />
             }
             position={50}
@@ -136,6 +142,14 @@ const About = () => {
             }}
           />
         </div>
+        <Button
+          effect={"hoverUnderline"}
+          variant={"link"}
+          className="hover:text-green-500"
+          onClick={() => router.push("/redesign")}
+        >
+          See Full Redesign &#8599;
+        </Button>
       </motion.div>
     </section>
   );

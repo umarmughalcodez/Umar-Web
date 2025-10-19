@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import img from "@/public/hero.jpg"; // your hero image
+import img from "@/public/hero.png"; // your hero image
 import { Button } from "./ui/button";
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
@@ -82,17 +82,18 @@ const Hero = () => {
 
       {/* RIGHT IMAGE SECTION */}
       <motion.div
-        className="w-full md:w-1/2 flex justify-center mt-10 md:mt-0"
+        className="w-full md:w-1/2 flex justify-center mt-10 md:mt-0 p-0 "
         initial={{ opacity: 0, x: 50 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.8 }}
       >
         <div className="relative w-full max-w-md md:max-w-lg lg:max-w-xl h-[300px] sm:h-[400px] md:h-[500px]">
           <Image
+            // loading="lazy"
             src={img}
             alt="Pet Grooming Hero"
             fill
-            className="object-cover rounded-2xl"
+            className="object-contain rounded-2xl"
             priority
           />
         </div>

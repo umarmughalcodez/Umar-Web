@@ -112,7 +112,11 @@ const Contact = () => {
         <p>Any Questions?</p>
         <p className="text-green-600">Feel Free to Ask</p>
         <p className="mt-6 text-base text-gray-600 font-normal text-center mb-16">
-          Whether you have a question, need assistance, <br />
+          Whether you want a{" "}
+          <span className="font-bold text-green-500">
+            FREE Website Audit, FREE Demo Site,
+          </span>
+          <br />
           or want to start a new project — our team is here to help.
         </p>
       </motion.div>
@@ -162,7 +166,9 @@ const Contact = () => {
           {/* Second Row */}
           <div className="flex flex-col sm:flex-row gap-4">
             <div className="flex-1">
-              <label className="block text-sm text-gray-700 mb-1">Email *</label>
+              <label className="block text-sm text-gray-700 mb-1">
+                Email *
+              </label>
               <input
                 type="email"
                 name="email"
@@ -175,7 +181,9 @@ const Contact = () => {
               />
             </div>
             <div className="flex-1">
-              <label className="block text-sm text-gray-700 mb-1">Phone *</label>
+              <label className="block text-sm text-gray-700 mb-1">
+                Phone *
+              </label>
               <input
                 type="tel"
                 name="phone"
@@ -206,7 +214,9 @@ const Contact = () => {
               />
             </div>
             <div className="flex-1">
-              <label className="block text-sm text-gray-700 mb-1">Industry</label>
+              <label className="block text-sm text-gray-700 mb-1">
+                Industry
+              </label>
               <input
                 name="industry"
                 type="text"
@@ -221,7 +231,9 @@ const Contact = () => {
 
           {/* Message Field */}
           <div>
-            <label className="block text-sm text-gray-700 mb-1">Message *</label>
+            <label className="block text-sm text-gray-700 mb-1">
+              Message *
+            </label>
             <textarea
               placeholder="Tell us how we can help your grooming business shine!"
               rows={5}
@@ -255,6 +267,7 @@ const Contact = () => {
         whileInView={"visible"}
         viewport={{ once: true, amount: 0.1 }}
         variants={fadeUp}
+        id="contact"
       >
         <p className="text-2xl font-semibold text-gray-900 my-3">
           Let&apos;s Connect Together
@@ -263,12 +276,12 @@ const Contact = () => {
           <LucideMail className="text-green-600" size={22} />
           Email:{" "}
           <Button
-            onClick={() => router.push("mailto:hello@umarweb.com")}
+            onClick={() => router.push("mailto:info@umarweb.com")}
             variant="link"
             effect="hoverUnderline"
             className="text-green-700 p-0 text-md md:text-xl hover:text-green-800 font-normal"
           >
-            hello@umarweb.com
+            info@umarweb.com
           </Button>
         </p>
 

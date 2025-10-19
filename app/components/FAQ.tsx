@@ -23,7 +23,7 @@ const FAQSection = () => {
           variants={fadeUp}
         >
           <p>Frequently</p>
-          <p className="text-green-400">Asked Questions</p>
+          <p className="text-green-600">Asked Questions</p>
           <span className="text-black/70 text-sm mb-6 mt-4 max-w-xs font-normal ">
             Have inquiries? Our FAQ section has you covered with quick answers
             to the most common questions.

@@ -4,21 +4,21 @@ import BorderBtn from "./ui/BorderBtn";
 import { PiSealCheck } from "react-icons/pi";
 import { motion } from "framer-motion";
 import { fadeRight, fadeUp } from "@/lib/animations";
+import { FaPaw } from "react-icons/fa";
 
 const Reasons = () => {
   const reasons = [
-  "No More 'Ruff' Websites — Get a Paw-fect Design Clients Love",
-  "Fully Mobile-Friendly — Looks Great on Every Screen, Big or Small",
-  "Show Up on Google When Pet Parents Search Nearby",
-  "Affordable Packages (Monthly & One-time) Made for Small Grooming Businesses",
-  "Fast, Smooth & No More 'Slow as a Snail' Sites",
-  "Modern, Trust-Building Designs That Make Pet Owners Book Instantly",
-  "Over 2 Years of Proven Experience in Grooming Web Design",
-  "Safe, Secure & Stress-Free — You Focus on Pets, We Handle Tech",
-  "24/7 Support — Because Pet Pros Deserve Peace of Mind",
-  "SEO + Marketing Ready — Built to Grow Your Grooming Brand",
-];
-
+    "No More 'Ruff' Websites — Get a Paw-fect Design Clients Love",
+    "Fully Mobile-Friendly — Looks Great on Every Screen, Big or Small",
+    "Show Up on Google When Pet Parents Search Nearby",
+    "Affordable Packages (Monthly & One-time) Made for Small Grooming Businesses",
+    "Fast, Smooth & No More 'Slow as a Snail' Sites",
+    "Modern, Trust-Building Designs That Make Pet Owners Book Instantly",
+    "Over 2 Years of Proven Experience in Grooming Web Design",
+    "Safe, Secure & Stress-Free — You Focus on Pets, We Handle Tech",
+    "24/7 Support — Because Pet Pros Deserve Peace of Mind",
+    "SEO + Marketing Ready — Built to Grow Your Grooming Brand",
+  ];
 
   return (
     <div className="pt-16 text-black flex flex-col items-center justify-center w-full px-6 md:px-12 lg:px-20">
@@ -36,7 +36,7 @@ const Reasons = () => {
       >
         <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-center mt-4 flex-col flex space-y-2">
           <span>Why You Should</span>
-          <span className="text-green-400">Work With Us?</span>
+          <span className="text-green-600">Work With Us?</span>
         </h2>
 
         {/* Subheading */}
@@ -65,7 +65,7 @@ const Reasons = () => {
             key={i}
             className="flex items-start space-x-3 text-base md:text-md"
           >
-            <PiSealCheck className="text-green-500 text-2xl shrink-0" />
+            <FaPaw className="text-green-500 text-2xl shrink-0" />
             <span className="text-black/80">{r}</span>
           </motion.div>
         ))}

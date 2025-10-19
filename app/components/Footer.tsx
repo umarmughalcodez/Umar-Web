@@ -78,7 +78,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="w-full px-12 xl:px-30 lg:px-26 py-10 border-t-2 border-t-green-200 text-black bg-gradient-to-b from-white to-green-200 mt-12">
+    <footer className="w-full px-12 xl:px-30 lg:px-26 py-10 border-t-2 border-t-green-200 text-black bg-white mt-12">
       <Toaster />
       {/* Main Layout */}
       <div className="flex flex-col lg:flex-row justify-between items-start lg:items-start gap-12">
@@ -90,7 +90,7 @@ const Footer = () => {
               <Image
                 src={logo}
                 alt="Umar Web Logo"
-                className="object-cover cursor-pointer"
+                className="object-contain cursor-pointer"
                 fill
                 onClick={() => router.push("/#home")}
               />
@@ -120,27 +120,26 @@ const Footer = () => {
               onChange={(e) => setEmail(e.target.value)}
             />
             <Button
-  type="submit"
-  variant="default"
-  effect="expandIcon"
-  className="text-white cursor-pointer bg-green-600 hover:bg-green-700 
+              type="submit"
+              variant="default"
+              effect="expandIcon"
+              className="text-white cursor-pointer bg-green-600 hover:bg-green-700 
   shadow-[0_0_20px_rgba(22,163,74,0.6)] hover:shadow-[0_0_30px_rgba(22,163,74,0.8)] 
   transition-all duration-300 font-semibold
   text-xs sm:text-sm md:text-base px-2 md:px-3 py-0 rounded-lg"
-  iconPlacement="right"
-  icon={LucideBell}
->
-  Subscribe
-</Button>
-
+              iconPlacement="right"
+              icon={LucideBell}
+            >
+              Subscribe
+            </Button>
           </motion.form>
           <div className="flex items-center">
             Or Feel Free to{" "}
             <Button
-              onClick={() => router.push("mailto:umar@umarweb.com")}
+              onClick={() => router.push("mailto:info@umarweb.com")}
               variant={"link"}
               effect={"hoverUnderline"}
-              className="text-green-500 hover:text-blue-400 hover:cursor-pointer p-0 mx-2 text-base"
+              className="text-green-500 hover:text-green-400 hover:cursor-pointer p-0 mx-2 text-base"
             >
               Email Us &#8599;
             </Button>
@@ -196,7 +195,7 @@ const Footer = () => {
               onClick={() => router.push("/contact")}
               variant="link"
               effect="hoverUnderline"
-              className="text-green-500 p-0 hover:text-blue-400"
+              className="text-green-500 p-0 hover:text-green-400"
             >
               Contact Us
             </Button>
@@ -204,7 +203,7 @@ const Footer = () => {
               onClick={() => router.push("/schedule-call")}
               variant="link"
               effect="hoverUnderline"
-              className="text-green-500 p-0 hover:text-blue-400"
+              className="text-green-500 p-0 hover:text-green-400"
             >
               Schedule Free Call
             </Button>
@@ -251,7 +250,7 @@ const Footer = () => {
       </div>
 
       {/* Divider */}
-      <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-gray-500 to-transparent my-6" />
+      <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-green-500 to-transparent my-6" />
 
       {/* Bottom Section */}
       <div className="text-center text-gray-400 text-sm">

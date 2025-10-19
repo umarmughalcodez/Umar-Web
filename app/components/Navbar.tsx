@@ -6,7 +6,7 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import AnimatedButton from "./AnimatedBtn";
 import { Button } from "./ui/button";
-import img from "@/public/Updated.png";
+import img from "@/public/logo.png";
 
 const Navbar = () => {
   const router = useRouter();
@@ -17,10 +17,10 @@ const Navbar = () => {
 
   const navItems = [
     { name: "Home", href: "/#" },
-    { name: "Free Demo", href: "/contact" },
 
+    { name: "Contact", href: "/contact/#contact" },
+    { name: "Free Website Audit", href: "/schedule-call" },
     { name: "Schedule Free Call", href: "/schedule-call" },
-    { name: "Contact", href: "/contact" },
   ];
 
   useEffect(() => {
@@ -48,7 +48,12 @@ const Navbar = () => {
             className="relative w-[130px] sm:w-[150px] md:w-[200px] h-[40px] sm:h-[50px] md:h-[60px]"
             onClick={() => router.push("/")}
           >
-            <Image src={img} alt="Logo" fill className="object-contain cursor-pointer" />
+            <Image
+              src={img}
+              alt="Logo"
+              fill
+              className="object-contain cursor-pointer"
+            />
           </div>
 
           {/* Desktop Menu */}
@@ -68,29 +73,28 @@ const Navbar = () => {
 
           {/* CTA Desktop */}
           <div className="hidden md:block">
-            <AnimatedButton text="Get In Touch" path="/contact" />
+            <AnimatedButton text="Get Free Demo" path="/contact" />
           </div>
 
           {/* Mobile Hamburger */}
           <button
-  className="md:hidden relative w-9 h-9 flex flex-col justify-center items-center rounded-md border border-gray-300 transition-all duration-300"
-  onClick={() => setIsDrawerOpen(!isDrawerOpen)}
-  aria-label="Toggle menu"
->
-  <span
-    className={`absolute block h-0.5 w-6 bg-green-500 transition-all duration-300 ease-in-out 
+            className="md:hidden relative w-9 h-9 flex flex-col justify-center items-center rounded-md border border-gray-300 transition-all duration-300"
+            onClick={() => setIsDrawerOpen(!isDrawerOpen)}
+            aria-label="Toggle menu"
+          >
+            <span
+              className={`absolute block h-0.5 w-6 bg-green-500 transition-all duration-300 ease-in-out 
     ${isDrawerOpen ? "rotate-45" : "-translate-y-2"}`}
-  ></span>
-  <span
-    className={`absolute block h-0.5 w-6 bg-green-500 transition-all duration-300 ease-in-out 
+            ></span>
+            <span
+              className={`absolute block h-0.5 w-6 bg-green-500 transition-all duration-300 ease-in-out 
     ${isDrawerOpen ? "opacity-0" : "opacity-100"}`}
-  ></span>
-  <span
-    className={`absolute block h-0.5 w-6 bg-green-500 transition-all duration-300 ease-in-out 
+            ></span>
+            <span
+              className={`absolute block h-0.5 w-6 bg-green-500 transition-all duration-300 ease-in-out 
     ${isDrawerOpen ? "-rotate-45" : "translate-y-2"}`}
-  ></span>
-</button>
-
+            ></span>
+          </button>
         </div>
       </nav>
 
@@ -115,15 +119,8 @@ const Navbar = () => {
               {item.name}
             </Button>
           ))}
-          <div
-            onClick={() => setIsDrawerOpen(false)}
-          
-          >
-
-          <AnimatedButton
-            text="Get In Touch"
-            path="/contact"
-          />
+          <div onClick={() => setIsDrawerOpen(false)}>
+            <AnimatedButton text="Get Free Demo" path="/contact" />
           </div>
         </div>
       </div>
