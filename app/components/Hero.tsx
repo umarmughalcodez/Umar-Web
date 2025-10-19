@@ -42,24 +42,20 @@ const Hero = () => {
           <span className="bg-green-600 rounded-sm font-semibold px-2 py-1 mr-2 text-white">
             NEW
           </span>
-          Trusted by businesses worldwide
+          Trusted by U.S. groomers nationwide
         </motion.div>
 
-        <motion.h1
-          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-gray-900"
-          variants={fadeUp}
-        >
+        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-gray-900">
           AMERICA&apos;S <span className="text-green-600">BEST</span> WEB DESIGN
           AGENCY <br /> FOR <span className="text-green-600">PET GROOMERS</span>
-        </motion.h1>
+        </h1>
 
-        <motion.p
-          className="mt-6 text-base sm:text-lg text-gray-700 max-w-md"
-          variants={fadeRight}
-        >
-          We specialize in developing custom websites and systems that reflect
-          your brand’s identity and convert customers into loyal clients.
-        </motion.p>
+        <p className="mt-6 text-base sm:text-lg text-gray-700 max-w-md">
+          We specialize in creating stunning, conversion-focused websites made
+          exclusively for pet groomers across the U.S. Our designs help dog
+          groomers, pet salons, and grooming brands attract more clients and
+          grow their business online.
+        </p>
 
         <motion.div
           className="mt-8 flex flex-wrap justify-center md:justify-start gap-4"

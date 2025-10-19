@@ -5,10 +5,8 @@ import Navbar from "./components/Navbar";
 
 import Footer from "./components/Footer";
 import CursorFollower from "./components/ui/CursorFollower";
-import SmoothScrollProvider from "./components/ui/SmoothScrollProvider";
 import Script from "next/script";
 import GradualBlurWrapper from "./components/ui/GradualBlurWrapper";
-import FlyonuiScript from "@/components/FlyonuiScript";
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",
@@ -17,9 +15,9 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "UmarWeb – Professional Web Development Services",
+  title: "Best Pet Grooming Web Design Agency in America | Umar Web Agency",
   description:
-    "We create SEO-optimized, mobile-friendly websites for businesses worldwide. Book a free strategy call today and grow your online presence.",
+    "We build high-converting, beautiful websites made exclusively for pet groomers across the U.S. — boosting bookings, trust, and brand love.",
   icons: {
     icon: [
       { url: "/favicon.ico", type: "image/x-icon" },
@@ -29,11 +27,25 @@ export const metadata: Metadata = {
     shortcut: "/favicon.ico",
   },
   keywords: [
-    "web development",
-    "web design",
-    "affordable websites",
-    "business websites",
-    "SEO friendly websites",
+    "Pet Grooming Web Design Agency",
+
+    "Best Pet Grooming Website Designer",
+
+    "Pet Grooming Website Design USA",
+
+    "Dog Grooming Website Design Agency",
+
+    "Web Design for Pet Groomers in America",
+
+    "Pet Groomer Website Development Company",
+
+    "Professional Pet Grooming Web Designer",
+
+    "Pet Grooming Business Website Design",
+
+    "Custom Pet Grooming Website Design",
+
+    "Pet Salon Website Design Agency USA",
   ],
   viewport: {
     width: "device-width",
@@ -42,9 +54,9 @@ export const metadata: Metadata = {
   },
   authors: [{ name: "UmarWeb", url: "https://umarweb.com" }],
   openGraph: {
-    title: "UmarWeb – Professional Web Development Services",
+    title: "Best Pet Grooming Web Design Agency in America | Umar Web Agency",
     description:
-      "Affordable and professional website design for businesses worldwide. Mobile-friendly, SEO-ready, and fast.",
+      "Custom websites built for U.S. pet groomers — designed to attract, convert, and grow your grooming business online.",
 
     url: "https://umarweb.com",
     siteName: "UmarWeb",
@@ -53,7 +65,7 @@ export const metadata: Metadata = {
         url: "https://umarweb.com/og-image.png",
         width: 1200,
         height: 630,
-        alt: "UmarWeb - Built To Sell.",
+        alt: "UmarWeb - Best Pet Grooming Web Design Agency America",
       },
     ],
     type: "website",
@@ -63,8 +75,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "UmarWeb - Built To Sell",
-    description: "Professional Websites For Growing Local Businesses",
+    title: "UmarWeb - Pet grooming Web Design Agency USA",
+    description:
+      "America’s #1 Pet Grooming Web Design Agency — Tail-wagging websites built to grow your pet business.",
     images: ["/og-image.png"],
   },
 };
@@ -79,7 +92,7 @@ export default function RootLayout({
       <body className={`${montserrat.variable} antialiased bg-white`}>
         <CursorFollower />
         <Navbar />
-        <SmoothScrollProvider>{children}</SmoothScrollProvider>
+        {children}
         <GradualBlurWrapper />
 
         <Footer />
@@ -94,17 +107,16 @@ export default function RootLayout({
               url: "https://umarweb.com",
               image: "https://umarweb.com/logo.png",
               description:
-                "We provide SEO-optimized websites for businesses worldwide. Affordable, fast, and mobile-friendly.",
+                "America’s #1 Pet Grooming Web Design Agency — specializing in beautiful, high-performing websites for pet grooming businesses.",
               address: {
                 "@type": "PostalAddress",
                 addressLocality: "Remote",
                 addressCountry: "Worldwide",
               },
-              sameAs: ["https://www.instagram.com/umarwebofficial/"],
+              sameAs: ["https://www.instagram.com/umarwebagency/"],
             }),
           }}
         />
-        <FlyonuiScript />
       </body>
     </html>
   );

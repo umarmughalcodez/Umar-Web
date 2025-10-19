@@ -134,7 +134,7 @@ export default function TestimonialsCarousel() {
               className="flex-shrink-0 w-full max-w-4xl mx-auto bg-gradient-to-bl from-green-100 via-white to-green-100 backdrop-blur-lg border border-green-200 shadow-xl rounded-3xl p-8 flex flex-col justify-between snap-center"
             >
               <p className="text-gray-700 text-lg leading-relaxed mb-6 italic">
-                "{item.text}"
+                &quot;{item.text}&quot;
               </p>
               <h4 className="text-green-500 font-semibold text-right text-xl">
                 — {item.name}

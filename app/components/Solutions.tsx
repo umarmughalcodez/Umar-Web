@@ -1,27 +1,29 @@
 "use client";
 
+import Image from "next/image";
 import { FaPaw, FaCheckCircle } from "react-icons/fa";
 
 export default function PetGroomingFrustrations() {
   return (
     <section className="bg-white py-16 px-6 md:px-20">
       <div className="text-center text-3xl md:text-4xl font-bold text-green-500 mb-10">
-  Pet Groomers’{" "}
-  <span className="text-gray-800">&nbsp;Frustrations Into&nbsp;</span>
-  <span className="text-green-500 inline-flex items-center justify-center">
-    PAW-FECT Solutions
-  </span>
-</div>
-
+        Pet Groomers’{" "}
+        <span className="text-gray-800">&nbsp;Frustrations Into&nbsp;</span>
+        <span className="text-green-500 inline-flex items-center justify-center">
+          PAW-FECT Solutions
+        </span>
+      </div>
 
       <div className="grid md:grid-cols-2 gap-8 items-stretch">
         {/* LEFT SIDE - FRUSTRATIONS */}
         <div className="border-2 border-green-500 rounded-2xl shadow-md p-6 bg-gray-50 flex flex-col h-full">
           <div className="flex items-center mb-4">
-            <img
+            <Image
               src="https://em-content.zobj.net/source/microsoft-teams/337/thinking-face_1f914.png"
               alt="Thinking Emoji"
-              className="w-8 h-8 mr-2"
+              className="mr-2"
+              width={8}
+              height={8}
             />
             <h3 className="text-xl md:text-2xl font-semibold text-gray-900">
               Does this sound familiar?

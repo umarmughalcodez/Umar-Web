@@ -3,7 +3,6 @@ import BorderBtn from "./ui/BorderBtn";
 import { motion } from "framer-motion";
 import WorkCards from "./WorkCards";
 import { fadeRight, fadeUp } from "@/lib/animations";
-import { FaPaw } from "react-icons/fa";
 
 export const Work = () => {
   return (

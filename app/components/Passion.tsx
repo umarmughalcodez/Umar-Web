@@ -28,8 +28,8 @@ export default function OurCommitment() {
             <span className="text-green-600 font-semibold">
               Umar Web Design Agency
             </span>
-            , and my mission is simple: "To turn your love for pets into a
-            website that actually brings in bookings"
+            , and my mission is simple: &quot;To turn your love for pets into a
+            website that actually brings in bookings&quot;
           </p>
 
           <p className="text-gray-700 mb-4 leading-relaxed">

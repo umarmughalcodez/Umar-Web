@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
 import BorderBtn from "./ui/BorderBtn";
-import { PiSealCheck } from "react-icons/pi";
 import { motion } from "framer-motion";
 import { fadeRight, fadeUp } from "@/lib/animations";
 import { FaPaw } from "react-icons/fa";
