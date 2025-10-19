@@ -113,7 +113,7 @@ export default function RootLayout({
                 addressLocality: "Remote",
                 addressCountry: "Worldwide",
               },
-              sameAs: ["https://www.instagram.com/umarwebagency/"],
+              sameAs: ["https://www.instagram.com/umarwebofficial/"],
             }),
           }}
         />
