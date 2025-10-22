@@ -12,7 +12,6 @@ interface PageProps {
 const PersonalizedPage: FC<PageProps> = ({ params }) => {
   const { name } = params;
 
-  // Hooks must be at the top
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [muted, setMuted] = useState(false);
@@ -21,10 +20,9 @@ const PersonalizedPage: FC<PageProps> = ({ params }) => {
   const [duration, setDuration] = useState(60);
   const [showControls, setShowControls] = useState(true);
 
-  if (!name) return notFound(); // conditional check after hooks
+  if (!name) return notFound();
 
   const displayName = name.charAt(0).toUpperCase() + name.slice(1);
-
   let hideControlsTimeout: NodeJS.Timeout;
 
   const togglePlay = () => {
@@ -91,7 +89,7 @@ const PersonalizedPage: FC<PageProps> = ({ params }) => {
   };
 
   return (
-    <main className="flex flex-col items-center justify-center min-h-screen bg-white px-6 text-center mt-20">
+    <main className="flex flex-col items-center justify-center min-h-screen bg-white px-6 text-center mt-32">
       {/* Hero */}
       <motion.div
         className="max-w-2xl w-full"
@@ -100,17 +98,24 @@ const PersonalizedPage: FC<PageProps> = ({ params }) => {
         transition={{ duration: 0.6 }}
       >
         <h1 className="text-4xl md:text-5xl font-extrabold text-gray-800 mb-3">
-          Only for you, <span className="text-green-500">{displayName}!</span>
+          A Special Preview for{" "}
+          <span className="text-green-500">{displayName}!</span>
         </h1>
         <p className="text-lg text-gray-600 mb-10 leading-relaxed">
-          Hey{" "}
-          <span className="text-green-500 font-semibold">{displayName}</span>, I
-          crafted this short 60-second video to show you what your business
-          could look like online — clean, modern, and built to impress. 🚀
+          Hi <span className="text-green-500 font-semibold">{displayName}</span>
+          , we created this short 60-second video to show how your business can
+          shine online — sleek, professional, and designed to attract more
+          clients. 🌟
         </p>
       </motion.div>
 
       {/* Video Player */}
+      <p className="text-md mb-3">
+        Here’s a website we redesigned for a business{" "}
+        <span className="font-semibold text-green-500">for free</span> as part
+        of our{" "}
+        <span className="text-green-500 font-semibold">Launch Offer</span>
+      </p>
       <motion.div
         className="relative w-full max-w-2xl bg-white border border-green-200 rounded-2xl shadow-xl overflow-hidden mb-10"
         initial={{ opacity: 0, scale: 0.95 }}
@@ -173,6 +178,59 @@ const PersonalizedPage: FC<PageProps> = ({ params }) => {
             </motion.div>
           )}
         </AnimatePresence>
+      </motion.div>
+
+      {/* Call-to-Action */}
+      <motion.div
+        className="text-center mb-8"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.6 }}
+      >
+        <p className="text-gray-700 mb-4">
+          Inspired by what you saw? Let’s take your business online with a
+          professional website —{" "}
+          <span className="text-green-500 font-semibold">
+            free for first clients
+          </span>
+          .
+        </p>
+
+        <p className="text-gray-700 mb-4">
+          I’m launching my agency and I’m looking to collaborate with amazing
+          pet groomers like you,{" "}
+          <span className="text-green-500 font-semibold">{displayName}</span>.
+          <br />
+          <span className="font-semibold">
+            This is a special opportunity to get a high-quality website at{" "}
+            <span className="text-green-500">No Cost!</span>
+          </span>
+        </p>
+
+        <div className="flex flex-wrap items-center justify-center gap-4">
+          <a
+            href="https://wa.me/923364190319?text=Hi%20Umar!%20I%20just%20watched%20the%20demo%20you%20made%20for%20me!"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-8 rounded-full shadow-md transition-transform transform hover:-translate-y-1 duration-300"
+          >
+            Chat on WhatsApp 💬
+          </a>
+
+          <a
+            href="mailto:hello@umarweb.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-8 rounded-full shadow-md transition-transform transform hover:-translate-y-1 duration-300"
+          >
+            Email Us 📩
+          </a>
+        </div>
+
+        <p className="mt-4 text-gray-500 text-md">
+          Available <span className="text-green-500 font-semibold">24/7</span> —
+          quick responses guaranteed! ⚡
+        </p>
       </motion.div>
     </main>
   );

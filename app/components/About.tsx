@@ -109,13 +109,13 @@ const About = () => {
 
       {/* Right Compare Section */}
       <motion.div
-        className="w-full lg:w-1/2 flex items-center space-y-3 justify-center mt-12 lg:mt-0 flex-col"
+        className="w-full lg:w-1/2 flex items-center space-y-1 justify-center mt-12 lg:mt-0 flex-col"
         initial="hidden"
         whileInView="visible"
         variants={fadeRight}
         viewport={{ once: true }}
       >
-        <div className="w-full max-w-xl bg-green-500 p-3 rounded-3xl">
+        <div className="w-full max-w-xl bg-green-500 p-1 rounded-3xl">
           <ReactCompareSlider
             boundsPadding={0}
             itemOne={
