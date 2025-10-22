@@ -121,13 +121,13 @@ const About = () => {
             itemOne={
               <ReactCompareSliderImage
                 alt="Before Website Redesign"
-                src="https://res.cloudinary.com/xcorpion/image/upload/v1760896447/gy5ewge6kgojbtwlmqpw.png"
+                src="https://res.cloudinary.com/xcorpion/image/upload/v1761149001/oaichjraowackmoivy1o.png"
               />
             }
             itemTwo={
               <ReactCompareSliderImage
                 alt="After Website Redesign"
-                src="https://res.cloudinary.com/xcorpion/image/upload/v1760896447/t4cokyrk5kl87kvgpfbn.png"
+                src="https://res.cloudinary.com/xcorpion/image/upload/v1761149001/xsdpyupskr3vooydulfi.png"
                 // style={{
                 //   filter:
                 //     "saturate(1.25) contrast(1.1) drop-shadow(2px 4px 6px black)",

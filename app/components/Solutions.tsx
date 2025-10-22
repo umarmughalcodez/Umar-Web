@@ -22,8 +22,9 @@ export default function PetGroomingFrustrations() {
               src="https://em-content.zobj.net/source/microsoft-teams/337/thinking-face_1f914.png"
               alt="Thinking Emoji"
               className="mr-2"
-              width={8}
-              height={8}
+              width={20}
+              height={20}
+              unoptimized
             />
             <h3 className="text-xl md:text-2xl font-semibold text-gray-900">
               Does this sound familiar?

@@ -7,6 +7,7 @@ import Footer from "./components/Footer";
 import CursorFollower from "./components/ui/CursorFollower";
 import Script from "next/script";
 import GradualBlurWrapper from "./components/ui/GradualBlurWrapper";
+// import ChatWidget from "@/components/ChatWidget";
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",
@@ -93,6 +94,7 @@ export default function RootLayout({
         <CursorFollower />
         <Navbar />
         {children}
+        {/* <ChatWidget /> */}
         <GradualBlurWrapper />
 
         <Footer />
