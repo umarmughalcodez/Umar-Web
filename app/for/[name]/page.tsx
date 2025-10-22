@@ -1,5 +1,6 @@
 "use client";
-import { FC, useRef, useState, useEffect } from "react";
+
+import { FC, useRef, useState } from "react";
 import { notFound } from "next/navigation";
 import { Play, Pause, Volume2, VolumeX, RotateCcw, Clock } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -10,20 +11,22 @@ interface PageProps {
 
 const PersonalizedPage: FC<PageProps> = ({ params }) => {
   const { name } = params;
-  if (!name) return notFound();
 
-  const displayName = name.charAt(0).toUpperCase() + name.slice(1);
+  // Hooks must be at the top
   const videoRef = useRef<HTMLVideoElement>(null);
-
   const [isPlaying, setIsPlaying] = useState(false);
   const [muted, setMuted] = useState(false);
   const [progress, setProgress] = useState(0);
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(60);
   const [showControls, setShowControls] = useState(true);
+
+  if (!name) return notFound(); // conditional check after hooks
+
+  const displayName = name.charAt(0).toUpperCase() + name.slice(1);
+
   let hideControlsTimeout: NodeJS.Timeout;
 
-  // Play / Pause toggle
   const togglePlay = () => {
     const video = videoRef.current;
     if (!video) return;
@@ -32,7 +35,6 @@ const PersonalizedPage: FC<PageProps> = ({ params }) => {
       video.play();
       setIsPlaying(true);
       setShowControls(true);
-      // Hide controls after 2 seconds
       clearTimeout(hideControlsTimeout);
       hideControlsTimeout = setTimeout(() => setShowControls(false), 2000);
     } else {
@@ -77,7 +79,7 @@ const PersonalizedPage: FC<PageProps> = ({ params }) => {
 
   const handleVideoEnd = () => {
     setIsPlaying(false);
-    setShowControls(true); // Show controls at end
+    setShowControls(true);
   };
 
   const formatTime = (time: number) => {
@@ -171,42 +173,6 @@ const PersonalizedPage: FC<PageProps> = ({ params }) => {
             </motion.div>
           )}
         </AnimatePresence>
-      </motion.div>
-
-      <motion.div
-        className="text-center mb-8"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.6 }}
-      >
-        <p className="text-gray-700 mb-4">
-          Liked what you saw? Let’s bring your business online — beautifully.
-        </p>
-
-        <div className="flex flex-wrap items-center justify-center gap-4">
-          <a
-            href="https://wa.me/923364190319?text=Hey%20Umar!%20I%20just%20watched%20the%20demo%20you%20made%20for%20me!"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-8 rounded-full shadow-md transition-transform transform hover:-translate-y-1 duration-300"
-          >
-            Chat on WhatsApp 💬
-          </a>
-
-          <a
-            href="mailto:hello@umarweb.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-8 rounded-full shadow-md transition-transform transform hover:-translate-y-1 duration-300"
-          >
-            Email Us 📩
-          </a>
-        </div>
-
-        <p className="mt-4 text-gray-500 text-sm">
-          Available <span className="text-green-500 font-semibold">24/7</span> —
-          we reply fast ⚡
-        </p>
       </motion.div>
     </main>
   );
