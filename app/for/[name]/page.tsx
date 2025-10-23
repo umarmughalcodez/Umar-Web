@@ -20,11 +20,6 @@ const PersonalizedPage: FC<PageProps> = ({ params }) => {
   const [duration, setDuration] = useState(60);
   const [showControls, setShowControls] = useState(true);
 
-  if (!name) return notFound();
-
-  const displayName = name.charAt(0).toUpperCase() + name.slice(1);
-  let hideControlsTimeout: NodeJS.Timeout;
-
   useEffect(() => {
     const video = videoRef.current;
     if (video) {
@@ -35,6 +30,13 @@ const PersonalizedPage: FC<PageProps> = ({ params }) => {
         .catch((err) => console.log("Autoplay blocked:", err));
     }
   }, []);
+
+  if (!name) return notFound();
+
+  const displayName = name.charAt(0).toUpperCase() + name.slice(1);
+  let hideControlsTimeout: NodeJS.Timeout;
+
+  
 
   const togglePlay = () => {
     const video = videoRef.current;
