@@ -1,6 +1,6 @@
 "use client";
 
-import { FC, useRef, useState } from "react";
+import { FC, useEffect, useRef, useState } from "react";
 import { notFound } from "next/navigation";
 import { Play, Pause, Volume2, VolumeX, RotateCcw, Clock } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -24,6 +24,17 @@ const PersonalizedPage: FC<PageProps> = ({ params }) => {
 
   const displayName = name.charAt(0).toUpperCase() + name.slice(1);
   let hideControlsTimeout: NodeJS.Timeout;
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (video) {
+      video.muted = true; // mute to allow autoplay
+      video
+        .play()
+        .then(() => setIsPlaying(true))
+        .catch((err) => console.log("Autoplay blocked:", err));
+    }
+  }, []);
 
   const togglePlay = () => {
     const video = videoRef.current;

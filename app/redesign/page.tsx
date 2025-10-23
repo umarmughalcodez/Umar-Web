@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Clock, Pause, Play, RotateCcw, Volume2, VolumeX } from "lucide-react";
 
@@ -14,6 +14,17 @@ const Redesign = () => {
   const [showControls, setShowControls] = useState(true);
 
   let hideControlsTimeout: NodeJS.Timeout;
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (video) {
+      video.muted = true; // mute to allow autoplay
+      video
+        .play()
+        .then(() => setIsPlaying(true))
+        .catch((err) => console.log("Autoplay blocked:", err));
+    }
+  }, []);
 
   const togglePlay = () => {
     const video = videoRef.current;
