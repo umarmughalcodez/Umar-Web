@@ -33,10 +33,12 @@ const PersonalizedPage: FC<PageProps> = ({ params }) => {
 
   if (!name) return notFound();
 
-  const displayName = name.charAt(0).toUpperCase() + name.slice(1);
-  let hideControlsTimeout: NodeJS.Timeout;
+  const displayName = decodeURIComponent(name)
+    .split(" ")
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ");
 
-  
+  let hideControlsTimeout: NodeJS.Timeout;
 
   const togglePlay = () => {
     const video = videoRef.current;

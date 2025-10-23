@@ -99,7 +99,7 @@ const Redesign = () => {
         transition={{ duration: 0.6 }}
       >
         <h1 className="text-4xl md:text-5xl font-extrabold text-gray-800 mb-3">
-          A Special Preview for You!
+          A Special preview for you!
         </h1>
         <p className="text-lg text-gray-600 mb-10 leading-relaxed">
           We created this short 60-second video to show how a business website
